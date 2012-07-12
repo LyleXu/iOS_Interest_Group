@@ -74,7 +74,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ul-s2-e7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Q5Y-Ji-62j" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KqC-8l-Kwt">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" barStyle="blackOpaque" id="TPH-SU-zSP">
@@ -88,7 +88,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="search-page-glyph.png" id="AWd-hj-dpe"/>
+                    <navigationItem key="navigationItem" id="CMr-na-Ogo"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="0hz-t6-oj1" id="8yJ-4w-k7M"/>
                     </connections>
@@ -103,60 +103,57 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1422" y="893"/>
+            <point key="canvasLocation" x="1948" y="893"/>
         </scene>
         <scene sceneID="Sgm-vl-Wrs">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxo-7K-vhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="NTX-Ic-qfG" customClass="HistoryTVC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="050-BN-ss5">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6T5-ob-65Z">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6T5-ob-65Z">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" id="HnE-48-mzP">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="HnE-48-mzP">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Borrow History" image="library-icon.png" id="Jro-ix-pA4"/>
-                    <connections>
-                        <outlet property="view" destination="6T5-ob-65Z" id="ogT-nS-38p"/>
-                    </connections>
+                                <connections>
+                                    <segue destination="MkA-a2-gJ9" kind="push" identifier="BookDetail" id="fUP-5Y-RA1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="NTX-Ic-qfG" id="HaP-D2-uuz"/>
+                            <outlet property="delegate" destination="NTX-Ic-qfG" id="DgJ-n8-3Bw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="WfU-lK-jsX"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1429" y="300"/>
+            <point key="canvasLocation" x="1955" y="300"/>
         </scene>
         <scene sceneID="dt2-7q-bTb">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I79-pv-2Ht" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="7Jz-pP-U5k" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yvi-Wb-Or8">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Library" image="iconMedBooks.png" id="D44-Zf-24u"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="TuS-uY-NwH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1429" y="-289"/>
+            <point key="canvasLocation" x="1955" y="-289"/>
         </scene>
         <scene sceneID="sId-Kl-Z3W">
             <objects>
@@ -169,13 +166,43 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="7Jz-pP-U5k" kind="relationship" relationship="viewControllers" id="SaG-lz-ZO9"/>
-                        <segue destination="NTX-Ic-qfG" kind="relationship" relationship="viewControllers" id="bbo-ss-TNy"/>
-                        <segue destination="Q5Y-Ji-62j" kind="relationship" relationship="viewControllers" id="3B5-rW-Qbf"/>
+                        <segue destination="b8F-vV-DeH" kind="relationship" relationship="viewControllers" id="SaG-lz-ZO9"/>
+                        <segue destination="aCk-wc-W2i" kind="relationship" relationship="viewControllers" id="bbo-ss-TNy"/>
+                        <segue destination="nIr-6O-0SZ" kind="relationship" relationship="viewControllers" id="3B5-rW-Qbf"/>
                     </connections>
                 </tabBarController>
             </objects>
             <point key="canvasLocation" x="878" y="34"/>
+        </scene>
+        <scene sceneID="Fim-TB-gIa">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gUO-wf-WzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="MkA-a2-gJ9" customClass="BookDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x73-98-OvJ">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="1Rc-aM-9x4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="RBU-wv-XJF">
+                                        <rect key="frame" x="116" y="96" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lw8-Mh-rvD"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2607" y="300"/>
         </scene>
         <scene sceneID="9W8-38-a9q">
             <objects>
@@ -194,20 +221,66 @@
             </objects>
             <point key="canvasLocation" x="43" y="34"/>
         </scene>
+        <scene sceneID="cDR-nP-gzV">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FpZ-Co-Y2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="aCk-wc-W2i" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Borrow History" image="library-icon.png" id="Jro-ix-pA4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="nif-Sb-wkb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NTX-Ic-qfG" kind="relationship" relationship="rootViewController" id="qrq-IQ-Gjr"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1429" y="300"/>
+        </scene>
+        <scene sceneID="myk-Go-wnY">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gEs-MK-FYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="b8F-vV-DeH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Library" image="iconMedBooks.png" id="D44-Zf-24u"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TQP-V3-JdU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7Jz-pP-U5k" kind="relationship" relationship="rootViewController" id="tKr-9B-bme"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1429" y="-289"/>
+        </scene>
+        <scene sceneID="BkN-QV-NIg">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zSW-gY-e3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="nIr-6O-0SZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="search-page-glyph.png" id="AWd-hj-dpe"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bW2-eh-8jg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q5Y-Ji-62j" kind="relationship" relationship="rootViewController" id="C6S-dz-KW2"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1422" y="893"/>
+        </scene>
     </scenes>
     <resources>
         <image name="iconMedBooks.png" width="26" height="26"/>
         <image name="library-icon.png" width="24" height="25"/>
         <image name="search-page-glyph.png" width="21" height="21"/>
     </resources>
-    <classes>
-        <class className="GTCCLibraryViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GTCCLibraryViewController.h"/>
-        </class>
-        <class className="HistoryTVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryTVC.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

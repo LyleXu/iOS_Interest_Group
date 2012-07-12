@@ -17,6 +17,7 @@
 		26AAAF1B159C473F003AEF83 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AAAF19159C473F003AEF83 /* MainStoryboard_iPhone.storyboard */; };
 		26AAAF1E159C473F003AEF83 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AAAF1C159C473F003AEF83 /* MainStoryboard_iPad.storyboard */; };
 		26AAAF21159C473F003AEF83 /* GTCCLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AAAF20159C473F003AEF83 /* GTCCLibraryViewController.m */; };
+		26B5D96715AEB8B900B79EE4 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B5D96615AEB8B900B79EE4 /* BookDetailViewController.m */; };
 		26EAA74915A470BE000057C3 /* search-page-glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EAA74815A470BE000057C3 /* search-page-glyph.png */; };
 		26EAA74B15A47247000057C3 /* iconMedBooks.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EAA74A15A47247000057C3 /* iconMedBooks.png */; };
 		26EAA74D15A47469000057C3 /* library-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EAA74C15A47469000057C3 /* library-icon.png */; };
@@ -40,6 +41,8 @@
 		26AAAF1D159C473F003AEF83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		26AAAF1F159C473F003AEF83 /* GTCCLibraryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTCCLibraryViewController.h; sourceTree = "<group>"; };
 		26AAAF20159C473F003AEF83 /* GTCCLibraryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTCCLibraryViewController.m; sourceTree = "<group>"; };
+		26B5D96515AEB8B900B79EE4 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookDetailViewController.h; path = ../BookDetailViewController.h; sourceTree = "<group>"; };
+		26B5D96615AEB8B900B79EE4 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookDetailViewController.m; path = ../BookDetailViewController.m; sourceTree = "<group>"; };
 		26EAA74815A470BE000057C3 /* search-page-glyph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-page-glyph.png"; sourceTree = "<group>"; };
 		26EAA74A15A47247000057C3 /* iconMedBooks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconMedBooks.png; sourceTree = "<group>"; };
 		26EAA74C15A47469000057C3 /* library-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "library-icon.png"; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 		26AAAF0D159C473E003AEF83 /* GTCCLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				26B5D96515AEB8B900B79EE4 /* BookDetailViewController.h */,
+				26B5D96615AEB8B900B79EE4 /* BookDetailViewController.m */,
 				26AAAF16159C473F003AEF83 /* GTCCLibraryAppDelegate.h */,
 				26AAAF17159C473F003AEF83 /* GTCCLibraryAppDelegate.m */,
 				26AAAF19159C473F003AEF83 /* MainStoryboard_iPhone.storyboard */,
@@ -197,6 +202,7 @@
 				26AAAF18159C473F003AEF83 /* GTCCLibraryAppDelegate.m in Sources */,
 				26AAAF21159C473F003AEF83 /* GTCCLibraryViewController.m in Sources */,
 				269F7EA115A488D200D96F94 /* HistoryTVC.m in Sources */,
+				26B5D96715AEB8B900B79EE4 /* BookDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

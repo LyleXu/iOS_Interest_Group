@@ -1,0 +1,18 @@
+# Please contack with boyd4y@gmail.com if you need change the config.
+
+set daemon 120 # Poll at 2-minute intervals
+
+set logfile /var/log/monit.log
+
+set httpd port 2812
+	allow admin:bingo # Allow Basic Auth
+
+set mailserver smtp.gmail.com port 587 username "bingosynovainteractive@gmail.com" password "Shmily010" using tlsv1 with timeout 30 seconds # this basically allows you to use gmail's smtp server.  tlsv1 gets things going in SSL.
+set alert boyd4y@gmail.com # set this as a default email to send alerts to if you don't specify later on
+
+include /etc/monit.d/* # includes your .monit config file, and any others you write
+
+set mail-format { from: bingo@synova.com
+subject: $SERVICE $EVENT at $DATE
+message: Monit $ACTION $SERVICE at $DATE on $HOST: $DESCRIPTION.
+}

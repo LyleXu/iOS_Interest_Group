@@ -7,7 +7,7 @@
 //
 
 #import "HistoryTVC.h"
-
+#import "BookDetailViewController.h"
 
 @implementation HistoryTVC
 
@@ -62,6 +62,15 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"BookDetail"]) {
+        
+        [segue.destinationViewController setTitle:@"aaa"];
+    }
+}
+
 #pragma mark - Table view data source
 
 
@@ -75,7 +84,7 @@
 {
     //返回一行的ou视图
     NSUInteger row=[indexPath row];
-    NSString * tableIdentifier=@"Simple table";
+    NSString * tableIdentifier=@"CellIdentifier";
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
     //当一行上滚在屏幕消失时，另一行从屏幕底部滚到屏幕上，如果新行可以直接使用已经滚出屏幕的那行，系统可以避免重新创建和释放视图，同一个TableView,所有的行都是可以复用的，tableIdentifier是用来区别是否属于同一TableView
     
@@ -92,6 +101,7 @@
     cell.textLabel.text=[_listData objectAtIndex:row];//设置文字
     UIImage *image=[UIImage imageNamed:@"abc"];//读取图片,无需扩展名
     cell.imageView.image=image;//文字左边的图片
+    
     //    cell.detailTextLabel.text=@"详细描述"; 适用于Subtitle，Value1，Value2样式
     //    cell.imageView.highlightedImage=image; 可以定义被选中后显示的图片
     return cell;
@@ -101,10 +111,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+/*
     NSString * string=[_listData objectAtIndex:[indexPath row]];
     //取出被选中项的文字
     UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"提示" message:string delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
     [alert show];
+ */
+
+
+    
 }
+
+
+
 
 @end
