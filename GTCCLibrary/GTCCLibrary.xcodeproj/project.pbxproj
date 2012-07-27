@@ -106,31 +106,7 @@
 		2638D0AC15C06A68000906BC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2638D0AD15C06A68000906BC /* NSObject+SBJson.h */,
-				2638D0AE15C06A68000906BC /* NSObject+SBJson.m */,
-				2638D0AF15C06A68000906BC /* SBJson.h */,
-				2638D0B015C06A68000906BC /* SBJsonParser.h */,
-				2638D0B115C06A68000906BC /* SBJsonParser.m */,
-				2638D0B215C06A68000906BC /* SBJsonStreamParser.h */,
-				2638D0B315C06A68000906BC /* SBJsonStreamParser.m */,
-				2638D0B415C06A68000906BC /* SBJsonStreamParserAccumulator.h */,
-				2638D0B515C06A68000906BC /* SBJsonStreamParserAccumulator.m */,
-				2638D0B615C06A68000906BC /* SBJsonStreamParserAdapter.h */,
-				2638D0B715C06A68000906BC /* SBJsonStreamParserAdapter.m */,
-				2638D0B815C06A68000906BC /* SBJsonStreamParserState.h */,
-				2638D0B915C06A68000906BC /* SBJsonStreamParserState.m */,
-				2638D0BA15C06A68000906BC /* SBJsonStreamWriter.h */,
-				2638D0BB15C06A68000906BC /* SBJsonStreamWriter.m */,
-				2638D0BC15C06A68000906BC /* SBJsonStreamWriterAccumulator.h */,
-				2638D0BD15C06A68000906BC /* SBJsonStreamWriterAccumulator.m */,
-				2638D0BE15C06A68000906BC /* SBJsonStreamWriterState.h */,
-				2638D0BF15C06A68000906BC /* SBJsonStreamWriterState.m */,
-				2638D0C015C06A68000906BC /* SBJsonTokeniser.h */,
-				2638D0C115C06A68000906BC /* SBJsonTokeniser.m */,
-				2638D0C215C06A68000906BC /* SBJsonUTF8Stream.h */,
-				2638D0C315C06A68000906BC /* SBJsonUTF8Stream.m */,
-				2638D0C415C06A68000906BC /* SBJsonWriter.h */,
-				2638D0C515C06A68000906BC /* SBJsonWriter.m */,
+				26BAD59015C2830400E4AC7F /* SBJson */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -193,6 +169,38 @@
 				26AAAF15159C473F003AEF83 /* GTCCLibrary-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26BAD59015C2830400E4AC7F /* SBJson */ = {
+			isa = PBXGroup;
+			children = (
+				2638D0AD15C06A68000906BC /* NSObject+SBJson.h */,
+				2638D0AE15C06A68000906BC /* NSObject+SBJson.m */,
+				2638D0AF15C06A68000906BC /* SBJson.h */,
+				2638D0B015C06A68000906BC /* SBJsonParser.h */,
+				2638D0B115C06A68000906BC /* SBJsonParser.m */,
+				2638D0B215C06A68000906BC /* SBJsonStreamParser.h */,
+				2638D0B315C06A68000906BC /* SBJsonStreamParser.m */,
+				2638D0B415C06A68000906BC /* SBJsonStreamParserAccumulator.h */,
+				2638D0B515C06A68000906BC /* SBJsonStreamParserAccumulator.m */,
+				2638D0B615C06A68000906BC /* SBJsonStreamParserAdapter.h */,
+				2638D0B715C06A68000906BC /* SBJsonStreamParserAdapter.m */,
+				2638D0B815C06A68000906BC /* SBJsonStreamParserState.h */,
+				2638D0B915C06A68000906BC /* SBJsonStreamParserState.m */,
+				2638D0BA15C06A68000906BC /* SBJsonStreamWriter.h */,
+				2638D0BB15C06A68000906BC /* SBJsonStreamWriter.m */,
+				2638D0BC15C06A68000906BC /* SBJsonStreamWriterAccumulator.h */,
+				2638D0BD15C06A68000906BC /* SBJsonStreamWriterAccumulator.m */,
+				2638D0BE15C06A68000906BC /* SBJsonStreamWriterState.h */,
+				2638D0BF15C06A68000906BC /* SBJsonStreamWriterState.m */,
+				2638D0C015C06A68000906BC /* SBJsonTokeniser.h */,
+				2638D0C115C06A68000906BC /* SBJsonTokeniser.m */,
+				2638D0C215C06A68000906BC /* SBJsonUTF8Stream.h */,
+				2638D0C315C06A68000906BC /* SBJsonUTF8Stream.m */,
+				2638D0C415C06A68000906BC /* SBJsonWriter.h */,
+				2638D0C515C06A68000906BC /* SBJsonWriter.m */,
+			);
+			name = SBJson;
 			sourceTree = "<group>";
 		};
 		26EAA74E15A47866000057C3 /* Image */ = {

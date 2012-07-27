@@ -76,8 +76,8 @@
 {
     NSArray* parameters = [NSArray arrayWithObjects: userName, password, nil];
     NSDictionary* result = [self FetchData:@"LoginService" methodName:@"Login" parameters:parameters];
-    id value = [self GetValueByKey:result keyName:@"_returnCode"];
-    if([value isEqual:@"0"])
+    NSInteger value = [[self GetValueByKey:result keyName:@"_returnCode"] integerValue];
+    if(value == 0)
     {
         return true;
     }else
