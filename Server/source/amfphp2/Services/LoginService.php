@@ -24,6 +24,7 @@ class LoginService extends DoctrineBaseService {
 					//the user and pwd is correct.
 					if (strcmp ( $encrypt, $user->getPassword() ) == 0) {					
 						// if login in different place, send a notification here..
+						$response->_returnCode = ErrorCode::OK;
 					} else {
 						$response->_returnCode = ErrorCode::UserPwdWrong; // user/pwd is not correct.
 					}
