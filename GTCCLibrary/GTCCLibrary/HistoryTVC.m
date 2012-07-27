@@ -8,7 +8,8 @@
 
 #import "HistoryTVC.h"
 #import "BookDetailViewController.h"
-
+#import "SBJson.h"
+#import "SBJsonWriter.h"
 @implementation HistoryTVC
 
 @synthesize listData = _listData;
@@ -42,8 +43,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _listData=[NSArray arrayWithObjects:@"aaa",@"bbb",@"ccc",@"ddd",
-               @"eee",@"fff",@"ggg",@"hhh",@"iii",@"jjj",@"kkk",@"lll",@"mmm",@"nnn",@"ooo",nil];
+    _listData=[NSArray arrayWithObjects:@"Clean Code",@"Effective C++",@"CLR via C#",@"Thinking in C++",@"Design Patten",@"Hackers and Painters",@"C++ Primer",@"Code Complete",@"Inside the C++ Object Model",@"Unix Network Programming",@"Software Testing",@"Parallel Programming",nil];
 }
 
 - (void)viewDidUnload
@@ -66,8 +66,8 @@
 {
     
     if ([segue.identifier isEqualToString:@"BookDetail"]) {
-        
-        [segue.destinationViewController setTitle:@"aaa"];
+        NSUInteger row = [[self.tableView indexPathForSelectedRow] row];
+        [segue.destinationViewController setTitle:[_listData objectAtIndex:row]];
     }
 }
 

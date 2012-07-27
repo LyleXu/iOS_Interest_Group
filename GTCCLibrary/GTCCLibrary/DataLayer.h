@@ -10,4 +10,6 @@
 
 @interface DataLayer : NSObject
 
++(BOOL) Login:(NSString*)userName
+password:(NSString*)password;
 @end

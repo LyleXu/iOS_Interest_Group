@@ -7,8 +7,14 @@
 //
 
 #import "GTCCLibraryViewController.h"
+#import "DataLayer.h"
+
+@interface GTCCLibraryViewController() <UITextFieldDelegate>
+@end
 
 @implementation GTCCLibraryViewController
+@synthesize username;
+@synthesize password;
 
 - (void)didReceiveMemoryWarning
 {
@@ -26,6 +32,8 @@
 
 - (void)viewDidUnload
 {
+    [self setUsername:nil];
+    [self setPassword:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -59,6 +67,28 @@
         return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
     } else {
         return YES;
+    }
+}
+
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+
+    if([segue.identifier isEqualToString:@"Login"])
+    {
+        //[DataLayer Login:self.username.text password:self.password.text];
+        [DataLayer Login:@"abc1" password:@"abc1"];
+    }
+}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    if ([textField.text length]) {
+        [textField resignFirstResponder];
+        return YES;
+    } else {
+        return NO;
     }
 }
 
