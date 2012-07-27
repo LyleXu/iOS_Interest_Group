@@ -28,6 +28,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.username.delegate = self;
+    self.password.delegate = self;
 }
 
 - (void)viewDidUnload
@@ -77,8 +79,7 @@
 
     if([segue.identifier isEqualToString:@"Login"])
     {
-        //[DataLayer Login:self.username.text password:self.password.text];
-        [DataLayer Login:@"abc1" password:@"abc1"];
+        [DataLayer Login:self.username.text password:self.password.text];
     }
 }
 

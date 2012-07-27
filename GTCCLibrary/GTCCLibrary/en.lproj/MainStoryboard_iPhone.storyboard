@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Aij-Qq-1hH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -10,7 +10,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="GTCCLibraryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="GTCC Library" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="gwU-ta-Kdh">
@@ -229,23 +229,6 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2378" y="300"/>
-        </scene>
-        <scene sceneID="9W8-38-a9q">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S6L-n6-Opa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController storyboardIdentifier="abc" id="Aij-Qq-1hH" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Z7g-KX-kPf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="2" kind="relationship" relationship="rootViewController" id="KHF-Iv-m3p"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="43" y="34"/>
         </scene>
         <scene sceneID="cDR-nP-gzV">
             <objects>
