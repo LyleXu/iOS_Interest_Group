@@ -20,6 +20,7 @@
 		2638D0CF15C06A68000906BC /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638D0C115C06A68000906BC /* SBJsonTokeniser.m */; };
 		2638D0D015C06A68000906BC /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638D0C315C06A68000906BC /* SBJsonUTF8Stream.m */; };
 		2638D0D115C06A68000906BC /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638D0C515C06A68000906BC /* SBJsonWriter.m */; };
+		267CA9271609E2E8005C2EA3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267CA9261609E2E8005C2EA3 /* LoginViewController.m */; };
 		269F7EA115A488D200D96F94 /* HistoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F7EA015A488D200D96F94 /* HistoryTVC.m */; };
 		26AAAF08159C473E003AEF83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AAAF07159C473E003AEF83 /* UIKit.framework */; };
 		26AAAF0A159C473E003AEF83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AAAF09159C473E003AEF83 /* Foundation.framework */; };
@@ -29,8 +30,9 @@
 		26AAAF18159C473F003AEF83 /* GTCCLibraryAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AAAF17159C473F003AEF83 /* GTCCLibraryAppDelegate.m */; };
 		26AAAF1B159C473F003AEF83 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AAAF19159C473F003AEF83 /* MainStoryboard_iPhone.storyboard */; };
 		26AAAF1E159C473F003AEF83 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AAAF1C159C473F003AEF83 /* MainStoryboard_iPad.storyboard */; };
-		26AAAF21159C473F003AEF83 /* GTCCLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AAAF20159C473F003AEF83 /* GTCCLibraryViewController.m */; };
 		26B5D96715AEB8B900B79EE4 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B5D96615AEB8B900B79EE4 /* BookDetailViewController.m */; };
+		26BAD59715C2DADE00E4AC7F /* unisys_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */; };
+		26DFDC79160A0DAD002283E4 /* GTCCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */; };
 		26EAA74915A470BE000057C3 /* search-page-glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EAA74815A470BE000057C3 /* search-page-glyph.png */; };
 		26EAA74B15A47247000057C3 /* iconMedBooks.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EAA74A15A47247000057C3 /* iconMedBooks.png */; };
 		26EAA74D15A47469000057C3 /* library-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EAA74C15A47469000057C3 /* library-icon.png */; };
@@ -65,6 +67,8 @@
 		2638D0C315C06A68000906BC /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		2638D0C415C06A68000906BC /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		2638D0C515C06A68000906BC /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		267CA9251609E2E8005C2EA3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		267CA9261609E2E8005C2EA3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		269F7E9F15A488D200D96F94 /* HistoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTVC.h; sourceTree = "<group>"; };
 		269F7EA015A488D200D96F94 /* HistoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTVC.m; sourceTree = "<group>"; };
 		26AAAF03159C473E003AEF83 /* GTCCLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GTCCLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,10 +83,11 @@
 		26AAAF17159C473F003AEF83 /* GTCCLibraryAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTCCLibraryAppDelegate.m; sourceTree = "<group>"; };
 		26AAAF1A159C473F003AEF83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		26AAAF1D159C473F003AEF83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		26AAAF1F159C473F003AEF83 /* GTCCLibraryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTCCLibraryViewController.h; sourceTree = "<group>"; };
-		26AAAF20159C473F003AEF83 /* GTCCLibraryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTCCLibraryViewController.m; sourceTree = "<group>"; };
 		26B5D96515AEB8B900B79EE4 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookDetailViewController.h; path = ../BookDetailViewController.h; sourceTree = "<group>"; };
 		26B5D96615AEB8B900B79EE4 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookDetailViewController.m; path = ../BookDetailViewController.m; sourceTree = "<group>"; };
+		26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unisys_logo.jpg; sourceTree = "<group>"; };
+		26DFDC77160A0DAD002283E4 /* GTCCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTCCTabBarController.h; sourceTree = "<group>"; };
+		26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTCCTabBarController.m; sourceTree = "<group>"; };
 		26EAA74815A470BE000057C3 /* search-page-glyph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-page-glyph.png"; sourceTree = "<group>"; };
 		26EAA74A15A47247000057C3 /* iconMedBooks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconMedBooks.png; sourceTree = "<group>"; };
 		26EAA74C15A47469000057C3 /* library-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "library-icon.png"; sourceTree = "<group>"; };
@@ -143,19 +148,21 @@
 		26AAAF0D159C473E003AEF83 /* GTCCLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				267CA9251609E2E8005C2EA3 /* LoginViewController.h */,
+				267CA9261609E2E8005C2EA3 /* LoginViewController.m */,
 				26B5D96515AEB8B900B79EE4 /* BookDetailViewController.h */,
 				26B5D96615AEB8B900B79EE4 /* BookDetailViewController.m */,
 				26AAAF16159C473F003AEF83 /* GTCCLibraryAppDelegate.h */,
 				26AAAF17159C473F003AEF83 /* GTCCLibraryAppDelegate.m */,
 				26AAAF19159C473F003AEF83 /* MainStoryboard_iPhone.storyboard */,
 				26AAAF1C159C473F003AEF83 /* MainStoryboard_iPad.storyboard */,
-				26AAAF1F159C473F003AEF83 /* GTCCLibraryViewController.h */,
-				26AAAF20159C473F003AEF83 /* GTCCLibraryViewController.m */,
 				269F7E9F15A488D200D96F94 /* HistoryTVC.h */,
 				269F7EA015A488D200D96F94 /* HistoryTVC.m */,
 				26AAAF0E159C473F003AEF83 /* Supporting Files */,
 				2638D09B15C0633A000906BC /* DataLayer.h */,
 				2638D09C15C0633A000906BC /* DataLayer.m */,
+				26DFDC77160A0DAD002283E4 /* GTCCTabBarController.h */,
+				26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */,
 			);
 			path = GTCCLibrary;
 			sourceTree = "<group>";
@@ -206,6 +213,7 @@
 		26EAA74E15A47866000057C3 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */,
 				26EAA74F15A48476000057C3 /* abc.png */,
 				26EAA74815A470BE000057C3 /* search-page-glyph.png */,
 				26EAA74A15A47247000057C3 /* iconMedBooks.png */,
@@ -271,6 +279,7 @@
 				26EAA74B15A47247000057C3 /* iconMedBooks.png in Resources */,
 				26EAA74D15A47469000057C3 /* library-icon.png in Resources */,
 				26EAA75015A48476000057C3 /* abc.png in Resources */,
+				26BAD59715C2DADE00E4AC7F /* unisys_logo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +292,6 @@
 			files = (
 				26AAAF14159C473F003AEF83 /* main.m in Sources */,
 				26AAAF18159C473F003AEF83 /* GTCCLibraryAppDelegate.m in Sources */,
-				26AAAF21159C473F003AEF83 /* GTCCLibraryViewController.m in Sources */,
 				269F7EA115A488D200D96F94 /* HistoryTVC.m in Sources */,
 				26B5D96715AEB8B900B79EE4 /* BookDetailViewController.m in Sources */,
 				2638D09D15C0633A000906BC /* DataLayer.m in Sources */,
@@ -299,6 +307,8 @@
 				2638D0CF15C06A68000906BC /* SBJsonTokeniser.m in Sources */,
 				2638D0D015C06A68000906BC /* SBJsonUTF8Stream.m in Sources */,
 				2638D0D115C06A68000906BC /* SBJsonWriter.m in Sources */,
+				267CA9271609E2E8005C2EA3 /* LoginViewController.m in Sources */,
+				26DFDC79160A0DAD002283E4 /* GTCCTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

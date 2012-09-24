@@ -22,13 +22,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "GTCCLibrary/DataLayer.m"
-         timestampString = "365069697.342715"
+         filePath = "GTCCLibrary/GTCCLibraryViewController.m"
+         timestampString = "365072727.458198"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "80"
-         endingLineNumber = "80"
-         landmarkName = "+Login:password:"
+         startingLineNumber = "82"
+         endingLineNumber = "82"
+         landmarkName = "-prepareForSegue:sender:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
