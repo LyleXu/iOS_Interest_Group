@@ -2,7 +2,7 @@
 
 namespace Json\Commands;
 
-class LoginResponse extends  BaseResponse
+class BookResponse extends  BaseResponse
 {
 	public $sessionId;
 	public $userId;

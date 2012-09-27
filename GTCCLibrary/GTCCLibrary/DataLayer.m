@@ -8,7 +8,7 @@
 
 #import "DataLayer.h"
 #import "SBJson.h"
-
+#import "CBook.h"
 #define ServiceAddress @"http://localhost/~Lyle/gtcclibrary/amfphp/index.php"
 
 @implementation DataLayer
@@ -84,6 +84,22 @@
     {
         return false;
     }
+}
+
++ (NSMutableArray*) GetAllBooks
+{    
+    NSDictionary* result = [self FetchData:@"BookService" methodName:@"GetAllBooks" parameters:nil];
+    NSDictionary* datas = [self GetValueByKey:result keyName:@"Books"];
+    
+    NSMutableArray *AllBooks = [NSMutableArray array];
+    
+    for (NSDictionary *data in [datas allValues]) {
+		CBook* book = [CBook new];
+        [book Parse:data];
+		[AllBooks addObject:book];
+	}
+    
+    return [AllBooks copy];
 }
 
 @end

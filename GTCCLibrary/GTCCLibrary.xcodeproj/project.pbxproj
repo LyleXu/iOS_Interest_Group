@@ -30,6 +30,7 @@
 		26AAAF18159C473F003AEF83 /* GTCCLibraryAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AAAF17159C473F003AEF83 /* GTCCLibraryAppDelegate.m */; };
 		26AAAF1B159C473F003AEF83 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AAAF19159C473F003AEF83 /* MainStoryboard_iPhone.storyboard */; };
 		26AAAF1E159C473F003AEF83 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AAAF1C159C473F003AEF83 /* MainStoryboard_iPad.storyboard */; };
+		26B25F62161369DC00D1959F /* CBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B25F61161369DC00D1959F /* CBook.m */; };
 		26B5D96715AEB8B900B79EE4 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B5D96615AEB8B900B79EE4 /* BookDetailViewController.m */; };
 		26BAD59715C2DADE00E4AC7F /* unisys_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */; };
 		26DFDC79160A0DAD002283E4 /* GTCCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */; };
@@ -83,6 +84,8 @@
 		26AAAF17159C473F003AEF83 /* GTCCLibraryAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTCCLibraryAppDelegate.m; sourceTree = "<group>"; };
 		26AAAF1A159C473F003AEF83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		26AAAF1D159C473F003AEF83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		26B25F60161369DC00D1959F /* CBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBook.h; sourceTree = "<group>"; };
+		26B25F61161369DC00D1959F /* CBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBook.m; sourceTree = "<group>"; };
 		26B5D96515AEB8B900B79EE4 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookDetailViewController.h; path = ../BookDetailViewController.h; sourceTree = "<group>"; };
 		26B5D96615AEB8B900B79EE4 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookDetailViewController.m; path = ../BookDetailViewController.m; sourceTree = "<group>"; };
 		26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unisys_logo.jpg; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				2638D09C15C0633A000906BC /* DataLayer.m */,
 				26DFDC77160A0DAD002283E4 /* GTCCTabBarController.h */,
 				26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */,
+				26B25F60161369DC00D1959F /* CBook.h */,
+				26B25F61161369DC00D1959F /* CBook.m */,
 			);
 			path = GTCCLibrary;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				2638D0D115C06A68000906BC /* SBJsonWriter.m in Sources */,
 				267CA9271609E2E8005C2EA3 /* LoginViewController.m in Sources */,
 				26DFDC79160A0DAD002283E4 /* GTCCTabBarController.m in Sources */,
+				26B25F62161369DC00D1959F /* CBook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,8 @@
 #import "BookDetailViewController.h"
 #import "SBJson.h"
 #import "SBJsonWriter.h"
+#import "DataLayer.h"
+#import "CBook.h"
 @implementation HistoryTVC
 
 @synthesize listData = _listData;
@@ -43,7 +45,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _listData=[NSArray arrayWithObjects:@"Clean Code",@"Effective C++",@"CLR via C#",@"Thinking in C++",@"Design Patten",@"Hackers and Painters",@"C++ Primer",@"Code Complete",@"Inside the C++ Object Model",@"Unix Network Programming",@"Software Testing",@"Parallel Programming",nil];
+    //_listData=[NSArray arrayWithObjects:@"Clean Code",@"Effective C++",@"CLR via C#",@"Thinking in C++",@"Design Patten",@"Hackers and Painters",@"C++ Primer",@"Code Complete",@"Inside the C++ Object Model",@"Unix Network Programming",@"Software Testing",@"Parallel Programming",nil];
+    
+    _listData = [DataLayer GetAllBooks];
 }
 
 - (void)viewDidUnload
@@ -98,7 +102,11 @@
         //UITableViewCellStyleValue2 可以显示两个字符串，左边的灰色，右边的黑色
         
     }
-    cell.textLabel.text=[_listData objectAtIndex:row];//设置文字
+    
+    CBook * book = [_listData objectAtIndex:row];
+    
+    cell.textLabel.text= book.title;//设置文字
+    
     UIImage *image=[UIImage imageNamed:@"abc"];//读取图片,无需扩展名
     cell.imageView.image=image;//文字左边的图片
     

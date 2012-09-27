@@ -31,6 +31,10 @@ class ErrorCode
 	const InvalidFormat = -14;
 	const NoPermission = -15;
 	
+	// Book
+	const CannotGetBookList = -200;
+	const BianHaoAlreadyExists = -201;
+	
 	// User
 	const InvalidUser = -100;
 	const UserOffline = -101;
@@ -49,38 +53,5 @@ class ErrorCode
 	const ReachMaxPlayerLimit = -114;
 	const ReachMaxCardCountLimit = -115;
 	
-	// Game
-	const GameServerNotAvailable = -200;
-	const GameIdInvalid = -201;
-	const GameRoundResultNotFound = -202;
-	const GameRoundAlreadyRunning = -203;
-	const GameRoundFinishedOrUnknown = -204;
-	const GameRoundNotFound = -205;
-	const NoBingoLeft = -206;
 	
-	// System
-	const VersionNeedUpdate = -300;
-	const VersionUnkownPlatform = -301;
-	
-	// Buy
-	const KeyPackegeIdNotCorrect = -400;
-	const NoEnoughMoney = -401;
-	const PowerUpsPackegeIdNotCorrect = -402;
-	const NoEnougnToken = -403;
-	const GetAchievementsFailed = -404;
-	const CityCollectionIdNotCorrect = -405;
-	const HasGotAchievement = -406;
-	const GetCityCollectionFailed = -407;
-	const HasGotCityCollection = -408;
-	const EmptyCityCollection = -409;
-	const GetAllPowerUpsTypeFailed = -410;
-	
-	// PowerUp
-	const PowerUpOwnerNotMatch = -500;
-	const PowerUpInvalidStatus = -501;
-	const PowerUpHasUsed = -502;
-	const NoAvailablePowerUp = -503;
-	
-	// Treasure
-	const NoTreasureChestToOpen = -600;
 }

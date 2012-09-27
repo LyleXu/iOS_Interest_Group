@@ -12,4 +12,7 @@
 
 +(BOOL) Login:(NSString*)userName
 password:(NSString*)password;
+
++(NSMutableArray*) GetAllBooks;
 @end
+
