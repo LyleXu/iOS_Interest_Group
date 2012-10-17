@@ -12,6 +12,8 @@
 #import "SBJsonWriter.h"
 #import "DataLayer.h"
 #import "CBook.h"
+#define ServerImagePath @"http://localhost/~Lyle/gtcclibrary/Images/"
+
 @implementation HistoryTVC
 
 @synthesize listData = _listData;
@@ -87,6 +89,21 @@
     return [_listData count];
 }
 
+-(UIImage *) getImageFromURL:(NSString *)fileURL {
+    UIImage * result;
+    
+    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
+    result = [UIImage imageWithData:data];
+    
+    return result;
+}
+
+-(NSString*) replaceWhiteSpace:(NSString*) url
+{
+    url = [url stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    return [url stringByReplacingOccurrencesOfString:@"#" withString:@"%23"];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //返回一行的ou视图
@@ -110,8 +127,12 @@
     
     cell.textLabel.text= book.title;//设置文字
     //cell.detailTextLabel.text = book.author;
-    UIImage *image=[UIImage imageNamed:@"abc"];//读取图片,无需扩展名
-    cell.imageView.image=image;//文字左边的图片
+    //UIImage *image=[UIImage imageNamed:@"abc"];//读取图片,无需扩展名
+    NSString* imageUrl = ServerImagePath;
+    imageUrl = [self replaceWhiteSpace:[imageUrl stringByAppendingFormat: @"%@.jpg", book.title]];
+    UIImage * imageFromURL = [self getImageFromURL: imageUrl];
+   
+    cell.imageView.image=imageFromURL;//文字左边的图片
     
     //    cell.detailTextLabel.text=@"详细描述"; 适用于Subtitle，Value1，Value2样式
     //    cell.imageView.highlightedImage=image; 可以定义被选中后显示的图片
