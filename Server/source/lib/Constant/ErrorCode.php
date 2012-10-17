@@ -34,6 +34,7 @@ class ErrorCode
 	// Book
 	const CannotGetBookList = -200;
 	const BianHaoAlreadyExists = -201;
+	const NoSuchBook = -202;
 	
 	// User
 	const InvalidUser = -100;

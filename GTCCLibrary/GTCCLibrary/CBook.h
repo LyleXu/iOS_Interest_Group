@@ -11,10 +11,12 @@
 @interface CBook : NSObject{
 NSString *title;
 NSString *bianhao;
+NSString *author;
 }
 
 @property(nonatomic,retain) NSString *title;
 @property(nonatomic,retain) NSString *bianhao;
+@property(nonatomic,retain) NSString *author;
 
 -(void) Parse:(NSDictionary*) data;
 

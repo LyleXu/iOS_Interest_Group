@@ -12,6 +12,7 @@ class CBook
 	public function  __construct(\Models\Book $book)
 	{
 		$this->title = $book->GetTitle();
-		$this->bianhao = $book->GetBianHao();		
+		$this->bianhao = $book->GetBianHao();	
+		$this->author = $book->GetAuthor();	
 	}
 }

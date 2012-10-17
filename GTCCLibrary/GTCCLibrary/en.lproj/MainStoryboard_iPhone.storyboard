@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="nqR-ob-5RU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="nqR-ob-5RU">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
         <scene sceneID="5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
@@ -52,7 +52,7 @@
                                         <rect key="frame" x="0.0" y="91" width="328" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="308" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="308" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -72,12 +72,13 @@
                         <outlet property="loginTableView" destination="Y7g-lo-2i1" id="BcP-KB-Izi"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1520" y="34"/>
         </scene>
+        <!--View Controller-->
         <scene sceneID="JTJ-t8-ALQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ul-s2-e7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Q5Y-Ji-62j" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KqC-8l-Kwt">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -99,6 +100,7 @@
                         <outlet property="searchDisplayController" destination="0hz-t6-oj1" id="8yJ-4w-k7M"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ul-s2-e7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="0hz-t6-oj1">
                     <connections>
                         <outlet property="delegate" destination="Q5Y-Ji-62j" id="tYP-O8-zhU"/>
@@ -109,11 +111,11 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3007" y="1061"/>
+            <point key="canvasLocation" x="2959" y="1029"/>
         </scene>
+        <!--HistoryTVC-->
         <scene sceneID="Sgm-vl-Wrs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zxo-7K-vhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="NTX-Ic-qfG" customClass="HistoryTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6T5-ob-65Z">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -130,7 +132,7 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="MkA-a2-gJ9" kind="push" identifier="BookDetail" id="fUP-5Y-RA1"/>
+                                    <segue destination="95H-zh-8dq" kind="push" identifier="BookDetail" id="nkZ-Sr-uOF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -142,12 +144,62 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="WfU-lK-jsX"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zxo-7K-vhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3007" y="300"/>
         </scene>
+        <!--Book Detail View Controller-->
+        <scene sceneID="VAp-WA-9g8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oZ-GS-7Nv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="95H-zh-8dq" customClass="BookDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1oQ-5Q-kWX">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Author:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="yUV-KT-Vpf">
+                                <rect key="frame" x="32" y="30" width="67" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="AuthorName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="yob-W7-gDm">
+                                <rect key="frame" x="107" y="30" width="159" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Brief Descirption:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="h3x-FJ-iCI">
+                                <rect key="frame" x="32" y="71" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="25K-Xg-V2h">
+                                <rect key="frame" x="26" y="112" width="264" height="235"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rkL-ap-ElC"/>
+                    <connections>
+                        <outlet property="authorName" destination="yob-W7-gDm" id="brx-dY-szN"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3432" y="300"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="dt2-7q-bTb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="I79-pv-2Ht" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="7Jz-pP-U5k" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yvi-Wb-Or8">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -158,12 +210,13 @@
                     <navigationItem key="navigationItem" id="TuS-uY-NwH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I79-pv-2Ht" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3007" y="-289"/>
         </scene>
+        <!--Tab Bar Controller-->
         <scene sceneID="sId-Kl-Z3W">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zNB-Qh-PtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="oPU-pn-kcy" customClass="GTCCTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="zUH-ri-Pdy"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -178,64 +231,13 @@
                         <segue destination="nIr-6O-0SZ" kind="relationship" relationship="viewControllers" id="3B5-rW-Qbf"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zNB-Qh-PtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1951" y="34"/>
         </scene>
-        <scene sceneID="Fim-TB-gIa">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gUO-wf-WzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="MkA-a2-gJ9" customClass="BookDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x73-98-OvJ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="1Rc-aM-9x4">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Author:" lineBreakMode="tailTruncation" minimumFontSize="10" id="RBU-wv-XJF">
-                                        <rect key="frame" x="20" y="41" width="56" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Publish Date:" lineBreakMode="tailTruncation" minimumFontSize="10" id="uXs-mX-ObK">
-                                        <rect key="frame" x="20" y="84" width="102" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Brief Description:" lineBreakMode="tailTruncation" minimumFontSize="10" id="8Wg-MA-qmf">
-                                        <rect key="frame" x="20" y="124" width="132" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="YyZ-ub-U4U">
-                                        <rect key="frame" x="20" y="164" width="280" height="137"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="lw8-Mh-rvD"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="3582" y="300"/>
-        </scene>
+        <!--Navigation Controller - Borrow History-->
         <scene sceneID="cDR-nP-gzV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FpZ-Co-Y2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="aCk-wc-W2i" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Borrow History" image="library-icon.png" id="Jro-ix-pA4"/>
                     <toolbarItems/>
@@ -248,12 +250,13 @@
                         <segue destination="NTX-Ic-qfG" kind="relationship" relationship="rootViewController" id="qrq-IQ-Gjr"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FpZ-Co-Y2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2517" y="308"/>
         </scene>
+        <!--Navigation Controller - My Library-->
         <scene sceneID="myk-Go-wnY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gEs-MK-FYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="b8F-vV-DeH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Library" image="iconMedBooks.png" id="D44-Zf-24u"/>
                     <toolbarItems/>
@@ -266,12 +269,13 @@
                         <segue destination="7Jz-pP-U5k" kind="relationship" relationship="rootViewController" id="tKr-9B-bme"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gEs-MK-FYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2481" y="-289"/>
         </scene>
+        <!--Navigation Controller - Search-->
         <scene sceneID="BkN-QV-NIg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zSW-gY-e3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="nIr-6O-0SZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="search-page-glyph.png" id="AWd-hj-dpe"/>
                     <toolbarItems/>
@@ -284,12 +288,13 @@
                         <segue destination="Q5Y-Ji-62j" kind="relationship" relationship="rootViewController" id="C6S-dz-KW2"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zSW-gY-e3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2481" y="1021"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="hxA-F0-3VX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qLb-AD-Tn4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController navigationBarHidden="YES" id="nqR-ob-5RU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="KPW-D4-xUA">
@@ -301,6 +306,7 @@
                         <segue destination="2" kind="relationship" relationship="rootViewController" id="G4L-UC-bjU"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qLb-AD-Tn4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="994" y="34"/>
         </scene>
@@ -314,6 +320,9 @@
     <classes>
         <class className="BookDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BookDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="authorName" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="GTCCTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GTCCTabBarController.h"/>
@@ -324,6 +333,7 @@
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
+                <relationship kind="action" name="Login:"/>
                 <relationship kind="outlet" name="btnCancel" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnLogin" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginTableView" candidateClass="UITableView"/>

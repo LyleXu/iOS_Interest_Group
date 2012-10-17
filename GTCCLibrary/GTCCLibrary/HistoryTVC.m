@@ -33,6 +33,7 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -44,8 +45,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    //_listData=[NSArray arrayWithObjects:@"Clean Code",@"Effective C++",@"CLR via C#",@"Thinking in C++",@"Design Patten",@"Hackers and Painters",@"C++ Primer",@"Code Complete",@"Inside the C++ Object Model",@"Unix Network Programming",@"Software Testing",@"Parallel Programming",nil];
     
     _listData = [DataLayer GetAllBooks];
 }
@@ -70,8 +69,12 @@
 {
     
     if ([segue.identifier isEqualToString:@"BookDetail"]) {
-        NSUInteger row = [[self.tableView indexPathForSelectedRow] row];
-        [segue.destinationViewController setTitle:[_listData objectAtIndex:row]];
+        NSUInteger rowIndex = [[self.tableView indexPathForSelectedRow] row];
+        CBook* book = [_listData objectAtIndex:rowIndex];
+        BookDetailViewController* controller = segue.destinationViewController;
+        controller.bookInfo = book;
+        [controller setTitle:book.title];
+        
     }
 }
 
@@ -106,7 +109,7 @@
     CBook * book = [_listData objectAtIndex:row];
     
     cell.textLabel.text= book.title;//设置文字
-    
+    //cell.detailTextLabel.text = book.author;
     UIImage *image=[UIImage imageNamed:@"abc"];//读取图片,无需扩展名
     cell.imageView.image=image;//文字左边的图片
     

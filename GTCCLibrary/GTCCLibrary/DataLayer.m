@@ -86,6 +86,7 @@
     }
 }
 
+//Array of CBook
 + (NSMutableArray*) GetAllBooks
 {    
     NSDictionary* result = [self FetchData:@"BookService" methodName:@"GetAllBooks" parameters:nil];

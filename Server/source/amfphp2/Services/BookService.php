@@ -43,7 +43,7 @@ class BookService extends DoctrineBaseService {
 	/**
 	 * 
 	 */
-	function AddBook($bianHao,$title)
+	function AddBook($bianHao,$title,$author)
 	{
 		$response = new BookResponse();
 		
@@ -54,7 +54,7 @@ class BookService extends DoctrineBaseService {
 				$response->_returnCode = ErrorCode::BianHaoAlreadyExists;
 			}else
 			{
-				$book = new Book($bianHao, $title);
+				$book = new Book($bianHao, $title,$author);
 				$this->doctrinemodel->persist($book);
 				$this->doctrinemodel->flush();
 				
@@ -73,9 +73,30 @@ class BookService extends DoctrineBaseService {
 	/**
 	 * 
 	 */
-	function RemoveBook()
+	function RemoveBook($bianhao)
 	{
+		$response = new BookResponse();
 		
+		try {
+			$result = $this->doctrinemodel->getRepository ( 'Models\Book' )->findOneBy ( array ('BianHao' => $bianHao ) );
+			if($result != NULL)
+			{
+				$this->doctrinemodel->remove($result);
+				$this->doctrinemodel->flush();
+				$response->_returnCode = ErrorCode::OK;
+			}else
+			{
+			
+				$response->_returnCode = ErrorCode::NoSuchBook;
+				$response->_returnMessage = "No Such Book";
+			}
+		}
+		catch ( Exception $e ) {
+			$response->_returnCode = ErrorCode::Failed;
+			$response->_returnMessage = $e->__toString ();
+		}
+		
+		return $response;
 	}
 	
 	/**

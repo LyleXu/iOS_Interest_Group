@@ -21,7 +21,7 @@ class Book
     private $title;
 
     /** @ODM\String */
-    private $Author;
+    private $author;
     
     /** @ODM\String */
     private $ISBN;   
@@ -32,10 +32,11 @@ class Book
     /** @ODM\Int */
     private $EnterLibraryTime;
     
-	public function __construct($Bianhao, $title)
+	public function __construct($Bianhao, $title, $author)
     	{
     		$this->BianHao = $Bianhao;
     		$this->title = $title;
+    		$this->author = $author;
     	}
 
     public function GetTitle()
@@ -46,6 +47,11 @@ class Book
     public function GetBianHao()
     {
     	return $this->BianHao;
+    }
+    
+    public function GetAuthor()
+    {
+    	return $this->author;   	
     }
 }
 ?>
