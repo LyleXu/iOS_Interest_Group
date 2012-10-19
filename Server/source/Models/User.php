@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 
 /** @ODM\Document(collection="User")
- * 	@ODM\UniqueIndex(keys={"name"="asc", "udid"="asc"})
+ * 	@ODM\UniqueIndex(keys={"username"="asc", "udid"="asc"})
  * */
 class User
 {
@@ -15,7 +15,7 @@ class User
     private $id;
 	
     /** @ODM\String */
-    private $name;
+    private $username;
 
     /** @ODM\String */
     private $pwd;
@@ -34,36 +34,43 @@ class User
     
     
 	
-	public function __construct($username, $password = NULL)
+	public function __construct($username, $password, $email = NULL)
     	{
-    		$this->name = $username;
+    		$this->username = $username;
     		$this->pwd = $password;
+    		$this->email = $email;
     	}
 
-	public function getPassword()
+	public function getPwd()
 	{	
 		return $this->pwd;
 	}   
 
-public function setName($username)
-{
-	$this->name = $username;
-}
+	public function setPwd($password)
+	{
+		$this->pwd = $password;
+		
+	}
+	
+	public function  getUsername()
+	{
+		return $this->username;
+	}
+	
+	public function  setUsername($username)
+	{
+		$this->username = $username;
+	}
 
-public function setPassword($pwd)
-{
-	$this->pwd = $pwd;
-}
-
-public function setEmail($mail)
-{
-	$this->email = $mail;
-}
+	public function getEmail()
+	{
+		return $this->email ;
+	}
  
-    public function Reset()
+    public function  setEmail($mail)
     {
+    	$this->email = $mail;
     }
-    
     
 }
 ?>

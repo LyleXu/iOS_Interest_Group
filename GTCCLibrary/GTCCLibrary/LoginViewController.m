@@ -196,8 +196,14 @@ static NSString *kViewKey = @"viewKey";
 	return YES;
 }
 
+
 - (IBAction)Login:(id)sender {
-    	
+    if([DataLayer Login:self.txtUser.text password:self.txtPass.text])
+    	[self performSegueWithIdentifier:@"DoLogin" sender:self];
+    else{
+        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Please input correct username and password" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert1 show];
+    }
 }
 
 @end
