@@ -9,7 +9,7 @@
 #import "CBook.h"
 
 @implementation CBook
-@synthesize title,bianhao,author,description;
+@synthesize title,bianhao,author,publisher,publishedDate,language,printLength;
 
 
 -(void) Parse:(NSDictionary*) data
@@ -17,6 +17,9 @@
     self.title = [data objectForKey:@"title"];
     self.bianhao = [data objectForKey:@"bianhao"];
     self.author = [data objectForKey:@"author"];
-    self.description = [data objectForKey:@"description"];
+    self.publisher = [data objectForKey:@"publisher"];
+    self.publishedDate = [data objectForKey:@"publishedDate"];
+    self.language = [data objectForKey:@"language"];
+    self.printLength = [data objectForKey:@"printLength"];
 }
 @end

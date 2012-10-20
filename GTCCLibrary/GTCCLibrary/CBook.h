@@ -12,13 +12,15 @@
     NSString *title;
     NSString *bianhao;
     NSString *author;
-    NSString* desciption;
 }
 
 @property(nonatomic,retain) NSString *title;
 @property(nonatomic,retain) NSString *bianhao;
 @property(nonatomic,retain) NSString *author;
-@property(nonatomic,retain) NSString *description;
+@property(nonatomic,retain) NSString *publisher;
+@property(nonatomic,retain) NSNumber *publishedDate;
+@property(nonatomic,retain) NSString *language;
+@property(nonatomic,retain) NSNumber *printLength;
 
 -(void) Parse:(NSDictionary*) data;
 

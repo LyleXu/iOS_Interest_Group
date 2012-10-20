@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 
 /** @ODM\Document(collection="Book")
- * 	@ODM\UniqueIndex(keys={"name"="asc", "udid"="asc"})
+ * 	@ODM\UniqueIndex(keys={"BianHao"="asc", "udid"="asc"})
  * */
 class Book
 {
@@ -25,6 +25,18 @@ class Book
     
     /** @ODM\String */
     private $author;
+    
+    /** @ODM\Int */
+    private $publishedDate;
+    
+    /** @ODM\String */
+    private $publisher;
+    
+    /** @ODM\String */
+    private $language;
+    
+    /** @ODM\Int */
+    private $printLength;
     
     /** @ODM\String */
     private $ISBN;   
@@ -57,6 +69,11 @@ class Book
     	return $this->author;   	
     }
     
+    public function setAuthor($author)
+    {
+    	$this->author = $author;
+    }
+    
     public function GetDescription()
     {
     	return $this->description;   	
@@ -65,6 +82,46 @@ class Book
     public function setDescription($description)
     {
     	$this->description = $description;   	
+    }
+    
+    public function getPrintLength()
+    {
+    	return $this->printLength;   	
+    }
+    
+    public function setPrintLength($printLength)
+    {
+    	$this->printLength = $printLength;
+    }
+    
+    public function getPublishedDate()
+    {
+    	return $this->publishedDate;
+    }
+    
+    public function setPublishedDate($publishedDate)
+    {
+    	$this->publishedDate = $publishedDate;
+    }
+    
+    public function getPublisher()
+    {
+    	return $this->publisher;
+    }
+    
+    public function setPublisher($publisher)
+    {
+    	$this->publisher = $publisher;
+    }
+    
+    public function getLanguage()
+    {
+    	return $this->language;
+    }
+    
+    public function setLanguage($language)
+    {
+    	$this->language = $language;
     }
 }
 ?>

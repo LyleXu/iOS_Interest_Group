@@ -44,7 +44,7 @@
     [request setHTTPBody:jsonData];
     NSURLResponse *theResponse =[[NSURLResponse alloc]init];
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&theResponse error:&theError];      
-    NSMutableString *theString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSMutableString *theString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] copy];
     NSDictionary *jsonDictionaryResponse = [theString JSONValue];
     return jsonDictionaryResponse;
 }

@@ -42,13 +42,16 @@ class BookService extends DoctrineBaseService {
 
 	/**
 	 * 
-	 * @param string $bianHao
-	 * @param string $title
-	 * @param string $author
-	 * @param string $description
+	 * @param unknown_type $bianHao
+	 * @param unknown_type $title
+	 * @param unknown_type $author
+	 * @param unknown_type $publisher
+	 * @param unknown_type $publishedDate
+	 * @param unknown_type $language
+	 * @param unknown_type $printLength
 	 * @return \Json\Commands\BookResponse
 	 */
-	function AddBook($bianHao,$title,$author,$description)
+	function AddBook($bianHao,$title,$author,$publisher,$publishedDate,$language,$printLength)
 	{
 		$response = new BookResponse();
 		
@@ -60,7 +63,11 @@ class BookService extends DoctrineBaseService {
 			}else
 			{
 				$book = new Book($bianHao, $title,$author);
-				$book->setDescription($description);
+				$book->setPublisher($publisher);
+				$book->setPublishedDate($publishedDate);
+				$book->setLanguage($language);
+				$book->setPrintLength($printLength);
+					
 				$this->doctrinemodel->persist($book);
 				$this->doctrinemodel->flush();
 				
@@ -75,9 +82,11 @@ class BookService extends DoctrineBaseService {
 		
 		return $response;
 	}
-	
+
 	/**
 	 * 
+	 * @param unknown_type $bianhao
+	 * @return \Json\Commands\BookResponse
 	 */
 	function RemoveBook($bianhao)
 	{
@@ -107,10 +116,39 @@ class BookService extends DoctrineBaseService {
 	
 	/**
 	 * 
+	 * @param unknown_type $bianhao
+	 * @param unknown_type $author
+	 * @param unknown_type $description
+	 * @return \Json\Commands\BookResponse
 	 */
-	function EditBook()
+	function EditBook($bianhao, $description = NULL)
 	{
+		$response = new BookResponse();
 		
+		try {
+			$result = $this->doctrinemodel->getRepository ( 'Models\Book' )->findOneBy ( array ('BianHao' => $bianhao ) );
+			if($result == NULL)
+			{
+				$response->_returnCode = ErrorCode::NoSuchBook;
+			}else
+			{
+				
+				$this->doctrinemodel->createQueryBuilder('Models\Book')
+				->update()
+				->field('description')->set($description)
+				->field('BianHao')->equals($bianhao)
+				->getQuery()
+				->execute();
+		
+				$response->_returnCode = ErrorCode::OK;
+			}
+		}
+		catch ( Exception $e ) {
+			$response->_returnCode = ErrorCode::Failed;
+			$response->_returnMessage = $e->__toString ();
+		}
+		
+		return $response;
 	}
 }
 ?>	
