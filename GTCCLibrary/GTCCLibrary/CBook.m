@@ -9,13 +9,14 @@
 #import "CBook.h"
 
 @implementation CBook
-@synthesize title,bianhao,author;
+@synthesize title,bianhao,author,description;
 
 
 -(void) Parse:(NSDictionary*) data
 {
     self.title = [data objectForKey:@"title"];
     self.bianhao = [data objectForKey:@"bianhao"];
-     self.author = [data objectForKey:@"author"];
+    self.author = [data objectForKey:@"author"];
+    self.description = [data objectForKey:@"description"];
 }
 @end

@@ -12,7 +12,7 @@
 #import "SBJsonWriter.h"
 #import "DataLayer.h"
 #import "CBook.h"
-#define ServerImagePath @"http://localhost/~Lyle/gtcclibrary/Images/"
+#import "Utility.h"
 
 @implementation HistoryTVC
 
@@ -85,76 +85,32 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return [_listData count];
-}
-
--(UIImage *) getImageFromURL:(NSString *)fileURL {
-    UIImage * result;
-    
-    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
-    result = [UIImage imageWithData:data];
-    
-    return result;
-}
-
--(NSString*) replaceWhiteSpace:(NSString*) url
-{
-    url = [url stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    return [url stringByReplacingOccurrencesOfString:@"#" withString:@"%23"];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //返回一行的ou视图
     NSUInteger row=[indexPath row];
     NSString * tableIdentifier=@"CellIdentifier";
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
-    //当一行上滚在屏幕消失时，另一行从屏幕底部滚到屏幕上，如果新行可以直接使用已经滚出屏幕的那行，系统可以避免重新创建和释放视图，同一个TableView,所有的行都是可以复用的，tableIdentifier是用来区别是否属于同一TableView
-    
+
     if(cell==nil)
     {
-        //当没有可复用的空闲的cell资源时(第一次载入,没翻页)
+        // first load
         cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
-        //UITableViewCellStyleDefault 只能显示一张图片，一个字符串，即本例样式
-        //UITableViewCellStyleSubtitle 可以显示一张图片，两个字符串，上面黑色，下面的灰色
-        //UITableViewCellStyleValue1 可以显示一张图片，两个字符串，左边的黑色，右边的灰色
-        //UITableViewCellStyleValue2 可以显示两个字符串，左边的灰色，右边的黑色
         
     }
     
     CBook * book = [_listData objectAtIndex:row];
     
-    cell.textLabel.text= book.title;//设置文字
-    //cell.detailTextLabel.text = book.author;
-    //UIImage *image=[UIImage imageNamed:@"abc"];//读取图片,无需扩展名
-    NSString* imageUrl = ServerImagePath;
-    imageUrl = [self replaceWhiteSpace:[imageUrl stringByAppendingFormat: @"%@.jpg", book.title]];
-    UIImage * imageFromURL = [self getImageFromURL: imageUrl];
-   
-    cell.imageView.image=imageFromURL;//文字左边的图片
+    cell.textLabel.text= book.title;
     
-    //    cell.detailTextLabel.text=@"详细描述"; 适用于Subtitle，Value1，Value2样式
-    //    cell.imageView.highlightedImage=image; 可以定义被选中后显示的图片
+    UIImage * imageFromURL = [Utility getImageFromUrl:book.title];
+    cell.imageView.image=imageFromURL;
+    
     return cell;
 }
 
 #pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-/*
-    NSString * string=[_listData objectAtIndex:[indexPath row]];
-    //取出被选中项的文字
-    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"提示" message:string delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
-    [alert show];
- */
-
-
-    
-}
-
-
-
 
 @end

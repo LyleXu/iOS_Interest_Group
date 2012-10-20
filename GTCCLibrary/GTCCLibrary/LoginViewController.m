@@ -163,6 +163,7 @@ static NSString *kViewKey = @"viewKey";
 		txtPass.clearButtonMode = UITextFieldViewModeWhileEditing;
 		txtPass.tag = kViewTag;
 		txtPass.delegate = self;
+        txtPass.secureTextEntry = YES; // Make password display "*******"
 	}
 	return txtPass;
 }

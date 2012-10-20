@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2636F7CF16327D2B00AFC6EC /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 2636F7CE16327D2B00AFC6EC /* Utility.m */; };
 		2638D09D15C0633A000906BC /* DataLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638D09C15C0633A000906BC /* DataLayer.m */; };
 		2638D0C615C06A68000906BC /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638D0AE15C06A68000906BC /* NSObject+SBJson.m */; };
 		2638D0C715C06A68000906BC /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638D0B115C06A68000906BC /* SBJsonParser.m */; };
@@ -41,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2636F7CD16327D2B00AFC6EC /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		2636F7CE16327D2B00AFC6EC /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		2638D09B15C0633A000906BC /* DataLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLayer.h; sourceTree = "<group>"; };
 		2638D09C15C0633A000906BC /* DataLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLayer.m; sourceTree = "<group>"; };
 		2638D0AD15C06A68000906BC /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				26B25F61161369DC00D1959F /* CBook.m */,
 				26B513AB162EED8600ABB490 /* BookDetailViewController.h */,
 				26B513AC162EED8600ABB490 /* BookDetailViewController.m */,
+				2636F7CD16327D2B00AFC6EC /* Utility.h */,
+				2636F7CE16327D2B00AFC6EC /* Utility.m */,
 			);
 			path = GTCCLibrary;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				26DFDC79160A0DAD002283E4 /* GTCCTabBarController.m in Sources */,
 				26B25F62161369DC00D1959F /* CBook.m in Sources */,
 				26B513AD162EED8700ABB490 /* BookDetailViewController.m in Sources */,
+				2636F7CF16327D2B00AFC6EC /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

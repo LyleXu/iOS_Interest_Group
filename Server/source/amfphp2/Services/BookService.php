@@ -42,8 +42,13 @@ class BookService extends DoctrineBaseService {
 
 	/**
 	 * 
+	 * @param string $bianHao
+	 * @param string $title
+	 * @param string $author
+	 * @param string $description
+	 * @return \Json\Commands\BookResponse
 	 */
-	function AddBook($bianHao,$title,$author)
+	function AddBook($bianHao,$title,$author,$description)
 	{
 		$response = new BookResponse();
 		
@@ -55,6 +60,7 @@ class BookService extends DoctrineBaseService {
 			}else
 			{
 				$book = new Book($bianHao, $title,$author);
+				$book->setDescription($description);
 				$this->doctrinemodel->persist($book);
 				$this->doctrinemodel->flush();
 				

@@ -21,6 +21,9 @@ class Book
     private $title;
 
     /** @ODM\String */
+    private $description;
+    
+    /** @ODM\String */
     private $author;
     
     /** @ODM\String */
@@ -52,6 +55,16 @@ class Book
     public function GetAuthor()
     {
     	return $this->author;   	
+    }
+    
+    public function GetDescription()
+    {
+    	return $this->description;   	
+    }
+    
+    public function setDescription($description)
+    {
+    	$this->description = $description;   	
     }
 }
 ?>
