@@ -54,6 +54,11 @@ class Book
     		$this->author = $author;
     	}
 
+    public function getId()
+    {
+    	return $this->id;
+    }
+    	
     public function GetTitle()
     {
     	return $this->title;    	

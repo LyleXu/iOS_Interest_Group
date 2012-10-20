@@ -25,7 +25,9 @@ class ErrorCode
 	const BianHaoAlreadyExists = -201;
 	const NoSuchBook = -202;
 	
-
+	// Borrow History
+	const NoSuchHistory = -300;
+	
 	
 	
 }

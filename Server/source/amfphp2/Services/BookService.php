@@ -93,7 +93,7 @@ class BookService extends DoctrineBaseService {
 		$response = new BookResponse();
 		
 		try {
-			$result = $this->doctrinemodel->getRepository ( 'Models\Book' )->findOneBy ( array ('BianHao' => $bianHao ) );
+			$result = $this->doctrinemodel->getRepository ( 'Models\Book' )->findOneBy ( array ('BianHao' => $bianhao ) );
 			if($result != NULL)
 			{
 				$this->doctrinemodel->remove($result);
@@ -149,6 +149,31 @@ class BookService extends DoctrineBaseService {
 		}
 		
 		return $response;
+	}
+	
+	function RemoveAll()
+	{
+		$response = new BaseResponse();
+	
+		try {
+			$result = $this->doctrinemodel->getRepository ( 'Models\Book' )->findAll()->toArray();
+			if($result != NULL)
+			{
+				foreach ($result as $row)
+				{
+					$this->doctrinemodel->remove($row);
+				}
+				$this->doctrinemodel->flush();
+				$response->_returnCode = ErrorCode::OK;
+			}
+		}
+		catch ( Exception $e ) {
+			$response->_returnCode = ErrorCode::Failed;
+			$response->_returnMessage = $e->__toString ();
+		}
+	
+		return $response;
+	
 	}
 }
 ?>	
