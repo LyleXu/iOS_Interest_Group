@@ -27,6 +27,7 @@ class ErrorCode
 	
 	// Borrow History
 	const NoSuchHistory = -300;
+	const NoBookInBorrow = -301;
 	
 	
 	

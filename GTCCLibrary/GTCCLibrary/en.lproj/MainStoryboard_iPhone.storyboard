@@ -176,6 +176,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="doBorrow:" destination="95H-zh-8dq" eventType="touchUpInside" id="eOs-u3-tOT"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" id="G0a-Sb-SKr">
                                         <rect key="frame" x="123" y="29" width="191" height="169"/>
@@ -262,6 +265,7 @@
                     <navigationItem key="navigationItem" id="rkL-ap-ElC"/>
                     <connections>
                         <outlet property="authorName" destination="yob-W7-gDm" id="brx-dY-szN"/>
+                        <outlet property="borrowButton" destination="fHj-H6-gfo" id="eEe-pe-QML"/>
                         <outlet property="infoView" destination="G0a-Sb-SKr" id="3Az-NK-qa3"/>
                         <outlet property="language" destination="J50-by-Fb3" id="P48-Dd-DRx"/>
                         <outlet property="printLength" destination="Gdr-ur-Hkl" id="HBA-eL-2jc"/>
@@ -274,18 +278,90 @@
             </objects>
             <point key="canvasLocation" x="3432" y="300"/>
         </scene>
-        <!--View Controller-->
+        <!--My Lirary View Controller-->
         <scene sceneID="dt2-7q-bTb">
             <objects>
-                <viewController id="7Jz-pP-U5k" sceneMemberID="viewController">
+                <viewController id="7Jz-pP-U5k" customClass="MyLiraryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yvi-Wb-Or8">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="Lwp-9R-rfi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="312"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="yjh-vw-Pw9">
+                                        <rect key="frame" x="20" y="97" width="101" height="147"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Borrow Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="4qj-nI-eYI">
+                                        <rect key="frame" x="145" y="97" width="121" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BorrowDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="vQ9-XD-6y0">
+                                        <rect key="frame" x="145" y="137" width="121" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PlanReturnDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Duz-Ux-mDL">
+                                        <rect key="frame" x="145" y="223" width="121" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Plan Return Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="PnU-qx-Jn1">
+                                        <rect key="frame" x="145" y="178" width="139" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZjJ-kd-z8F">
+                                        <rect key="frame" x="145" y="263" width="72" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Return">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doReturnBook:" destination="7Jz-pP-U5k" eventType="touchUpInside" id="pfe-QP-FSE"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BookTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="YKn-dF-GDk">
+                                        <rect key="frame" x="20" y="20" width="280" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="TuS-uY-NwH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bookTitle" destination="YKn-dF-GDk" id="EeQ-23-vT1"/>
+                        <outlet property="borrowDate" destination="vQ9-XD-6y0" id="hcS-RJ-E95"/>
+                        <outlet property="borrowDateLabel" destination="4qj-nI-eYI" id="7GE-X7-S2g"/>
+                        <outlet property="imageView" destination="yjh-vw-Pw9" id="lkx-VC-J55"/>
+                        <outlet property="planReturnDate" destination="Duz-Ux-mDL" id="XBh-6j-iwJ"/>
+                        <outlet property="planReturnDateLabel" destination="PnU-qx-Jn1" id="6ZA-hd-cym"/>
+                        <outlet property="returnButton" destination="ZjJ-kd-z8F" id="FmP-YH-xtC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I79-pv-2Ht" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -312,11 +388,11 @@
             </objects>
             <point key="canvasLocation" x="1929" y="34"/>
         </scene>
-        <!--Navigation Controller - Borrow History-->
+        <!--Navigation Controller - Book Store-->
         <scene sceneID="cDR-nP-gzV">
             <objects>
                 <navigationController id="aCk-wc-W2i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Borrow History" image="library-icon.png" id="Jro-ix-pA4"/>
+                    <tabBarItem key="tabBarItem" title="Book Store" image="library-icon.png" id="Jro-ix-pA4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="nif-Sb-wkb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -376,6 +452,53 @@
         <image name="search-page-glyph.png" width="21" height="21"/>
         <image name="unisys_logo.jpg" width="513" height="271"/>
     </resources>
+    <classes>
+        <class className="BookDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BookDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doBorrow:"/>
+                <relationship kind="outlet" name="authorName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="borrowButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="descTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="infoView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="language" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="printLength" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="publishedDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="publisher" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="theImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="GTCCTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GTCCTabBarController.h"/>
+        </class>
+        <class className="HistoryTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HistoryTVC.h"/>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Login:"/>
+                <relationship kind="outlet" name="btnCancel" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnLogin" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loginTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MyLiraryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyLiraryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bookTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="borrowDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="borrowDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="infoView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="planReturnDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="planReturnDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="returnButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

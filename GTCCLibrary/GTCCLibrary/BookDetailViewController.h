@@ -21,4 +21,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *publishedDate;
 @property (weak, nonatomic) IBOutlet UILabel *language;
 @property (weak, nonatomic) IBOutlet UILabel *printLength;
+@property (weak, nonatomic) IBOutlet UIButton *borrowButton;
 @end

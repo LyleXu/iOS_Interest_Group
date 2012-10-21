@@ -7,12 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "CBorrowHistory.h"
 @interface DataLayer : NSObject
 
 +(BOOL) Login:(NSString*)userName
 password:(NSString*)password;
 
 +(NSMutableArray*) GetAllBooks;
++(BOOL) checkWhetherBookInBorrow:(NSString*) bookBianhao;
++(BOOL) Borrow:(NSString*) username
+   bookBianhao: (NSString*) bookBianhao;
++(CBorrowHistory*) getBorrowInfo:(NSString*) username;
++(BOOL) ReturnBook:(NSString*) username
+       bookBianhao:(NSString*) bookBianhao;
 @end
 

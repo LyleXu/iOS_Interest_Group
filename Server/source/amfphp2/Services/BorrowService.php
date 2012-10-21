@@ -1,4 +1,6 @@
 <?php
+use Json\Commands\BorrowResponse;
+
 use Doctrine\ODM\MongoDB\Mapping\Annotations\String;
 
 use Json\Data\CBorrowHistory;
@@ -103,6 +105,59 @@ class BorrowService extends DoctrineBaseService {
 			}
 		
 		}catch ( Exception $e ) {
+			$response->_returnCode = ErrorCode::Failed;
+			$response->_returnMessage = $e->__toString ();
+		}
+		
+		return $response;
+	}
+	
+	function checkWhetherBookInBorrow($bookBianhao)
+	{
+		$response = new BaseResponse();
+		
+		try {
+			$book = $this->doctrinemodel->getRepository ( 'Models\Book' )->findOneBy ( array ('BianHao' => $bookBianhao) );
+			
+			$result = $this->doctrinemodel->getRepository ( 'Models\BorrowHistory' )
+			->findOneBy ( array ('book.$id' => new \MongoId($book->getId()),'realReturnDate' => '-1') );
+			if($result != NULL)
+			{
+				$response->_returnCode = ErrorCode::OK;
+			}else
+			{
+				$response->_returnCode = ErrorCode::NoSuchHistory;
+			}				
+		}
+		catch ( Exception $e ) {
+			$response->_returnCode = ErrorCode::Failed;
+			$response->_returnMessage = $e->__toString ();
+		}
+				
+		return $response;
+			
+	}
+	
+	function getBorrowInfo($username)
+	{
+		$response = new BorrowResponse();
+		
+		try {
+			$user = $this->doctrinemodel->getRepository ( 'Models\User' )->findOneBy ( array ('username' => $username ) );
+			
+			$result = $this->doctrinemodel->getRepository ( 'Models\BorrowHistory' )
+			->findOneBy ( array ('user.$id' => new \MongoId($user->getId()),'realReturnDate' => '-1') );
+			if($result != NULL)
+			{
+				$response->_returnCode = ErrorCode::OK;
+				$response->borrowInfo = array();
+				array_push($response->borrowInfo, new CBorrowHistory($result));
+			}else
+			{
+				$response->_returnCode = ErrorCode::NoBookInBorrow;
+			}
+		}
+		catch ( Exception $e ) {
 			$response->_returnCode = ErrorCode::Failed;
 			$response->_returnMessage = $e->__toString ();
 		}

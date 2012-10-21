@@ -8,7 +8,9 @@
 
 #import "LoginViewController.h"
 #import "DataLayer.h"
-
+#import "GTCCTabBarController.h"
+#import "Constraint.h"
+#import "Utility.h"
 #define kLeftMargin				20.0
 #define kRightMargin			20.0
 
@@ -197,13 +199,18 @@ static NSString *kViewKey = @"viewKey";
 	return YES;
 }
 
-
 - (IBAction)Login:(id)sender {
     if([DataLayer Login:self.txtUser.text password:self.txtPass.text])
+    {
+        // Save the user info to NSDefult
+        NSUserDefaults *mydefault = [NSUserDefaults standardUserDefaults];
+        [mydefault setObject:txtUser.text forKey:USERNAME];
+        [mydefault synchronize];
+        
     	[self performSegueWithIdentifier:@"DoLogin" sender:self];
+    }
     else{
-        UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"Please input correct username and password" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert1 show];
+        [Utility Alert:@"Login Failed" message:@"Please input correct username and password"];
     }
 }
 

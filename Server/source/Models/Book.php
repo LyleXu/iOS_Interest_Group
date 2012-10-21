@@ -15,7 +15,7 @@ class Book
     private $id;
 	
     /** @ODM\String */
-    private $BianHao;
+    public $BianHao;
     
     /** @ODM\String */
     private $title;

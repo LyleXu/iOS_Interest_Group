@@ -27,4 +27,16 @@
     return [UIImage imageWithData:data];
 }
 
++(void) Alert:(NSString *)title message:(NSString *)msg
+{
+    UIAlertView *alert1 = [[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert1 show];
+}
+
++(NSString*) getUsername
+{
+    NSUserDefaults *mydefault = [NSUserDefaults standardUserDefaults];
+    return  [mydefault objectForKey:USERNAME];
+}
+
 @end

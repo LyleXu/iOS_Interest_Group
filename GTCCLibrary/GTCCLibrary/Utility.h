@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Constraint.h"
 @interface Utility : NSObject
 +(UIImage*) getImageFromUrl:(NSString*) imageName;
++(void) Alert:(NSString*) title
+      message: (NSString*) msg;
+
++(NSString*) getUsername;
 @end

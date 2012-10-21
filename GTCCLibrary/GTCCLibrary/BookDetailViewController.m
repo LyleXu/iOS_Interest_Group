@@ -9,6 +9,8 @@
 #import "BookDetailViewController.h"
 #import "Utility.h"
 #import <QuartzCore/QuartzCore.h>
+#import "DataLayer.h"
+
 @interface BookDetailViewController ()
 
 @end
@@ -25,6 +27,7 @@
 @synthesize publishedDate;
 @synthesize language;
 @synthesize printLength;
+@synthesize borrowButton;
 
 
 -(void)setBookInfo:(CBook *)bookInfo
@@ -39,6 +42,24 @@
         // Custom initialization
     }
     return self;
+}
+
+-(void) setButtonDisabled
+{
+    self.borrowButton.enabled = false;
+    [self.borrowButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+}
+
+-(void) CheckBorrowButton
+{
+   if([DataLayer checkWhetherBookInBorrow:self.bookInfo.bianhao])
+   {
+       [self setButtonDisabled];
+   }else
+   {
+       self.borrowButton.enabled = true;
+       [self.borrowButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+   }
 }
 
 - (void)viewDidLoad
@@ -60,6 +81,9 @@
     self.infoView.layer.borderWidth = 1;
     self.infoView.layer.borderColor = [[UIColor blackColor] CGColor];
     
+    
+    [self CheckBorrowButton];
+    
     self.scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 1400.0f);
     scrollView.scrollEnabled = YES;
     scrollView.backgroundColor = [UIColor grayColor];
@@ -77,6 +101,7 @@
     [self setLanguage:nil];
     [self setPrintLength:nil];
     [self setInfoView:nil];
+    [self setBorrowButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -84,6 +109,21 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (IBAction)doBorrow:(id)sender {
+    NSString* username =  [Utility getUsername];
+    NSString* bookBianhao = self.bookInfo.bianhao;
+   if([DataLayer Borrow:username bookBianhao:bookBianhao])
+   {
+       // alert borrow sucessfully
+       [Utility Alert:@"Borrow" message:@"Borrow Successfully!"];
+       [self setButtonDisabled];
+   }else
+   {
+       [Utility Alert:@"Borrow" message:@"Borrow Failed! It may be borrowed by others."];
+
+   }
 }
 
 @end

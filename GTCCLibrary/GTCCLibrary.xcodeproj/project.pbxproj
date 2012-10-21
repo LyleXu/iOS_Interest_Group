@@ -32,6 +32,8 @@
 		26AAAF18159C473F003AEF83 /* GTCCLibraryAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AAAF17159C473F003AEF83 /* GTCCLibraryAppDelegate.m */; };
 		26AAAF1B159C473F003AEF83 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AAAF19159C473F003AEF83 /* MainStoryboard_iPhone.storyboard */; };
 		26AAAF1E159C473F003AEF83 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AAAF1C159C473F003AEF83 /* MainStoryboard_iPad.storyboard */; };
+		26AF2D5B1633BC3200AB5CEF /* MyLiraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF2D5A1633BC3200AB5CEF /* MyLiraryViewController.m */; };
+		26AF2D5E1633C47600AB5CEF /* CBorrowHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AF2D5D1633C47600AB5CEF /* CBorrowHistory.m */; };
 		26B25F62161369DC00D1959F /* CBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B25F61161369DC00D1959F /* CBook.m */; };
 		26B513AD162EED8700ABB490 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B513AC162EED8600ABB490 /* BookDetailViewController.m */; };
 		26BAD59715C2DADE00E4AC7F /* unisys_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */; };
@@ -89,6 +91,11 @@
 		26AAAF17159C473F003AEF83 /* GTCCLibraryAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTCCLibraryAppDelegate.m; sourceTree = "<group>"; };
 		26AAAF1A159C473F003AEF83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		26AAAF1D159C473F003AEF83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		26AF2D5716338E7900AB5CEF /* Constraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constraint.h; sourceTree = "<group>"; };
+		26AF2D591633BC3200AB5CEF /* MyLiraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLiraryViewController.h; sourceTree = "<group>"; };
+		26AF2D5A1633BC3200AB5CEF /* MyLiraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLiraryViewController.m; sourceTree = "<group>"; };
+		26AF2D5C1633C47600AB5CEF /* CBorrowHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBorrowHistory.h; sourceTree = "<group>"; };
+		26AF2D5D1633C47600AB5CEF /* CBorrowHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBorrowHistory.m; sourceTree = "<group>"; };
 		26B25F60161369DC00D1959F /* CBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBook.h; sourceTree = "<group>"; };
 		26B25F61161369DC00D1959F /* CBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBook.m; sourceTree = "<group>"; };
 		26B513AB162EED8600ABB490 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
@@ -158,6 +165,7 @@
 		26AAAF0D159C473E003AEF83 /* GTCCLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				26AF2D5F1633D93600AB5CEF /* FromServer */,
 				267CA9251609E2E8005C2EA3 /* LoginViewController.h */,
 				267CA9261609E2E8005C2EA3 /* LoginViewController.m */,
 				26AAAF16159C473F003AEF83 /* GTCCLibraryAppDelegate.h */,
@@ -167,16 +175,15 @@
 				269F7E9F15A488D200D96F94 /* HistoryTVC.h */,
 				269F7EA015A488D200D96F94 /* HistoryTVC.m */,
 				26AAAF0E159C473F003AEF83 /* Supporting Files */,
-				2638D09B15C0633A000906BC /* DataLayer.h */,
-				2638D09C15C0633A000906BC /* DataLayer.m */,
 				26DFDC77160A0DAD002283E4 /* GTCCTabBarController.h */,
 				26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */,
-				26B25F60161369DC00D1959F /* CBook.h */,
-				26B25F61161369DC00D1959F /* CBook.m */,
 				26B513AB162EED8600ABB490 /* BookDetailViewController.h */,
 				26B513AC162EED8600ABB490 /* BookDetailViewController.m */,
 				2636F7CD16327D2B00AFC6EC /* Utility.h */,
 				2636F7CE16327D2B00AFC6EC /* Utility.m */,
+				26AF2D5716338E7900AB5CEF /* Constraint.h */,
+				26AF2D591633BC3200AB5CEF /* MyLiraryViewController.h */,
+				26AF2D5A1633BC3200AB5CEF /* MyLiraryViewController.m */,
 			);
 			path = GTCCLibrary;
 			sourceTree = "<group>";
@@ -190,6 +197,19 @@
 				26AAAF15159C473F003AEF83 /* GTCCLibrary-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26AF2D5F1633D93600AB5CEF /* FromServer */ = {
+			isa = PBXGroup;
+			children = (
+				2638D09B15C0633A000906BC /* DataLayer.h */,
+				2638D09C15C0633A000906BC /* DataLayer.m */,
+				26B25F60161369DC00D1959F /* CBook.h */,
+				26B25F61161369DC00D1959F /* CBook.m */,
+				26AF2D5C1633C47600AB5CEF /* CBorrowHistory.h */,
+				26AF2D5D1633C47600AB5CEF /* CBorrowHistory.m */,
+			);
+			name = FromServer;
 			sourceTree = "<group>";
 		};
 		26BAD59015C2830400E4AC7F /* SBJson */ = {
@@ -325,6 +345,8 @@
 				26B25F62161369DC00D1959F /* CBook.m in Sources */,
 				26B513AD162EED8700ABB490 /* BookDetailViewController.m in Sources */,
 				2636F7CF16327D2B00AFC6EC /* Utility.m in Sources */,
+				26AF2D5B1633BC3200AB5CEF /* MyLiraryViewController.m in Sources */,
+				26AF2D5E1633C47600AB5CEF /* CBorrowHistory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

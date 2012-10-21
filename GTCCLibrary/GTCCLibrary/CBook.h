@@ -9,9 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface CBook : NSObject{
-    NSString *title;
-    NSString *bianhao;
-    NSString *author;
+
 }
 
 @property(nonatomic,retain) NSString *title;

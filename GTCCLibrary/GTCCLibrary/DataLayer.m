@@ -9,6 +9,7 @@
 #import "DataLayer.h"
 #import "SBJson.h"
 #import "CBook.h"
+
 #define ServiceAddress @"http://localhost/~Lyle/gtcclibrary/amfphp/index.php"
 
 @implementation DataLayer
@@ -71,6 +72,26 @@
 
 }
 
+//Array of CBook
++ (NSMutableArray*) GetAllBooks
+{
+    NSDictionary* result = [self FetchData:@"BookService" methodName:@"GetAllBooks" parameters:nil];
+    NSDictionary* datas = [self GetValueByKey:result keyName:@"Books"];
+    
+    NSMutableArray *AllBooks = [NSMutableArray array];
+    
+    if([datas count])
+    {
+        for (NSDictionary *data in [datas allValues]) {
+            CBook* book = [CBook new];
+            [book Parse:data];
+            [AllBooks addObject:book];
+        }
+    }
+    
+    return [AllBooks copy];
+}
+
 + (BOOL)Login:(NSString*)userName
         password:(NSString*)password
 {
@@ -86,21 +107,65 @@
     }
 }
 
-//Array of CBook
-+ (NSMutableArray*) GetAllBooks
-{    
-    NSDictionary* result = [self FetchData:@"BookService" methodName:@"GetAllBooks" parameters:nil];
-    NSDictionary* datas = [self GetValueByKey:result keyName:@"Books"];
-    
-    NSMutableArray *AllBooks = [NSMutableArray array];
-    
-    for (NSDictionary *data in [datas allValues]) {
-		CBook* book = [CBook new];
-        [book Parse:data];
-		[AllBooks addObject:book];
-	}
-    
-    return [AllBooks copy];
++(BOOL) Borrow:(NSString*) username
+        bookBianhao: (NSString*) bookBianhao
+{
+    NSArray* parameters = [NSArray arrayWithObjects: username, bookBianhao, nil];
+    NSDictionary* result = [self FetchData:@"BorrowService" methodName:@"Borrow" parameters:parameters];
+    NSInteger value = [[self GetValueByKey:result keyName:@"_returnCode"] integerValue];
+    if(value == 0)
+    {
+        return true;
+    }else
+    {
+        return false;
+    }
 }
 
++(BOOL) ReturnBook:(NSString*) username
+        bookBianhao:(NSString*) bookBianhao
+{
+    NSArray* parameters = [NSArray arrayWithObjects: username, bookBianhao, nil];
+    NSDictionary* result = [self FetchData:@"BorrowService" methodName:@"ReturnBook" parameters:parameters];
+    NSInteger value = [[self GetValueByKey:result keyName:@"_returnCode"] integerValue];
+    if(value == 0)
+    {
+        return true;
+    }else
+    {
+        return false;
+    }
+}
+
++(BOOL) checkWhetherBookInBorrow:(NSString*) bookBianhao
+{
+    NSArray* parameters = [NSArray arrayWithObjects: bookBianhao, nil];
+    NSDictionary* result = [self FetchData:@"BorrowService" methodName:@"checkWhetherBookInBorrow" parameters:parameters];
+    NSInteger value = [[self GetValueByKey:result keyName:@"_returnCode"] integerValue];
+    if(value == 0)
+    {
+        return true;
+    }else
+    {
+        return false;
+    }
+
+}
+
++(CBorrowHistory*) getBorrowInfo:(NSString*) username
+{
+    NSArray* parameters = [NSArray arrayWithObjects: username, nil];
+    NSDictionary* result = [self FetchData:@"BorrowService" methodName:@"getBorrowInfo" parameters:parameters];
+    NSDictionary* datas = [self GetValueByKey:result keyName:@"borrowInfo"];
+    
+    if(datas != [NSNull null] )
+    {
+      for (NSDictionary *data in [datas allValues]) {
+		CBorrowHistory* history = [CBorrowHistory new];
+        [history Parse:data];
+        return history;
+	  }
+    }
+    return nil;
+}
 @end
