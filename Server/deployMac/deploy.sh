@@ -9,7 +9,7 @@ if [[ "$unamestr" == 'Linux' ]]; then
     LIBPATH='/usr/share/php/gtcclibrary'
 elif [[ "$unamestr" == 'Darwin' ]]; then
     echo 'Mac Deploy...'
-    WWWROOT='/Users/Lyle/Sites/gtcclibrary'
+    WWWROOT='/Users/lylexu/Sites/gtcclibrary'
     LIBPATH='/usr/lib/php/gtcclibrary'
 fi
 

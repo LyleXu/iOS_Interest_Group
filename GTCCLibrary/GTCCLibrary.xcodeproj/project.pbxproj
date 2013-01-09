@@ -38,10 +38,10 @@
 		26B513AD162EED8700ABB490 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B513AC162EED8600ABB490 /* BookDetailViewController.m */; };
 		26BAD59715C2DADE00E4AC7F /* unisys_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */; };
 		26DFDC79160A0DAD002283E4 /* GTCCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */; };
-		26EAA74915A470BE000057C3 /* search-page-glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EAA74815A470BE000057C3 /* search-page-glyph.png */; };
-		26EAA74B15A47247000057C3 /* iconMedBooks.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EAA74A15A47247000057C3 /* iconMedBooks.png */; };
-		26EAA74D15A47469000057C3 /* library-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EAA74C15A47469000057C3 /* library-icon.png */; };
-		26EAA75015A48476000057C3 /* abc.png in Resources */ = {isa = PBXBuildFile; fileRef = 26EAA74F15A48476000057C3 /* abc.png */; };
+		7FFB25E1169D9E340087F12F /* mybookinfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB25DE169D9E340087F12F /* mybookinfo.png */; };
+		7FFB25E2169D9E340087F12F /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB25DF169D9E340087F12F /* search.png */; };
+		7FFB25E3169D9E340087F12F /* store.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB25E0169D9E340087F12F /* store.png */; };
+		7FFB25E5169DA0380087F12F /* Icon-iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB25E4169DA0380087F12F /* Icon-iPhone@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,10 +103,10 @@
 		26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unisys_logo.jpg; sourceTree = "<group>"; };
 		26DFDC77160A0DAD002283E4 /* GTCCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTCCTabBarController.h; sourceTree = "<group>"; };
 		26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTCCTabBarController.m; sourceTree = "<group>"; };
-		26EAA74815A470BE000057C3 /* search-page-glyph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-page-glyph.png"; sourceTree = "<group>"; };
-		26EAA74A15A47247000057C3 /* iconMedBooks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconMedBooks.png; sourceTree = "<group>"; };
-		26EAA74C15A47469000057C3 /* library-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "library-icon.png"; sourceTree = "<group>"; };
-		26EAA74F15A48476000057C3 /* abc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abc.png; sourceTree = "<group>"; };
+		7FFB25DE169D9E340087F12F /* mybookinfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mybookinfo.png; sourceTree = "<group>"; };
+		7FFB25DF169D9E340087F12F /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		7FFB25E0169D9E340087F12F /* store.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = store.png; sourceTree = "<group>"; };
+		7FFB25E4169DA0380087F12F /* Icon-iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPhone@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,11 +247,11 @@
 		26EAA74E15A47866000057C3 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				7FFB25E4169DA0380087F12F /* Icon-iPhone@2x.png */,
 				26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */,
-				26EAA74F15A48476000057C3 /* abc.png */,
-				26EAA74815A470BE000057C3 /* search-page-glyph.png */,
-				26EAA74A15A47247000057C3 /* iconMedBooks.png */,
-				26EAA74C15A47469000057C3 /* library-icon.png */,
+				7FFB25DE169D9E340087F12F /* mybookinfo.png */,
+				7FFB25DF169D9E340087F12F /* search.png */,
+				7FFB25E0169D9E340087F12F /* store.png */,
 			);
 			name = Image;
 			sourceTree = "<group>";
@@ -266,6 +266,7 @@
 				26AAAEFF159C473E003AEF83 /* Sources */,
 				26AAAF00159C473E003AEF83 /* Frameworks */,
 				26AAAF01159C473E003AEF83 /* Resources */,
+				7FFB25DD169D9A780087F12F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -309,15 +310,31 @@
 				26AAAF12159C473F003AEF83 /* InfoPlist.strings in Resources */,
 				26AAAF1B159C473F003AEF83 /* MainStoryboard_iPhone.storyboard in Resources */,
 				26AAAF1E159C473F003AEF83 /* MainStoryboard_iPad.storyboard in Resources */,
-				26EAA74915A470BE000057C3 /* search-page-glyph.png in Resources */,
-				26EAA74B15A47247000057C3 /* iconMedBooks.png in Resources */,
-				26EAA74D15A47469000057C3 /* library-icon.png in Resources */,
-				26EAA75015A48476000057C3 /* abc.png in Resources */,
 				26BAD59715C2DADE00E4AC7F /* unisys_logo.jpg in Resources */,
+				7FFB25E1169D9E340087F12F /* mybookinfo.png in Resources */,
+				7FFB25E2169D9E340087F12F /* search.png in Resources */,
+				7FFB25E3169D9E340087F12F /* store.png in Resources */,
+				7FFB25E5169DA0380087F12F /* Icon-iPhone@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7FFB25DD169D9A780087F12F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ] || [ \"${PLATFORM_NAME}\" == \"ipados\" ]; then\n/Applications/Xcode.app/Contents/Developer/iphoneentitlements/gen_entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		26AAAEFF159C473E003AEF83 /* Sources */ = {
@@ -431,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GTCCLibrary/GTCCLibrary-Prefix.pch";
 				INFOPLIST_FILE = "GTCCLibrary/GTCCLibrary-Info.plist";
@@ -443,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GTCCLibrary/GTCCLibrary-Prefix.pch";
 				INFOPLIST_FILE = "GTCCLibrary/GTCCLibrary-Info.plist";

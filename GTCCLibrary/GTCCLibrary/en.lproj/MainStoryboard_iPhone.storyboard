@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -121,9 +121,17 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="kA7-ua-bxB">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="NTX-Ic-qfG" id="ZDe-Ag-if3"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" id="HnE-48-mzP">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
@@ -132,7 +140,7 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="95H-zh-8dq" kind="push" identifier="BookDetail" id="nkZ-Sr-uOF"/>
+                                    <segue destination="95H-zh-8dq" kind="push" identifier="BookDetail" id="UcR-sX-3DY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -143,8 +151,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="WfU-lK-jsX"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="dmr-9C-qaP" id="Lfh-HH-rnr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxo-7K-vhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="dmr-9C-qaP">
+                    <connections>
+                        <outlet property="delegate" destination="NTX-Ic-qfG" id="3QW-Wh-Kzn"/>
+                        <outlet property="searchBar" destination="kA7-ua-bxB" id="eB9-Oo-89j"/>
+                        <outlet property="searchContentsController" destination="NTX-Ic-qfG" id="2bm-7z-NPB"/>
+                        <outlet property="searchResultsDataSource" destination="NTX-Ic-qfG" id="M4H-9w-kui"/>
+                        <outlet property="searchResultsDelegate" destination="NTX-Ic-qfG" id="zem-FK-kdL"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="3007" y="300"/>
         </scene>
@@ -391,8 +411,9 @@
         <!--Navigation Controller - Book Store-->
         <scene sceneID="cDR-nP-gzV">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FpZ-Co-Y2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="aCk-wc-W2i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Book Store" image="library-icon.png" id="Jro-ix-pA4"/>
+                    <tabBarItem key="tabBarItem" title="Book Store" image="store.png" id="Jro-ix-pA4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="nif-Sb-wkb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -403,7 +424,6 @@
                         <segue destination="NTX-Ic-qfG" kind="relationship" relationship="rootViewController" id="qrq-IQ-Gjr"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FpZ-Co-Y2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2517" y="308"/>
         </scene>
@@ -411,7 +431,7 @@
         <scene sceneID="myk-Go-wnY">
             <objects>
                 <navigationController id="b8F-vV-DeH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Library" image="iconMedBooks.png" id="D44-Zf-24u"/>
+                    <tabBarItem key="tabBarItem" title="My Library" image="mybookinfo.png" id="D44-Zf-24u"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TQP-V3-JdU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -426,11 +446,11 @@
             </objects>
             <point key="canvasLocation" x="2481" y="-289"/>
         </scene>
-        <!--Navigation Controller - Search-->
+        <!--Navigation Controller - History-->
         <scene sceneID="BkN-QV-NIg">
             <objects>
                 <navigationController id="nIr-6O-0SZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="search-page-glyph.png" id="AWd-hj-dpe"/>
+                    <tabBarItem key="tabBarItem" title="History" image="search.png" id="AWd-hj-dpe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bW2-eh-8jg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -443,20 +463,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSW-gY-e3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2481" y="1021"/>
+            <point key="canvasLocation" x="2493" y="1029"/>
         </scene>
     </scenes>
     <resources>
-        <image name="iconMedBooks.png" width="26" height="26"/>
-        <image name="library-icon.png" width="24" height="25"/>
-        <image name="search-page-glyph.png" width="21" height="21"/>
+        <image name="mybookinfo.png" width="16" height="16"/>
+        <image name="search.png" width="16" height="16"/>
+        <image name="store.png" width="16" height="16"/>
         <image name="unisys_logo.jpg" width="513" height="271"/>
     </resources>
     <classes>
         <class className="BookDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BookDetailViewController.h"/>
             <relationships>
-                <relationship kind="action" name="doBorrow:"/>
                 <relationship kind="outlet" name="authorName" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="borrowButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="descTextView" candidateClass="UITextView"/>
@@ -478,7 +497,6 @@
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
-                <relationship kind="action" name="Login:"/>
                 <relationship kind="outlet" name="btnCancel" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="btnLogin" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="loginTableView" candidateClass="UITableView"/>

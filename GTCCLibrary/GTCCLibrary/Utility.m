@@ -8,7 +8,7 @@
 
 #import "Utility.h"
 
-#define ServerImagePath @"http://localhost/~Lyle/gtcclibrary/Images/"
+#define ServerImagePath @"http://localhost/~lylexu/gtcclibrary/Images/"
 
 @implementation Utility
 

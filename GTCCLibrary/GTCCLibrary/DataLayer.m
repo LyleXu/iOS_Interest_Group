@@ -10,7 +10,7 @@
 #import "SBJson.h"
 #import "CBook.h"
 
-#define ServiceAddress @"http://localhost/~Lyle/gtcclibrary/amfphp/index.php"
+#define ServiceAddress @"http://localhost/~lylexu/gtcclibrary/amfphp/index.php"
 
 @implementation DataLayer
 
