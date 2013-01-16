@@ -8,12 +8,19 @@
 
 #import "ScanViewController.h"
 #import "ZBarReaderViewController.h"
-
+#import "RegexKitLite.h"
+#import "DataLayer.h"
 @interface ScanViewController ()
 
 @end
 
 @implementation ScanViewController
+@synthesize bookTitle;
+@synthesize bookAuthor;
+@synthesize bookPublishedBy;
+@synthesize bookPublishedYear;
+@synthesize bookPage;
+@synthesize bookPrice;
 @synthesize resultImage, resultText;
 
 - (IBAction) scanButtonTapped
@@ -34,7 +41,8 @@
     // present and release the controller
     [self presentModalViewController: reader
                             animated: YES];
-    
+
+   
 }
 
 - (void) imagePickerController: (UIImagePickerController*) reader
@@ -52,11 +60,36 @@
     resultText.text = symbol.data;
     
     // EXAMPLE: do something useful with the barcode image
-    resultImage.image =
-    [info objectForKey: UIImagePickerControllerOriginalImage];
+    //resultImage.image =
+    //[info objectForKey: UIImagePickerControllerOriginalImage];
     
     // ADD: dismiss the controller (NB dismiss from the *reader*!)
     [reader dismissModalViewControllerAnimated: YES];
+    
+    
+    dispatch_queue_t taskQ = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_async(taskQ, 
+    ^{
+        // Search the barcode on the network
+        NSString* url = [[NSString alloc] initWithFormat:@"%@%@/",DouBanAPI,resultText.text];
+        NSMutableString* response = [DataLayer FetchDataFromWeb:url];
+        
+        NSString *bookTitleRegexString = @"<span property=\"v:itemreviewed\">(.*)</span>";
+        NSString *authorReg = @"作者</span>: \\s+<a href.+>(.*)</a>";
+        NSString *publishedByReg = @"出版社:</span>\\s+(.*)<br/>";
+        NSString *publishedYearReg = @"出版年:</span>(.*)<br/>";
+        NSString *pageReg = @"页数:</span>(.*)<br/>";
+        NSString *priceReg = @"定价:</span>(.*)<br/>";
+        
+        bookTitle.text = [response stringByMatching:bookTitleRegexString capture:1L];
+        bookAuthor.text = [response stringByMatching:authorReg capture:1L];
+        NSString* abc = [response stringByMatching:publishedByReg capture:1L];
+        bookPublishedBy.text = abc;
+        bookPublishedYear.text = [response stringByMatching:publishedYearReg capture:1L];
+        bookPage.text = [response stringByMatching:pageReg capture:1L];
+        bookPrice.text = [response stringByMatching:priceReg capture:1L];
+    });
 }
 
 
@@ -77,6 +110,12 @@
 
 - (void)viewDidUnload
 {
+    [self setBookTitle:nil];
+    [self setBookAuthor:nil];
+    [self setBookPublishedBy:nil];
+    [self setBookPublishedYear:nil];
+    [self setBookPage:nil];
+    [self setBookPrice:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

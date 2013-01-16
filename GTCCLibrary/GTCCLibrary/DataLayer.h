@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "CBorrowHistory.h"
+
+#define DouBanAPI @"http://book.douban.com/isbn/"
+
 @interface DataLayer : NSObject
 
 +(BOOL) Login:(NSString*)userName
@@ -20,5 +23,6 @@ password:(NSString*)password;
 +(CBorrowHistory*) getBorrowInfo:(NSString*) username;
 +(BOOL) ReturnBook:(NSString*) username
        bookBianhao:(NSString*) bookBianhao;
++(NSMutableString *)FetchDataFromWeb:(NSString* )url;
 @end
 

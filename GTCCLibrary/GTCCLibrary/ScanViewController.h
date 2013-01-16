@@ -18,6 +18,12 @@
 
 @property (nonatomic, retain) IBOutlet UITextView *resultText;
 
+@property (weak, nonatomic) IBOutlet UILabel *bookTitle;
+@property (weak, nonatomic) IBOutlet UILabel *bookAuthor;
 
+@property (weak, nonatomic) IBOutlet UILabel *bookPublishedBy;
+@property (weak, nonatomic) IBOutlet UILabel *bookPublishedYear;
+@property (weak, nonatomic) IBOutlet UILabel *bookPage;
+@property (weak, nonatomic) IBOutlet UILabel *bookPrice;
 - (IBAction) scanButtonTapped;
 @end
