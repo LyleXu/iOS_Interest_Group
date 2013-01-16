@@ -10,6 +10,7 @@
 #import "ZBarReaderViewController.h"
 #import "RegexKitLite.h"
 #import "DataLayer.h"
+
 @interface ScanViewController ()
 
 @end
@@ -45,6 +46,28 @@
    
 }
 
+- (void)loadBookInfoFromWeb
+{
+    // Search the barcode on the network
+    NSString* url = [[NSString alloc] initWithFormat:@"%@%@/",DouBanAPI,resultText.text];
+    NSMutableString* response = [DataLayer FetchDataFromWeb:url];
+    
+    NSString *bookTitleRegexString = @"<span property=\"v:itemreviewed\">(.*)</span>";
+    NSString *authorReg = @"作者</span>: \\s+<a href.+>(.*)</a>";
+    NSString *publishedByReg = @"出版社:</span>\\s+(.*)<br/>";
+    NSString *publishedYearReg = @"出版年:</span>(.*)<br/>";
+    NSString *pageReg = @"页数:</span>(.*)<br/>";
+    NSString *priceReg = @"定价:</span>(.*)<br/>";
+    
+    bookTitle.text = [response stringByMatching:bookTitleRegexString capture:1L];
+    bookAuthor.text = [response stringByMatching:authorReg capture:1L];
+    NSString* abc = [response stringByMatching:publishedByReg capture:1L];
+    bookPublishedBy.text = abc;
+    bookPublishedYear.text = [response stringByMatching:publishedYearReg capture:1L];
+    bookPage.text = [response stringByMatching:pageReg capture:1L];
+    bookPrice.text = [response stringByMatching:priceReg capture:1L];
+}
+
 - (void) imagePickerController: (UIImagePickerController*) reader
  didFinishPickingMediaWithInfo: (NSDictionary*) info
 {
@@ -67,29 +90,15 @@
     [reader dismissModalViewControllerAnimated: YES];
     
     
-    dispatch_queue_t taskQ = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    
-    dispatch_async(taskQ, 
-    ^{
-        // Search the barcode on the network
-        NSString* url = [[NSString alloc] initWithFormat:@"%@%@/",DouBanAPI,resultText.text];
-        NSMutableString* response = [DataLayer FetchDataFromWeb:url];
-        
-        NSString *bookTitleRegexString = @"<span property=\"v:itemreviewed\">(.*)</span>";
-        NSString *authorReg = @"作者</span>: \\s+<a href.+>(.*)</a>";
-        NSString *publishedByReg = @"出版社:</span>\\s+(.*)<br/>";
-        NSString *publishedYearReg = @"出版年:</span>(.*)<br/>";
-        NSString *pageReg = @"页数:</span>(.*)<br/>";
-        NSString *priceReg = @"定价:</span>(.*)<br/>";
-        
-        bookTitle.text = [response stringByMatching:bookTitleRegexString capture:1L];
-        bookAuthor.text = [response stringByMatching:authorReg capture:1L];
-        NSString* abc = [response stringByMatching:publishedByReg capture:1L];
-        bookPublishedBy.text = abc;
-        bookPublishedYear.text = [response stringByMatching:publishedYearReg capture:1L];
-        bookPage.text = [response stringByMatching:pageReg capture:1L];
-        bookPrice.text = [response stringByMatching:priceReg capture:1L];
-    });
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+	[self.navigationController.view addSubview:HUD];
+	
+	HUD.delegate = self;
+	HUD.labelText = @"Loading";
+	HUD.detailsLabelText = @"Getting Book Info";
+	HUD.square = YES;
+	
+	[HUD showWhileExecuting:@selector(loadBookInfoFromWeb) onTarget:self withObject:nil animated:YES];
 }
 
 

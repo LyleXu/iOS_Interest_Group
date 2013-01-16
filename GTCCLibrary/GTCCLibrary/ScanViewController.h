@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ZBarReaderController.h"
+#import "MBProgressHUD.h"
 @interface ScanViewController : UIViewController    
-< ZBarReaderDelegate >
+< ZBarReaderDelegate,MBProgressHUDDelegate >
 {
     UIImageView *resultImage;
     UITextView *resultText;
+    MBProgressHUD *HUD;
 }
 @property (nonatomic, retain) IBOutlet UIImageView *resultImage;
 
@@ -26,4 +28,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *bookPage;
 @property (weak, nonatomic) IBOutlet UILabel *bookPrice;
 - (IBAction) scanButtonTapped;
+- (void) loadBookInfoFromWeb;
 @end

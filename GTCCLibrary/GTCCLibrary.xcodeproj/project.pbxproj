@@ -39,6 +39,7 @@
 		26BAD59715C2DADE00E4AC7F /* unisys_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */; };
 		26DFDC79160A0DAD002283E4 /* GTCCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */; };
 		7F9ED4C8169DB897004090F0 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9ED4C7169DB897004090F0 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7F9F117816A6FB370085AE8C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9F117716A6FB370085AE8C /* MBProgressHUD.m */; };
 		7FF9E310169DA50300DF4906 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FF9E30F169DA50300DF4906 /* ScanViewController.m */; };
 		7FFB25E1169D9E340087F12F /* mybookinfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB25DE169D9E340087F12F /* mybookinfo.png */; };
 		7FFB25E2169D9E340087F12F /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FFB25DF169D9E340087F12F /* search.png */; };
@@ -116,6 +117,8 @@
 		26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTCCTabBarController.m; sourceTree = "<group>"; };
 		7F9ED4C6169DB88E004090F0 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		7F9ED4C7169DB897004090F0 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		7F9F117616A6FB370085AE8C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		7F9F117716A6FB370085AE8C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		7FF9E30E169DA50300DF4906 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		7FF9E30F169DA50300DF4906 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		7FFB25DE169D9E340087F12F /* mybookinfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mybookinfo.png; sourceTree = "<group>"; };
@@ -176,6 +179,7 @@
 		2638D0AC15C06A68000906BC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7F9F117416A6FB210085AE8C /* MBProgressHUD */,
 				7F9ED4C4169DB875004090F0 /* RegexKitLite */,
 				7FFB25E6169DA17E0087F12F /* ZBarSDK */,
 				26BAD59015C2830400E4AC7F /* SBJson */,
@@ -320,6 +324,15 @@
 				7F9ED4C6169DB88E004090F0 /* RegexKitLite.h */,
 			);
 			name = RegexKitLite;
+			sourceTree = "<group>";
+		};
+		7F9F117416A6FB210085AE8C /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				7F9F117616A6FB370085AE8C /* MBProgressHUD.h */,
+				7F9F117716A6FB370085AE8C /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		7FFB25E6169DA17E0087F12F /* ZBarSDK */ = {
@@ -501,6 +514,7 @@
 				26AF2D5E1633C47600AB5CEF /* CBorrowHistory.m in Sources */,
 				7FF9E310169DA50300DF4906 /* ScanViewController.m in Sources */,
 				7F9ED4C8169DB897004090F0 /* RegexKitLite.m in Sources */,
+				7F9F117816A6FB370085AE8C /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
