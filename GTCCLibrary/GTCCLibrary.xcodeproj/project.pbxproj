@@ -23,7 +23,7 @@
 		2638D0D015C06A68000906BC /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638D0C315C06A68000906BC /* SBJsonUTF8Stream.m */; };
 		2638D0D115C06A68000906BC /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2638D0C515C06A68000906BC /* SBJsonWriter.m */; };
 		267CA9271609E2E8005C2EA3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267CA9261609E2E8005C2EA3 /* LoginViewController.m */; };
-		269F7EA115A488D200D96F94 /* HistoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F7EA015A488D200D96F94 /* HistoryTVC.m */; };
+		269F7EA115A488D200D96F94 /* BookstoreTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 269F7EA015A488D200D96F94 /* BookstoreTVC.m */; };
 		26AAAF08159C473E003AEF83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AAAF07159C473E003AEF83 /* UIKit.framework */; };
 		26AAAF0A159C473E003AEF83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AAAF09159C473E003AEF83 /* Foundation.framework */; };
 		26AAAF0C159C473E003AEF83 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AAAF0B159C473E003AEF83 /* CoreGraphics.framework */; };
@@ -89,8 +89,8 @@
 		2638D0C515C06A68000906BC /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		267CA9251609E2E8005C2EA3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		267CA9261609E2E8005C2EA3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		269F7E9F15A488D200D96F94 /* HistoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTVC.h; sourceTree = "<group>"; };
-		269F7EA015A488D200D96F94 /* HistoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryTVC.m; sourceTree = "<group>"; };
+		269F7E9F15A488D200D96F94 /* BookstoreTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; path = BookstoreTVC.h; sourceTree = "<group>"; };
+		269F7EA015A488D200D96F94 /* BookstoreTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookstoreTVC.m; sourceTree = "<group>"; };
 		26AAAF03159C473E003AEF83 /* GTCCLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GTCCLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AAAF07159C473E003AEF83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		26AAAF09159C473E003AEF83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -231,8 +231,8 @@
 				26AAAF17159C473F003AEF83 /* GTCCLibraryAppDelegate.m */,
 				26AAAF19159C473F003AEF83 /* MainStoryboard_iPhone.storyboard */,
 				26AAAF1C159C473F003AEF83 /* MainStoryboard_iPad.storyboard */,
-				269F7E9F15A488D200D96F94 /* HistoryTVC.h */,
-				269F7EA015A488D200D96F94 /* HistoryTVC.m */,
+				269F7E9F15A488D200D96F94 /* BookstoreTVC.h */,
+				269F7EA015A488D200D96F94 /* BookstoreTVC.m */,
 				26AAAF0E159C473F003AEF83 /* Supporting Files */,
 				26DFDC77160A0DAD002283E4 /* GTCCTabBarController.h */,
 				26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */,
@@ -491,7 +491,7 @@
 			files = (
 				26AAAF14159C473F003AEF83 /* main.m in Sources */,
 				26AAAF18159C473F003AEF83 /* GTCCLibraryAppDelegate.m in Sources */,
-				269F7EA115A488D200D96F94 /* HistoryTVC.m in Sources */,
+				269F7EA115A488D200D96F94 /* BookstoreTVC.m in Sources */,
 				2638D09D15C0633A000906BC /* DataLayer.m in Sources */,
 				2638D0C615C06A68000906BC /* NSObject+SBJson.m in Sources */,
 				2638D0C715C06A68000906BC /* SBJsonParser.m in Sources */,

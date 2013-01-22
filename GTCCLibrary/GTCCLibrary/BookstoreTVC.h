@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HistoryTVC : UITableViewController<UITableViewDelegate,UITableViewDataSource>
+@interface BookstoreTVC : UITableViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) NSArray * listData;
 @property (nonatomic, retain) NSMutableArray *filteredListData;           

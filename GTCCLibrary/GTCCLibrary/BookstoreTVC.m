@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "HistoryTVC.h"
+#import "BookstoreTVC.h"
 #import "BookDetailViewController.h"
 #import "SBJson.h"
 #import "SBJsonWriter.h"
@@ -14,7 +14,7 @@
 #import "CBook.h"
 #import "Utility.h"
 
-@implementation HistoryTVC
+@implementation BookstoreTVC
 
 @synthesize listData = _listData;
 @synthesize filteredListData = _filteredListData;
