@@ -13,22 +13,28 @@
 < ZBarReaderDelegate,MBProgressHUDDelegate >
 {
     UIImageView *resultImage;
-    UITextView *resultText;
+    UILabel *resultText;
+    UITextView * bookDesc;
     MBProgressHUD *HUD;
 }
 @property (nonatomic, retain) IBOutlet UIImageView *resultImage;
 
-@property (nonatomic, retain) IBOutlet UITextView *resultText;
+@property (nonatomic, retain) IBOutlet UILabel *resultText;
 
 @property (weak, nonatomic) IBOutlet UILabel *bookTitle;
 @property (weak, nonatomic) IBOutlet UILabel *bookAuthor;
-
 @property (weak, nonatomic) IBOutlet UILabel *bookPublishedBy;
 @property (weak, nonatomic) IBOutlet UILabel *bookPublishedYear;
 @property (weak, nonatomic) IBOutlet UILabel *bookPage;
 @property (weak, nonatomic) IBOutlet UILabel *bookPrice;
+@property (weak, nonatomic) IBOutlet UIImageView *bookImage;
+@property (retain, nonatomic) IBOutlet UITextView *bookDesc;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (retain, nonatomic) NSString* tmpDesc;
+
 - (IBAction) scanButtonTapped;
 - (void) loadBookInfoFromWeb;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIImageView *bookImage;
+- (void) updateDescription;
+- (IBAction)addBookToServer;
 @end

@@ -11,6 +11,7 @@
 #import "RegexKitLite.h"
 #import "DataLayer.h"
 #import "Constraint.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ScanViewController ()
 
@@ -19,6 +20,7 @@
 @implementation ScanViewController
 @synthesize scrollView;
 @synthesize bookImage;
+@synthesize bookDesc;
 @synthesize bookTitle;
 @synthesize bookAuthor;
 @synthesize bookPublishedBy;
@@ -26,6 +28,7 @@
 @synthesize bookPage;
 @synthesize bookPrice;
 @synthesize resultImage, resultText;
+@synthesize tmpDesc;
 
 - (IBAction) scanButtonTapped
 {
@@ -61,6 +64,7 @@
     NSString *publishedYearReg = @"出版年:</span>(.*)<br/>";
     NSString *pageReg = @"页数:</span>(.*)<br/>";
     NSString *priceReg = @"定价:</span>(.*)<br/>";
+    NSString *bookDescriptionReg = @"<div class=\"intro\">\n(.*)</div>";
     NSString *bookPicReg = @"img src=\"(.*)\" title=";
     
     bookTitle.text = [response stringByMatching:bookTitleRegexString capture:1L];
@@ -69,8 +73,25 @@
     bookPublishedYear.text = [response stringByMatching:publishedYearReg capture:1L];
     bookPage.text = [response stringByMatching:pageReg capture:1L];
     bookPrice.text = [response stringByMatching:priceReg capture:1L];
-    
+  
+    // image
     NSString *picUrl = [response stringByMatching:bookPicReg capture:1L];
+    UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:picUrl]]];
+    bookImage.image = image;
+    
+    // description
+    tmpDesc = [[response stringByMatching:bookDescriptionReg capture:1L] copy];
+    tmpDesc = [tmpDesc stringByReplacingOccurrencesOfRegex:@"<p>" withString:@""];
+    tmpDesc = [tmpDesc stringByReplacingOccurrencesOfRegex:@"</p>" withString:@"\n"];
+    // update the UI on the main thread. but not know why I can update label and image on the thread
+    [self performSelectorOnMainThread:@selector(updateDescription) withObject:nil waitUntilDone:false];
+}
+
+-(void)updateDescription
+{
+    self.bookDesc.text = tmpDesc;
+    
+    self.scrollView.hidden = false;
 }
 
 - (void) imagePickerController: (UIImagePickerController*) reader
@@ -105,6 +126,10 @@
 	[HUD showWhileExecuting:@selector(loadBookInfoFromWeb) onTarget:self withObject:nil animated:YES];
 }
 
+-(void)addBookToServer
+{
+    
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -115,17 +140,20 @@
     return self;
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [self scanButtonTapped];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 600.0f);
-    scrollView.scrollEnabled = YES;
+    self.scrollView.scrollEnabled = YES;
+    
+    self.scrollView.hidden = true;
+    
+    self.bookDesc.layer.borderWidth = 5.0f;
+    self.bookDesc.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.bookDesc.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    
+    [self scanButtonTapped];
 }
 
 - (void)viewDidUnload
@@ -138,6 +166,7 @@
     [self setBookPrice:nil];
     [self setScrollView:nil];
     [self setBookImage:nil];
+    [self setBookDesc:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
