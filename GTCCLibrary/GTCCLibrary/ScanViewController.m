@@ -10,6 +10,7 @@
 #import "ZBarReaderViewController.h"
 #import "RegexKitLite.h"
 #import "DataLayer.h"
+#import "Constraint.h"
 
 @interface ScanViewController ()
 
@@ -88,7 +89,6 @@
     
     // ADD: dismiss the controller (NB dismiss from the *reader*!)
     [reader dismissModalViewControllerAnimated: YES];
-    
     
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
 	[self.navigationController.view addSubview:HUD];

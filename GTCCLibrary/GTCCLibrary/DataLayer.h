@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "CBorrowHistory.h"
 
-#define DouBanAPI @"http://book.douban.com/isbn/"
-
 @interface DataLayer : NSObject
 
 +(BOOL) Login:(NSString*)userName

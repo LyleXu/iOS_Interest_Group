@@ -8,7 +8,7 @@
 
 #import "Utility.h"
 
-#define ServerImagePath @"http://localhost/~lylexu/gtcclibrary/Images/"
+
 
 @implementation Utility
 
@@ -20,7 +20,7 @@
 
 +(UIImage*) getImageFromUrl:(NSString*) imageName
 {
-    NSString* imageUrl = ServerImagePath;
+    NSString* imageUrl = [[NSString alloc] initWithFormat:@"%@%@",ServerHost,ServerImagePath];
     imageUrl = [self replaceWhiteSpace:[imageUrl stringByAppendingFormat: @"%@.jpg", imageName]];
     
     NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];

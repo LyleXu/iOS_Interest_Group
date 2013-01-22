@@ -9,8 +9,8 @@
 #import "DataLayer.h"
 #import "SBJson.h"
 #import "CBook.h"
+#import "Constraint.h"
 
-#define ServiceAddress @"http://localhost/~lylexu/gtcclibrary/amfphp/index.php"
 
 @implementation DataLayer
 
@@ -39,7 +39,8 @@
     
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:ServiceAddress]];
+    NSString* serverURL = [[NSString alloc] initWithFormat:@"%@%@",ServerHost,ServiceAddress];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:serverURL]];
     [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:jsonData];
