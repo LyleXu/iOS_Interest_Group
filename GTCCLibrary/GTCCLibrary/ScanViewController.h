@@ -29,4 +29,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *bookPrice;
 - (IBAction) scanButtonTapped;
 - (void) loadBookInfoFromWeb;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *bookImage;
 @end

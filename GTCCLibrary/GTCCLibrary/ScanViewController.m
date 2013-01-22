@@ -17,6 +17,8 @@
 @end
 
 @implementation ScanViewController
+@synthesize scrollView;
+@synthesize bookImage;
 @synthesize bookTitle;
 @synthesize bookAuthor;
 @synthesize bookPublishedBy;
@@ -59,14 +61,16 @@
     NSString *publishedYearReg = @"出版年:</span>(.*)<br/>";
     NSString *pageReg = @"页数:</span>(.*)<br/>";
     NSString *priceReg = @"定价:</span>(.*)<br/>";
+    NSString *bookPicReg = @"img src=\"(.*)\" title=";
     
     bookTitle.text = [response stringByMatching:bookTitleRegexString capture:1L];
     bookAuthor.text = [response stringByMatching:authorReg capture:1L];
-    NSString* abc = [response stringByMatching:publishedByReg capture:1L];
-    bookPublishedBy.text = abc;
+    bookPublishedBy.text = [response stringByMatching:publishedByReg capture:1L];
     bookPublishedYear.text = [response stringByMatching:publishedYearReg capture:1L];
     bookPage.text = [response stringByMatching:pageReg capture:1L];
     bookPrice.text = [response stringByMatching:priceReg capture:1L];
+    
+    NSString *picUrl = [response stringByMatching:bookPicReg capture:1L];
 }
 
 - (void) imagePickerController: (UIImagePickerController*) reader
@@ -111,10 +115,17 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self scanButtonTapped];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 600.0f);
+    scrollView.scrollEnabled = YES;
 }
 
 - (void)viewDidUnload
@@ -125,6 +136,8 @@
     [self setBookPublishedYear:nil];
     [self setBookPage:nil];
     [self setBookPrice:nil];
+    [self setScrollView:nil];
+    [self setBookImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
