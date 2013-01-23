@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CBorrowHistory.h"
-
+#import "CBook.h"
 @interface DataLayer : NSObject
 
 +(BOOL) Login:(NSString*)userName
@@ -22,5 +22,6 @@ password:(NSString*)password;
 +(BOOL) ReturnBook:(NSString*) username
        bookBianhao:(NSString*) bookBianhao;
 +(NSMutableString *)FetchDataFromWeb:(NSString* )url;
++(BOOL) addBookToLibrary:(CBook*) bookInfo;
 @end
 

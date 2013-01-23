@@ -244,7 +244,13 @@
                             <outlet property="delegate" destination="NTX-Ic-qfG" id="DgJ-n8-3Bw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="WfU-lK-jsX"/>
+                    <navigationItem key="navigationItem" id="WfU-lK-jsX">
+                        <barButtonItem key="rightBarButtonItem" image="sync-1.png" id="czW-gh-sO9">
+                            <connections>
+                                <action selector="doRefresh:" destination="NTX-Ic-qfG" id="Tch-33-BnO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="dmr-9C-qaP" id="Lfh-HH-rnr"/>
                     </connections>
@@ -479,7 +485,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I79-pv-2Ht" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3007" y="-289"/>
+            <point key="canvasLocation" x="2904" y="-295"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sId-Kl-Z3W">
@@ -563,6 +569,7 @@
     <resources>
         <image name="mybook.png" width="26" height="26"/>
         <image name="store.png" width="24" height="25"/>
+        <image name="sync-1.png" width="26" height="26"/>
         <image name="tab_isbn.png" width="23" height="18"/>
         <image name="unisys_logo.jpg" width="513" height="271"/>
     </resources>
@@ -584,6 +591,9 @@
         </class>
         <class className="BookstoreTVC" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BookstoreTVC.h"/>
+            <relationships>
+                <relationship kind="action" name="doRefresh:"/>
+            </relationships>
         </class>
         <class className="GTCCTabBarController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GTCCTabBarController.h"/>

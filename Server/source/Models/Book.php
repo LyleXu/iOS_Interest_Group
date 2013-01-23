@@ -26,7 +26,7 @@ class Book
     /** @ODM\String */
     private $author;
     
-    /** @ODM\Int */
+    /** @ODM\String */
     private $publishedDate;
     
     /** @ODM\String */
@@ -43,6 +43,9 @@ class Book
     
     /** @ODM\String */
     private $image;
+    
+    /** @ODM\String */
+    private $price;
     
     /** @ODM\Int */
     private $EnterLibraryTime;
@@ -127,6 +130,26 @@ class Book
     public function setLanguage($language)
     {
     	$this->language = $language;
+    }
+    
+    public function getISDN()
+    {
+    	return $this->ISBN;
+    }
+    
+    public function setISBN($isbn)
+    {
+    	$this->ISBN = $isbn;
+    }
+    
+    public function getPrice()
+    {
+    	return $this->price;
+    }
+    
+    public function setPrice($price)
+    {
+    	$this->price = $price;
     }
 }
 ?>

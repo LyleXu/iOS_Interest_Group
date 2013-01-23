@@ -12,7 +12,7 @@
 #import "DataLayer.h"
 #import "Constraint.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "Utility.h"
 @interface ScanViewController ()
 
 @end
@@ -29,6 +29,7 @@
 @synthesize bookPrice;
 @synthesize resultImage, resultText;
 @synthesize tmpDesc;
+@synthesize picUrl;
 
 - (IBAction) scanButtonTapped
 {
@@ -75,7 +76,7 @@
     bookPrice.text = [response stringByMatching:priceReg capture:1L];
   
     // image
-    NSString *picUrl = [response stringByMatching:bookPicReg capture:1L];
+    picUrl = [response stringByMatching:bookPicReg capture:1L];
     UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:picUrl]]];
     bookImage.image = image;
     
@@ -128,7 +129,24 @@
 
 -(void)addBookToServer
 {
+    CBook* bookInfo = [[CBook alloc] init];
+    bookInfo.title = bookTitle.text;
+    bookInfo.author = bookAuthor.text;
+    bookInfo.publisher = bookPublishedBy.text;
+    bookInfo.publishedDate = bookPublishedYear.text;
+    bookInfo.printLength = (NSNumber*)bookPage.text;
+    bookInfo.imageUrl = picUrl;
+    bookInfo.price = bookPrice.text;
+    bookInfo.bookDescription = bookDesc.text;
+    bookInfo.ISBN = resultText.text;
     
+    BOOL isSucceed = [DataLayer addBookToLibrary:bookInfo];
+    if(isSucceed)
+    {
+        [Utility Alert:@"Add Book" message:@"Add Book to Server Successfully!"];
+    }else {
+        [Utility Alert:@"Add Book" message:@"Add Book to Server Failed!"];
+    }
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -156,6 +174,19 @@
     self.bookDesc.layer.borderWidth = 5.0f;
     self.bookDesc.layer.borderColor = [[UIColor grayColor] CGColor];
     self.bookDesc.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    
+    
+    // Test Data
+//    bookTitle.text = @"Programming WPF";
+//    bookAuthor.text = @"Jeffery";
+//    bookPublishedBy.text = @"Apress";
+//    bookPublishedYear.text = @"2010-12";
+//    bookPage.text = @"400";
+//    bookPrice.text = @"$20";
+//    bookDesc.text = @"description";
+//    picUrl = @"http://img3.douban.com/lpic/s4255234.jpg";
+//    resultText.text = @"9780596510374";
+
 }
 
 - (void)viewDidUnload

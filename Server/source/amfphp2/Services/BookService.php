@@ -42,16 +42,20 @@ class BookService extends DoctrineBaseService {
 
 	/**
 	 * 
-	 * @param unknown_type $bianHao
-	 * @param unknown_type $title
-	 * @param unknown_type $author
-	 * @param unknown_type $publisher
-	 * @param unknown_type $publishedDate
-	 * @param unknown_type $language
-	 * @param unknown_type $printLength
+	 * @param string $bianHao
+	 * @param string $title
+	 * @param string $author
+	 * @param string $publisher
+	 * @param string $publishedDate
+	 * @param string $language
+	 * @param int $printLength
+	 * @param string $ISBN
+	 * @param string $price
+	 * @param string $description
+	 * @param string $imageUrl
 	 * @return \Json\Commands\BookResponse
 	 */
-	function AddBook($bianHao,$title,$author,$publisher,$publishedDate,$language,$printLength)
+	function AddBook($bianHao,$title,$author,$publisher,$publishedDate,$language,$printLength,$ISBN,$price,$description,$imageUrl)
 	{
 		$response = new BookResponse();
 		
@@ -67,9 +71,17 @@ class BookService extends DoctrineBaseService {
 				$book->setPublishedDate($publishedDate);
 				$book->setLanguage($language);
 				$book->setPrintLength($printLength);
+				$book->setISBN($ISBN);
+				$book->setPrice($price);
 					
 				$this->doctrinemodel->persist($book);
 				$this->doctrinemodel->flush();
+				
+				// Create a pic on the server side under gtcclibrary/Images
+				// Image name is the ISBN.jpg
+				$img = file_get_contents($imageUrl); 
+				echo __DIR__.'/'.$ISBN;
+				file_put_contents(__DIR__.'/'.$ISBN.'.jpg',$img); 
 				
 				$response->_returnCode = ErrorCode::OK;
 				$response->book = $book;

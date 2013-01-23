@@ -198,4 +198,8 @@ CGCONTEXT_H_
 
 
 
+- (IBAction)doRefresh:(id)sender {
+    _listData = [DataLayer GetAllBooks];
+    [self.tableView reloadData];
+}
 @end

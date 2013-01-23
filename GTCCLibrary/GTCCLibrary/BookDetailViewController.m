@@ -71,7 +71,7 @@
     self.publisher.text = self.bookInfo.publisher;
     self.language.text = self.bookInfo.language;
     self.printLength.text = [self.bookInfo.printLength stringValue];
-    self.publishedDate.text = [self.bookInfo.publishedDate stringValue];
+    self.publishedDate.text = self.bookInfo.publishedDate;
     
     self.theImage.image = [Utility getImageFromUrl:self.bookInfo.title];
     self.theImage.layer.borderColor = [[UIColor blackColor] CGColor];

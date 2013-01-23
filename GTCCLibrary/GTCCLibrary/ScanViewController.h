@@ -32,6 +32,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (retain, nonatomic) NSString* tmpDesc;
+@property (retain, nonatomic) NSString* picUrl;
 
 - (IBAction) scanButtonTapped;
 - (void) loadBookInfoFromWeb;
