@@ -76,7 +76,7 @@
             </objects>
             <point key="canvasLocation" x="1520" y="34"/>
         </scene>
-        <!--Scan View Controller-->
+        <!--Scan View Controller - Scan-->
         <scene sceneID="JTJ-t8-ALQ">
             <objects>
                 <viewController id="Q5Y-Ji-62j" customClass="ScanViewController" sceneMemberID="viewController">
@@ -182,7 +182,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CMr-na-Ogo">
+                    <navigationItem key="navigationItem" title="Scan" id="CMr-na-Ogo">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="PwL-k1-MZ3">
                             <connections>
                                 <action selector="addBookToServer" destination="Q5Y-Ji-62j" id="4DU-Ab-aFz"/>
@@ -392,7 +392,7 @@
             </objects>
             <point key="canvasLocation" x="3432" y="300"/>
         </scene>
-        <!--My Lirary View Controller-->
+        <!--My Lirary View Controller - My Book-->
         <scene sceneID="dt2-7q-bTb">
             <objects>
                 <viewController id="7Jz-pP-U5k" customClass="MyLiraryViewController" sceneMemberID="viewController">
@@ -465,7 +465,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="TuS-uY-NwH"/>
+                    <navigationItem key="navigationItem" title="My Book" id="TuS-uY-NwH"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bookTitle" destination="YKn-dF-GDk" id="EeQ-23-vT1"/>
@@ -525,7 +525,7 @@
         <scene sceneID="myk-Go-wnY">
             <objects>
                 <navigationController id="b8F-vV-DeH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Library" image="mybookinfo.png" id="D44-Zf-24u"/>
+                    <tabBarItem key="tabBarItem" title="My Library" image="mybook.png" id="D44-Zf-24u"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TQP-V3-JdU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -561,7 +561,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="mybookinfo.png" width="26" height="26"/>
+        <image name="mybook.png" width="26" height="26"/>
         <image name="store.png" width="24" height="25"/>
         <image name="tab_isbn.png" width="23" height="18"/>
         <image name="unisys_logo.jpg" width="513" height="271"/>
