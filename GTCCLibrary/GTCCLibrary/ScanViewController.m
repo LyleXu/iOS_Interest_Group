@@ -140,6 +140,12 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.scrollView.hidden = true;
+    [self scanButtonTapped];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -147,13 +153,9 @@
     self.scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 600.0f);
     self.scrollView.scrollEnabled = YES;
     
-    self.scrollView.hidden = true;
-    
     self.bookDesc.layer.borderWidth = 5.0f;
     self.bookDesc.layer.borderColor = [[UIColor grayColor] CGColor];
     self.bookDesc.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-    
-    [self scanButtonTapped];
 }
 
 - (void)viewDidUnload

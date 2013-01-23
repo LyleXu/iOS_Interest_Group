@@ -544,7 +544,7 @@
         <scene sceneID="BkN-QV-NIg">
             <objects>
                 <navigationController id="nIr-6O-0SZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Scan" image="search.png" id="AWd-hj-dpe"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="tab_isbn.png" id="AWd-hj-dpe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bW2-eh-8jg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -562,8 +562,8 @@
     </scenes>
     <resources>
         <image name="mybookinfo.png" width="26" height="26"/>
-        <image name="search.png" width="21" height="21"/>
         <image name="store.png" width="24" height="25"/>
+        <image name="tab_isbn.png" width="23" height="18"/>
         <image name="unisys_logo.jpg" width="513" height="271"/>
     </resources>
     <classes>
