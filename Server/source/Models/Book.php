@@ -132,7 +132,7 @@ class Book
     	$this->language = $language;
     }
     
-    public function getISDN()
+    public function getISBN()
     {
     	return $this->ISBN;
     }

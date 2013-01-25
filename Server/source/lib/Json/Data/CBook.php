@@ -12,6 +12,7 @@ class CBook
 	public $language;
 	public $printLength;
 	public $image;
+	public $ISBN;
 		
 	public function  __construct(\Models\Book $book)
 	{
@@ -22,5 +23,6 @@ class CBook
 		$this->publishedDate = $book->getPublishedDate();
 		$this->language = $book->getLanguage();
 		$this->printLength = $book->getPrintLength();
+		$this->ISBN = $book->getISBN();
 	}
 }
