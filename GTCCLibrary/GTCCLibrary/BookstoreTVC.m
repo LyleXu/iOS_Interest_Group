@@ -127,7 +127,7 @@
     
     cell.textLabel.text= book.title;
     
-    UIImage * imageFromURL = [Utility getImageFromUrl:book.title];
+    UIImage * imageFromURL = [Utility getImageFromUrl:book.ISBN];
     cell.imageView.image=imageFromURL;
     
     return cell;
