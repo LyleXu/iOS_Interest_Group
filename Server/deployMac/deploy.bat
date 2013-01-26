@@ -33,4 +33,8 @@ xcopy ..\source\*.php %LIBPATH%\
 xcopy /Y /S ..\source\lib %LIBPATH%\
 xcopy /Y /S ..\source\Models %LIBPATH%\Models
 
-xcopy ..\source\*.ini %INIPATH%\
+xcopy /Y /Q ..\source\*.ini %INIPATH%\
+
+xcopy /Y /Q .\usedInWindows\GlobalConfiguration.php D:\wamp\phplibpath\gtcclibrary\Utility\
+xcopy /Y /Q .\usedInWindows\DoctrineBaseService.php D:\wamp\www\gtcclibrary\amfphp\lib\
+xcopy /Y /Q .\usedInWindows\AmfphpServiceBrowser.php D:\wamp\www\gtcclibrary\amfphp\Plugins\AmfphpServiceBrowser\
