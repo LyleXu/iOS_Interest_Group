@@ -24,6 +24,6 @@
     self.ISBN = [data objectForKey:@"ISBN"];
     self.price = [data objectForKey:@"price"];
     self.imageUrl = [data objectForKey:@"imageUrl"];
-    self.bookDescription = [data objectForKey:@"description"];
+    self.bookDescription = [data objectForKey:@"bookDescription"];
 }
 @end

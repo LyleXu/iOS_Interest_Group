@@ -82,7 +82,7 @@
         CBook* book = [_listData objectAtIndex:rowIndex];
         BookDetailViewController* controller = segue.destinationViewController;
         controller.bookInfo = book;
-        [controller setTitle:book.title];
+        //[controller setTitle:book.title];
         
     }
      

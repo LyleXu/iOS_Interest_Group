@@ -10,7 +10,7 @@
 #define GTCCLibrary_Constraint_h
 
 #define USERNAME    @"USERNAME"
-#define ServerHost @"http://192.168.1.100:8080/gtcclibrary/"
+#define ServerHost @"http://192.168.1.101:8080/gtcclibrary/"
 //#define ServerHost @"http://localhost/~lylexu/gtcclibrary/"
 //#define ServerHost @"http://129.223.252.209:8080/gtcclibrary/"
 

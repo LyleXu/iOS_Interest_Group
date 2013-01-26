@@ -18,16 +18,17 @@
 @implementation BookDetailViewController
 
 @synthesize authorName;
-@synthesize infoView;
 @synthesize bookInfo = _bookInfo;
 @synthesize theImage;
 @synthesize scrollView;
 @synthesize descTextView;
 @synthesize publisher;
 @synthesize publishedDate;
-@synthesize language;
 @synthesize printLength;
+@synthesize bookISBN;
 @synthesize borrowButton;
+@synthesize bookTitle;
+@synthesize bookPrice;
 
 
 -(void)setBookInfo:(CBook *)bookInfo
@@ -47,7 +48,6 @@
 -(void) setButtonDisabled
 {
     self.borrowButton.enabled = false;
-    [self.borrowButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
 }
 
 -(void) CheckBorrowButton
@@ -58,7 +58,6 @@
    }else
    {
        self.borrowButton.enabled = true;
-       [self.borrowButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
    }
 }
 
@@ -67,26 +66,29 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+        
+    self.scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 600.0f);
+    self.scrollView.scrollEnabled = YES;
+    
+    self.descTextView.layer.borderWidth = 5.0f;
+    self.descTextView.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.descTextView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    
+    self.descTextView.text = self.bookInfo.bookDescription;
+    
+    self.bookTitle.text = self.bookInfo.title;
+    self.bookISBN.text = self.bookInfo.ISBN;
     self.authorName.text = self.bookInfo.author;
     self.publisher.text = self.bookInfo.publisher;
-    self.language.text = self.bookInfo.language;
     self.printLength.text = [self.bookInfo.printLength stringValue];
     self.publishedDate.text = self.bookInfo.publishedDate;
     
     self.theImage.image = [Utility getImageFromUrl:self.bookInfo.ISBN];
     self.theImage.layer.borderColor = [[UIColor blackColor] CGColor];
-
-    
-    self.infoView.backgroundColor = [UIColor whiteColor];
-    self.infoView.layer.borderWidth = 1;
-    self.infoView.layer.borderColor = [[UIColor blackColor] CGColor];
-    
+    self.bookPrice.text = self.bookInfo.price;
     
     [self CheckBorrowButton];
-    
-    self.scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 1400.0f);
-    scrollView.scrollEnabled = YES;
-    scrollView.backgroundColor = [UIColor grayColor];
+
 }
 
 - (void)viewDidUnload
@@ -98,10 +100,12 @@
     [self setDescTextView:nil];
     [self setPublisher:nil];
     [self setPublishedDate:nil];
-    [self setLanguage:nil];
     [self setPrintLength:nil];
-    [self setInfoView:nil];
     [self setBorrowButton:nil];
+    [self setBookISBN:nil];
+    [self setBorrowButton:nil];
+    [self setBookTitle:nil];
+    [self setBookPrice:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

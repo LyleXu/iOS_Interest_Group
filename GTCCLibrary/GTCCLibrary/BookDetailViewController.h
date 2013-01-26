@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CBook.h"
 @interface BookDetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *infoView;
+
 
 @property (weak,nonatomic) CBook* bookInfo;
 
@@ -19,7 +19,10 @@
 @property (weak, nonatomic) IBOutlet UITextView *descTextView;
 @property (weak, nonatomic) IBOutlet UILabel *publisher;
 @property (weak, nonatomic) IBOutlet UILabel *publishedDate;
-@property (weak, nonatomic) IBOutlet UILabel *language;
 @property (weak, nonatomic) IBOutlet UILabel *printLength;
-@property (weak, nonatomic) IBOutlet UIButton *borrowButton;
+@property (weak, nonatomic) IBOutlet UILabel *bookISBN;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *borrowButton;
+@property (weak, nonatomic) IBOutlet UILabel *bookTitle;
+@property (weak, nonatomic) IBOutlet UILabel *bookPrice;
+
 @end

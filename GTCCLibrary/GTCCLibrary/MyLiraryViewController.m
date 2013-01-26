@@ -66,7 +66,7 @@
         
         self.borrowHistory = history;
         bookTitle.text = history.bookName;
-        imageView.image = [Utility getImageFromUrl:history.bookName];
+        imageView.image = [Utility getImageFromUrl:history.ISBN];
         borrowDate.text = history.borrowDate;
         planReturnDate.text = history.planReturnDate;
         

@@ -15,6 +15,7 @@
 @property(nonatomic,retain) NSString *borrowDate;
 @property(nonatomic,retain) NSString *planReturnDate;
 @property(nonatomic,retain) NSString *realReturnDate;
+@property(nonatomic,retain) NSString *ISBN;
 
 -(void) Parse:(NSDictionary*) data;
 @end

@@ -10,7 +10,7 @@
 
 
 @implementation CBorrowHistory
-@synthesize username,bookName,bookBianhao, borrowDate,planReturnDate,realReturnDate;
+@synthesize username,bookName,bookBianhao, borrowDate,planReturnDate,realReturnDate,ISBN;
 
 -(void) Parse:(NSDictionary*) data
 {
@@ -20,5 +20,6 @@
     self.borrowDate = [data objectForKey:@"borrowDate"];
     self.planReturnDate = [data objectForKey:@"planReturnDate"];
     self.realReturnDate = [data objectForKey:@"realReturnDate"];
+    self.ISBN = [data objectForKey:@"ISBN"];
 }
 @end
