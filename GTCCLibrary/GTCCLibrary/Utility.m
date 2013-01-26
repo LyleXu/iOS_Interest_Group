@@ -39,4 +39,13 @@
     return  [mydefault objectForKey:USERNAME];
 }
 
++(NSString *)getGUID
+{
+    CFUUIDRef uuidObj = CFUUIDCreate(nil);
+    CFStringRef newGUID = CFUUIDCreateString(nil, uuidObj);
+    CFRelease(uuidObj);
+    return (__bridge NSString*)newGUID ;
+    
+}
+
 @end

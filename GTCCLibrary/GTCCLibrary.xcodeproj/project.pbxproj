@@ -235,7 +235,6 @@
 				26AAAF1C159C473F003AEF83 /* MainStoryboard_iPad.storyboard */,
 				269F7E9F15A488D200D96F94 /* BookstoreTVC.h */,
 				269F7EA015A488D200D96F94 /* BookstoreTVC.m */,
-				26AAAF0E159C473F003AEF83 /* Supporting Files */,
 				26DFDC77160A0DAD002283E4 /* GTCCTabBarController.h */,
 				26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */,
 				26B513AB162EED8600ABB490 /* BookDetailViewController.h */,
@@ -247,6 +246,7 @@
 				26AF2D5A1633BC3200AB5CEF /* MyLiraryViewController.m */,
 				7FF9E30E169DA50300DF4906 /* ScanViewController.h */,
 				7FF9E30F169DA50300DF4906 /* ScanViewController.m */,
+				26AAAF0E159C473F003AEF83 /* Supporting Files */,
 			);
 			path = GTCCLibrary;
 			sourceTree = "<group>";

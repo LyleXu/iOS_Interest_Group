@@ -10,7 +10,7 @@
 #import "SBJson.h"
 #import "CBook.h"
 #import "Constraint.h"
-
+#import "Utility.h"
 
 @implementation DataLayer
 
@@ -187,7 +187,7 @@
 +(BOOL)addBookToLibrary:(CBook *)bookInfo
 {
     // The first parameter should be bianhao, but not sure we will use it
-    NSArray* parameters = [NSArray arrayWithObjects: @"",bookInfo.title,bookInfo.author,
+    NSArray* parameters = [NSArray arrayWithObjects: [Utility getGUID],bookInfo.title,bookInfo.author,
                            bookInfo.publisher,bookInfo.publishedDate,@"",bookInfo.printLength,
                            bookInfo.ISBN,bookInfo.price,bookInfo.description,bookInfo.imageUrl, nil];
     NSDictionary* result = [self FetchData:@"BookService" methodName:@"AddBook" parameters:parameters];

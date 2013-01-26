@@ -14,4 +14,7 @@
       message: (NSString*) msg;
 
 +(NSString*) getUsername;
+
++(NSString*) getGUID;
+
 @end
