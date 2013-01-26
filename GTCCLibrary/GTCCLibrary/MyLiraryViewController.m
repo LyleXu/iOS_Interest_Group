@@ -20,9 +20,11 @@
 @synthesize planReturnDate;
 @synthesize imageView;
 @synthesize borrowHistory = _borrowHistory;
-@synthesize returnButton;
+//@synthesize returnButton;
 @synthesize borrowDateLabel;
 @synthesize planReturnDateLabel;
+@synthesize smileImage;
+@synthesize noBookLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,27 +35,19 @@
     return self;
 }
 
--(void) setReturnButtonDisabled
-{
-    self.returnButton.enabled = false;
-    [self.returnButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
-}
-
--(void) setReturnButtonEnable
-{
-    self.returnButton.enabled = true;
-    [self.returnButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-}
-
 -(void) hiddenSubViews:(BOOL) visible
 {
-    returnButton.hidden = visible;
-    bookTitle.hidden = visible;
-    borrowDate.hidden = visible;
-    planReturnDate.hidden = visible;
-    borrowDateLabel.hidden = visible;
-    planReturnDateLabel.hidden = visible;
-    imageView.hidden = visible;
+    if(visible)
+    {
+        self.navigationItem.rightBarButtonItem = nil;
+    }else {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Return" style:UIBarButtonItemStyleBordered target:self action:@selector(doReturnBook)];
+    }
+   
+    infoView.hidden = visible;
+    
+    smileImage.hidden = !visible;
+    noBookLabel.hidden = !visible;
 }
 
 -(void) refresh
@@ -69,8 +63,6 @@
         imageView.image = [Utility getImageFromUrl:history.ISBN];
         borrowDate.text = history.borrowDate;
         planReturnDate.text = history.planReturnDate;
-        
-        [self setReturnButtonEnable];
     }else
     {
         
@@ -83,8 +75,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    [self refresh];
     
 }
 
@@ -100,9 +90,11 @@
     [self setBorrowDate:nil];
     [self setPlanReturnDate:nil];
     [self setImageView:nil];
-    [self setReturnButton:nil];
     [self setBorrowDateLabel:nil];
     [self setPlanReturnDateLabel:nil];
+    //[self setReturnButton:nil];
+    [self setSmileImage:nil];
+    [self setNoBookLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -111,13 +103,14 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-- (IBAction)doReturnBook:(id)sender {
+- (void)doReturnBook
+{
     NSString* username = [Utility getUsername];
     NSString* bookBianhao = [self.borrowHistory bookBianhao];
     if([DataLayer ReturnBook:username bookBianhao:bookBianhao])
     {
         [Utility Alert:@"Return" message:@"Return Book Successfully!"];
-        [self setReturnButtonDisabled];
+        [self refresh];
     }else
     {
         [Utility Alert:@"Return" message:@"Return Book Failed!"];

@@ -45,19 +45,14 @@
     return self;
 }
 
--(void) setButtonDisabled
-{
-    self.borrowButton.enabled = false;
-}
-
 -(void) CheckBorrowButton
 {
    if([DataLayer checkWhetherBookInBorrow:self.bookInfo.bianhao])
    {
-       [self setButtonDisabled];
+       self.navigationItem.rightBarButtonItem = nil;
    }else
    {
-       self.borrowButton.enabled = true;
+       self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Borrow" style:UIBarButtonItemStyleBordered target:self action:@selector(doBorrow)];
    }
 }
 
@@ -115,14 +110,14 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)doBorrow:(id)sender {
+- (void)doBorrow {
     NSString* username =  [Utility getUsername];
     NSString* bookBianhao = self.bookInfo.bianhao;
    if([DataLayer Borrow:username bookBianhao:bookBianhao])
    {
        // alert borrow sucessfully
        [Utility Alert:@"Borrow" message:@"Borrow Successfully!"];
-       [self setButtonDisabled];
+       self.navigationItem.rightBarButtonItem = nil;
    }else
    {
        [Utility Alert:@"Borrow" message:@"Borrow Failed! It may be borrowed by others."];

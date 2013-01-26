@@ -18,9 +18,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (retain, nonatomic) CBorrowHistory* borrowHistory;
-@property (weak, nonatomic) IBOutlet UIButton *returnButton;
+//@property (weak, nonatomic) IBOutlet UIBarButtonItem *returnButton;
 
 @property (weak, nonatomic) IBOutlet UILabel *borrowDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *planReturnDateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *smileImage;
+@property (weak, nonatomic) IBOutlet UILabel *noBookLabel;
 
 @end
