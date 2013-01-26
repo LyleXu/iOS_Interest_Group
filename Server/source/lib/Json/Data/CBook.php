@@ -13,6 +13,8 @@ class CBook
 	public $printLength;
 	public $image;
 	public $ISBN;
+	public $bookDescription;
+	public $price;
 		
 	public function  __construct(\Models\Book $book)
 	{
@@ -24,5 +26,7 @@ class CBook
 		$this->language = $book->getLanguage();
 		$this->printLength = $book->getPrintLength();
 		$this->ISBN = $book->getISBN();
+		$this->bookDescription = $book->GetDescription();
+		$this->price = $book->getPrice();
 	}
 }

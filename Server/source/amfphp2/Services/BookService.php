@@ -73,6 +73,7 @@ class BookService extends DoctrineBaseService {
 				$book->setPrintLength($printLength);
 				$book->setISBN($ISBN);
 				$book->setPrice($price);
+				$book->SetDescription($description);
 					
 				$this->doctrinemodel->persist($book);
 				$this->doctrinemodel->flush();
