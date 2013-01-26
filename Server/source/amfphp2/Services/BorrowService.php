@@ -12,7 +12,7 @@ include_once __DIR__ . '/../lib/DoctrineBaseService.php';
 
 class BorrowService extends DoctrineBaseService {	
 
-	private $dateFormat = "Y-m-d H:i:s";
+	private $dateFormat = "Y-m-d";
 	
 	public function GetAllHistory()
 	{
