@@ -80,11 +80,18 @@ class BookService extends DoctrineBaseService {
 				
 				// Create a pic on the server side under gtcclibrary/Images
 				// Image name is the ISBN.jpg
-				$img = file_get_contents($imageUrl); 
-				
-				$imageName = __DIR__.'/../../Images/'.$ISBN.'.jpg';
-				echo $imageName;
-				file_put_contents($imageName,$img); 
+				if(!empty($imageUrl))
+				{
+					$img = file_get_contents($imageUrl); 
+					
+					$imageName = __DIR__.'/../../Images/'.$ISBN.'.jpg';
+					
+					if(!file_exists($imageName))
+					{				
+						//echo $imageName;
+						file_put_contents($imageName,$img); 
+					}
+				}
 				
 				$response->_returnCode = ErrorCode::OK;
 				$response->book = $book;
