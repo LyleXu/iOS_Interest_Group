@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CBook.h"
-@interface BookDetailViewController : UIViewController
+@interface BookDetailViewController : UIViewController <UIActionSheetDelegate>
 
 
 @property (weak,nonatomic) CBook* bookInfo;

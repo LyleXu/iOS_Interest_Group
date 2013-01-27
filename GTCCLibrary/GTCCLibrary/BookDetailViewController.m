@@ -111,18 +111,29 @@
 }
 
 - (void)doBorrow {
-    NSString* username =  [Utility getUsername];
-    NSString* bookBianhao = self.bookInfo.bianhao;
-   if([DataLayer Borrow:username bookBianhao:bookBianhao])
-   {
-       // alert borrow sucessfully
-       [Utility Alert:@"Borrow" message:@"Borrow Successfully!"];
-       self.navigationItem.rightBarButtonItem = nil;
-   }else
-   {
-       [Utility Alert:@"Borrow" message:@"Borrow Failed! It may be borrowed by others."];
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure to Borrow the Book?" delegate:self cancelButtonTitle:@"No Way!" destructiveButtonTitle:@"Yes, I'm sure!" otherButtonTitles: nil];
+    
+    [actionSheet showInView:self.view];
+}
 
-   }
+-(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex != [actionSheet cancelButtonIndex])
+    {
+        NSString* username =  [Utility getUsername];
+        NSString* bookBianhao = self.bookInfo.bianhao;
+        if([DataLayer Borrow:username bookBianhao:bookBianhao])
+        {
+            // alert borrow sucessfully
+            [Utility Alert:@"" message:@"Borrow Successfully!"];
+            self.navigationItem.rightBarButtonItem = nil;
+        }else
+        {
+            [Utility Alert:@"" message:@"Borrow Failed! It may be borrowed by others."];
+            
+        }
+    }
 }
 
 @end

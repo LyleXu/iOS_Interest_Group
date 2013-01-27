@@ -105,15 +105,26 @@
 }
 - (void)doReturnBook
 {
-    NSString* username = [Utility getUsername];
-    NSString* bookBianhao = [self.borrowHistory bookBianhao];
-    if([DataLayer ReturnBook:username bookBianhao:bookBianhao])
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure to return the book?"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"No Way!" destructiveButtonTitle:@"Yes, I’m Sure!" otherButtonTitles:nil];
+    [actionSheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if( buttonIndex != [actionSheet cancelButtonIndex])
     {
-        [Utility Alert:@"Return" message:@"Return Book Successfully!"];
-        [self refresh];
-    }else
-    {
-        [Utility Alert:@"Return" message:@"Return Book Failed!"];
+        NSString* username = [Utility getUsername];
+        NSString* bookBianhao = [self.borrowHistory bookBianhao];
+        if([DataLayer ReturnBook:username bookBianhao:bookBianhao])
+        {
+            [Utility Alert:@"" message:@"Return Book Successfully!"];
+            [self refresh];
+        }else
+        {
+            [Utility Alert:@"" message:@"Return Book Failed!"];
+        }
     }
 }
 

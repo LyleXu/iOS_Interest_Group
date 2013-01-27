@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CBorrowHistory.h"
-@interface MyLiraryViewController : UIViewController
+@interface MyLiraryViewController : UIViewController <UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *infoView;
 @property (weak, nonatomic) IBOutlet UILabel *bookTitle;
