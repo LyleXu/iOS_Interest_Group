@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BookstoreTVC : UITableViewController<UITableViewDelegate,UITableViewDataSource>
-
+#import "EGORefreshTableHeaderView.h"
+@interface BookstoreTVC : UITableViewController<EGORefreshTableHeaderDelegate,UITableViewDelegate,UITableViewDataSource>
+{	
+	EGORefreshTableHeaderView *_refreshHeaderView;	
+	//  Reloading var should really be your tableviews datasource
+	//  Putting it here for demo purposes 
+	BOOL _reloading;
+}
 @property (nonatomic,strong) NSArray * listData;
 @property (nonatomic, retain) NSMutableArray *filteredListData;           
 - (IBAction)doRefresh:(id)sender;
 
+- (void)reloadTableViewDataSource;
+- (void)doneLoadingTableViewData;
 @end
