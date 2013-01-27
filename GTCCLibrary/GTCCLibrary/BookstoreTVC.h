@@ -17,7 +17,6 @@
 }
 @property (nonatomic,strong) NSArray * listData;
 @property (nonatomic, retain) NSMutableArray *filteredListData;           
-- (IBAction)doRefresh:(id)sender;
 
 - (void)reloadTableViewDataSource;
 - (void)doneLoadingTableViewData;

@@ -34,7 +34,6 @@
 @property (retain, nonatomic) NSString* tmpDesc;
 @property (retain, nonatomic) NSString* picUrl;
 
-- (IBAction) scanButtonTapped;
 - (void) loadBookInfoFromWeb;
 - (void) updateDescription;
 - (IBAction)addBookToServer;

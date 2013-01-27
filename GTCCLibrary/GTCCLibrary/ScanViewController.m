@@ -129,6 +129,8 @@
 
 -(void)addBookToServer
 {
+
+    
     CBook* bookInfo = [[CBook alloc] init];
     bookInfo.title = bookTitle.text;
     bookInfo.author = bookAuthor.text;
@@ -143,9 +145,9 @@
     BOOL isSucceed = [DataLayer addBookToLibrary:bookInfo];
     if(isSucceed)
     {
-        [Utility Alert:@"Add Book" message:@"Add Book to Server Successfully!"];
+        [Utility Alert:@"" message:@"Add Book to Server Successfully!"];
     }else {
-        [Utility Alert:@"Add Book" message:@"Add Book to Server Failed!"];
+        [Utility Alert:@"" message:@"Add Book to Server Failed!"];
     }
 }
 
