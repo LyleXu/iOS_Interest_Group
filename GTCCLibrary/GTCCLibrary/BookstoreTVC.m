@@ -213,8 +213,6 @@ CGCONTEXT_H_
     
     _listData = [DataLayer GetAllBooks];
     
-    [self.tableView reloadData];
-    
     self.filteredListData = [NSMutableArray arrayWithCapacity:[self.listData count]];
 }
 
@@ -223,6 +221,8 @@ CGCONTEXT_H_
 	//  model should call this when its done loading
 	_reloading = NO;
 	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+    
+    [self.tableView reloadData];
 	
 }
 
