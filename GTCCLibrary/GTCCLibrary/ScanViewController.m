@@ -84,6 +84,12 @@
     tmpDesc = [[response stringByMatching:bookDescriptionReg capture:1L] copy];
     tmpDesc = [tmpDesc stringByReplacingOccurrencesOfRegex:@"<p>" withString:@""];
     tmpDesc = [tmpDesc stringByReplacingOccurrencesOfRegex:@"</p>" withString:@"\n"];
+    NSRange range = [tmpDesc rangeOfString:@"<a href"];
+    if(range.length > 0)
+    {
+        tmpDesc = [tmpDesc substringToIndex:range.location];
+    }
+    
     // update the UI on the main thread. but not know why I can update label and image on the thread
     [self performSelectorOnMainThread:@selector(updateDescription) withObject:nil waitUntilDone:false];
 }
