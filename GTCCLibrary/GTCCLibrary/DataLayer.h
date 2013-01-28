@@ -22,6 +22,12 @@ password:(NSString*)password;
 +(BOOL) ReturnBook:(NSString*) username
        bookBianhao:(NSString*) bookBianhao;
 +(NSMutableString *)FetchDataFromWeb:(NSString* )url;
-+(BOOL) addBookToLibrary:(CBook*) bookInfo;
++(NSInteger) addBookToLibrary:(CBook*) bookInfo;
+
+typedef enum
+{
+  BookTagAlreadyExists = -201  
+}ErrorCode;
+
 @end
 

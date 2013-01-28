@@ -184,21 +184,15 @@
     return theString;
 }
 
-+(BOOL)addBookToLibrary:(CBook *)bookInfo
++(NSInteger)addBookToLibrary:(CBook *)bookInfo
 {
     // The first parameter should be bianhao, but not sure we will use it
-    NSArray* parameters = [NSArray arrayWithObjects: [Utility getGUID],bookInfo.title,bookInfo.author,
+    NSArray* parameters = [NSArray arrayWithObjects: bookInfo.bianhao,bookInfo.title,bookInfo.author,
                            bookInfo.publisher,bookInfo.publishedDate,@"",bookInfo.printLength,
                            bookInfo.ISBN,bookInfo.price,bookInfo.bookDescription,bookInfo.imageUrl, nil];
     NSDictionary* result = [self FetchData:@"BookService" methodName:@"AddBook" parameters:parameters];
     NSInteger value = [[self GetValueByKey:result keyName:@"_returnCode"] integerValue];
-    if(value == 0)
-    {
-        return true;
-    }else
-    {
-        return false;
-    }
+    return value;
 }
 
 @end

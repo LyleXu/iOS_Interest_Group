@@ -30,7 +30,7 @@
 @synthesize resultImage, resultText;
 @synthesize tmpDesc;
 @synthesize picUrl;
-
+UITextField *bookTagTextfield;
 - (IBAction) scanButtonTapped
 {
     // ADD: present a barcode reader that scans from the camera feed
@@ -135,9 +135,28 @@
 
 -(void)addBookToServer
 {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please Enter Book Tag" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [alert show];
+    
+}
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if(buttonIndex == 0)
+    {
+        return; // click cancel
+    }
+    
+    NSString* bookTag = [alertView textFieldAtIndex:0].text;
+    if([bookTag isEqualToString:@""])
+    {
+        [Utility Alert:@"" message:@"Book Tag cannot be empty"];
+        return;
+    }    
     
     CBook* bookInfo = [[CBook alloc] init];
+    bookInfo.bianhao = bookTag;
     bookInfo.title = bookTitle.text;
     bookInfo.author = bookAuthor.text;
     bookInfo.publisher = bookPublishedBy.text;
@@ -148,13 +167,16 @@
     bookInfo.bookDescription = bookDesc.text;
     bookInfo.ISBN = resultText.text;
     
-    BOOL isSucceed = [DataLayer addBookToLibrary:bookInfo];
-    if(isSucceed)
+    NSInteger returnCode = [DataLayer addBookToLibrary:bookInfo];
+    if(returnCode == 0)
     {
         [Utility Alert:@"" message:@"Add Book to Server Successfully!"];
+    }else if(returnCode == BookTagAlreadyExists){
+        [Utility Alert:@"" message:@"Book Tag already exists!"];
     }else {
         [Utility Alert:@"" message:@"Add Book to Server Failed!"];
     }
+
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
