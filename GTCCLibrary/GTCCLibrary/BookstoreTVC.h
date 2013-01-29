@@ -17,7 +17,7 @@
 }
 @property (nonatomic,strong) NSArray * listData;
 @property (nonatomic, retain) NSMutableArray *filteredListData;           
-
+@property (nonatomic, assign) BOOL isSearching;
 - (void)reloadTableViewDataSource;
 - (void)doneLoadingTableViewData;
 @end

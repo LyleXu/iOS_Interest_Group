@@ -18,7 +18,7 @@
 
 @synthesize listData = _listData;
 @synthesize filteredListData = _filteredListData;
-
+@synthesize isSearching;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -84,11 +84,17 @@
 {
     
     if ([segue.identifier isEqualToString:@"BookDetail"]) {
+
         NSUInteger rowIndex = [[self.tableView indexPathForSelectedRow] row];
-        CBook* book = [_listData objectAtIndex:rowIndex];
+        CBook* book = nil;
+        if(isSearching)
+        {
+            book = [self.filteredListData objectAtIndex:rowIndex];
+        }else {
+            book = [self.listData objectAtIndex:rowIndex];
+        }
         BookDetailViewController* controller = segue.destinationViewController;
         controller.bookInfo = book;
-        //[controller setTitle:book.title];
         
     }
      
@@ -145,22 +151,13 @@ CGCONTEXT_H_
 	/*
 	 If the requesting table view is the search display controller's table view, configure the next view controller using the filtered content, otherwise use the main list.
 	 */
-	CBook *book = nil;
 	if (tableView == self.searchDisplayController.searchResultsTableView)
 	{
-        
-        BookDetailViewController* detailsViewController = [[BookDetailViewController alloc] init];
-        book = [self.filteredListData objectAtIndex:indexPath.row];
-        
-        detailsViewController.title = book.title;
-        detailsViewController.bookInfo = book;
-        [self.navigationController pushViewController:detailsViewController animated:YES];
+        isSearching = true;
+        [self performSegueWithIdentifier:@"BookDetail" sender:self];
     }else {
-        book = [self.listData objectAtIndex:indexPath.row];
+        isSearching = false;
     }
-    
-    
-
 }
 
 #pragma mark - Table view delegate
