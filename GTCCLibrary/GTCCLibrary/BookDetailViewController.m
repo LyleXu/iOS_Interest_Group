@@ -29,6 +29,7 @@
 @synthesize borrowButton;
 @synthesize bookTitle;
 @synthesize bookPrice;
+@synthesize bookTag;
 
 
 -(void)setBookInfo:(CBook *)bookInfo
@@ -70,7 +71,7 @@
     self.descTextView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     
     self.descTextView.text = self.bookInfo.bookDescription;
-    
+    self.bookTag.text = self.bookInfo.bianhao;
     self.bookTitle.text = self.bookInfo.title;
     self.bookISBN.text = self.bookInfo.ISBN;
     self.authorName.text = self.bookInfo.author;
@@ -101,6 +102,7 @@
     [self setBorrowButton:nil];
     [self setBookTitle:nil];
     [self setBookPrice:nil];
+    [self setBookTag:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

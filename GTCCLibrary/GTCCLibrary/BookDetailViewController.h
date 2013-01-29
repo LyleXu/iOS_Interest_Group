@@ -24,5 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *borrowButton;
 @property (weak, nonatomic) IBOutlet UILabel *bookTitle;
 @property (weak, nonatomic) IBOutlet UILabel *bookPrice;
+@property (weak, nonatomic) IBOutlet UILabel *bookTag;
 
 @end
