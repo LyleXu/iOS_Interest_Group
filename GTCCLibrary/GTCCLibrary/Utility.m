@@ -18,6 +18,11 @@
     return [url stringByReplacingOccurrencesOfString:@"#" withString:@"%23"];
 }
 
++(NSString*) replaceQuote:(NSString*) source
+{
+    return [source stringByReplacingOccurrencesOfString:@"&#39;" withString:@"'"];
+}
+
 +(UIImage*) getImageFromUrl:(NSString*) imageName
 {
     NSString* imageUrl = [[NSString alloc] initWithFormat:@"%@%@",ServerHost,ServerImagePath];

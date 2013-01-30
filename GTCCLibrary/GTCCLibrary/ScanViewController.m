@@ -68,7 +68,7 @@ UITextField *bookTagTextfield;
     NSString *bookDescriptionReg = @"<div class=\"intro\">\n(.*)</div>";
     NSString *bookPicReg = @"img src=\"(.*)\" title=";
     
-    bookTitle.text = [response stringByMatching:bookTitleRegexString capture:1L];
+    bookTitle.text = [Utility replaceQuote:[response stringByMatching:bookTitleRegexString capture:1L]];
     bookAuthor.text = [response stringByMatching:authorReg capture:1L];
     bookPublishedBy.text = [response stringByMatching:publishedByReg capture:1L];
     bookPublishedYear.text = [response stringByMatching:publishedYearReg capture:1L];
@@ -89,6 +89,8 @@ UITextField *bookTagTextfield;
     {
         tmpDesc = [tmpDesc substringToIndex:range.location];
     }
+    
+    tmpDesc = [Utility replaceQuote:tmpDesc];
     
     // update the UI on the main thread. but not know why I can update label and image on the thread
     [self performSelectorOnMainThread:@selector(updateDescription) withObject:nil waitUntilDone:false];
@@ -206,7 +208,11 @@ UITextField *bookTagTextfield;
     self.bookDesc.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     
     
+    
     // Test Data
+    //resultText.text = @"9781840183788";
+    //[self loadBookInfoFromWeb];
+    
 //    bookTitle.text = @"Programming WPF";
 //    bookAuthor.text = @"Jeffery";
 //    bookPublishedBy.text = @"Apress";
@@ -215,7 +221,7 @@ UITextField *bookTagTextfield;
 //    bookPrice.text = @"$20";
 //    bookDesc.text = @"description";
 //    picUrl = @"http://img3.douban.com/lpic/s4255234.jpg";
-//    resultText.text = @"9780596510374";
+//    resultText.text = @"9781840183788";
 
 }
 

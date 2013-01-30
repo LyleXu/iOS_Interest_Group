@@ -16,5 +16,5 @@
 +(NSString*) getUsername;
 
 +(NSString*) getGUID;
-
++(NSString*) replaceQuote:(NSString*) source;
 @end
