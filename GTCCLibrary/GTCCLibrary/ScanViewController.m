@@ -137,7 +137,7 @@ UITextField *bookTagTextfield;
 
 -(void)addBookToServer
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please Enter Book Tag" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please enter the book tag" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK",nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
     
@@ -153,7 +153,7 @@ UITextField *bookTagTextfield;
     NSString* bookTag = [alertView textFieldAtIndex:0].text;
     if([bookTag isEqualToString:@""])
     {
-        [Utility Alert:@"" message:@"Book Tag cannot be empty"];
+        [Utility Alert:@"" message:@"Book tag cannot be empty"];
         return;
     }    
     
@@ -172,11 +172,11 @@ UITextField *bookTagTextfield;
     NSInteger returnCode = [DataLayer addBookToLibrary:bookInfo];
     if(returnCode == 0)
     {
-        [Utility Alert:@"" message:@"Add Book to Server Successfully!"];
+        [Utility Alert:@"" message:@"Added the book to Library successfully!"];
     }else if(returnCode == BookTagAlreadyExists){
-        [Utility Alert:@"" message:@"Book Tag already exists!"];
+        [Utility Alert:@"" message:@"Book tag already exists!"];
     }else {
-        [Utility Alert:@"" message:@"Add Book to Server Failed!"];
+        [Utility Alert:@"" message:@"Added the book to Library Failed!"];
     }
 
 }

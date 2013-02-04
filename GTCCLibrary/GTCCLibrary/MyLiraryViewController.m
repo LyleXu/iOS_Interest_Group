@@ -107,7 +107,7 @@
 {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure to return the book?"
                                                              delegate:self
-                                                    cancelButtonTitle:@"No Way!" destructiveButtonTitle:@"Yes, I’m Sure!" otherButtonTitles:nil];
+                                                    cancelButtonTitle:@"No, Thanks!" destructiveButtonTitle:@"Yes, I’m Sure!" otherButtonTitles:nil];
     [actionSheet showInView:self.view];
 }
 
@@ -119,11 +119,11 @@
         NSString* bookBianhao = [self.borrowHistory bookBianhao];
         if([DataLayer ReturnBook:username bookBianhao:bookBianhao])
         {
-            [Utility Alert:@"" message:@"Return Book Successfully!"];
+            [Utility Alert:@"" message:@"Returned the book successfully!"];
             [self refresh];
         }else
         {
-            [Utility Alert:@"" message:@"Return Book Failed!"];
+            [Utility Alert:@"" message:@"Returned the book failed!"];
         }
     }
 }

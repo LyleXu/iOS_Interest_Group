@@ -207,7 +207,7 @@
             </objects>
             <point key="canvasLocation" x="2959" y="1029"/>
         </scene>
-        <!--BookstoreTVC-->
+        <!--BookstoreTVC - Library-->
         <scene sceneID="Sgm-vl-Wrs">
             <objects>
                 <viewController id="NTX-Ic-qfG" customClass="BookstoreTVC" sceneMemberID="viewController">
@@ -244,7 +244,7 @@
                             <outlet property="delegate" destination="NTX-Ic-qfG" id="DgJ-n8-3Bw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="WfU-lK-jsX"/>
+                    <navigationItem key="navigationItem" title="Library" id="WfU-lK-jsX"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="dmr-9C-qaP" id="Lfh-HH-rnr"/>
                     </connections>
@@ -424,7 +424,7 @@
                                         <rect key="frame" x="20" y="97" width="101" height="147"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Borrow Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="4qj-nI-eYI">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Borrowed on:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="4qj-nI-eYI">
                                         <rect key="frame" x="145" y="97" width="121" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -445,7 +445,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Plan Return Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="PnU-qx-Jn1">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please return before:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="PnU-qx-Jn1">
                                         <rect key="frame" x="145" y="178" width="139" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -466,10 +466,10 @@
                                 <rect key="frame" x="40" y="83" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No Book Borrowed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" id="deB-NE-abN">
-                                <rect key="frame" x="60" y="234" width="200" height="21"/>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="You haven't borrowed any book." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" id="deB-NE-abN">
+                                <rect key="frame" x="20" y="234" width="280" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -516,12 +516,12 @@
             </objects>
             <point key="canvasLocation" x="1929" y="34"/>
         </scene>
-        <!--Navigation Controller - Book Store-->
+        <!--Navigation Controller - Library-->
         <scene sceneID="cDR-nP-gzV">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FpZ-Co-Y2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="aCk-wc-W2i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Book Store" image="store.png" id="Jro-ix-pA4"/>
+                    <tabBarItem key="tabBarItem" title="Library" image="store.png" id="Jro-ix-pA4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="nif-Sb-wkb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -535,11 +535,11 @@
             </objects>
             <point key="canvasLocation" x="2517" y="308"/>
         </scene>
-        <!--Navigation Controller - My Library-->
+        <!--Navigation Controller - My Book-->
         <scene sceneID="myk-Go-wnY">
             <objects>
                 <navigationController id="b8F-vV-DeH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Library" image="mybook.png" id="D44-Zf-24u"/>
+                    <tabBarItem key="tabBarItem" title="My Book" image="mybook.png" id="D44-Zf-24u"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TQP-V3-JdU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -581,6 +581,71 @@
         <image name="tab_isbn.png" width="23" height="18"/>
         <image name="unisys_logo.jpg" width="513" height="161"/>
     </resources>
+    <classes>
+        <class className="BookDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BookDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="authorName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookISBN" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookTag" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="borrowButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="descTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="printLength" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="publishedDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="publisher" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="theImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="BookstoreTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BookstoreTVC.h"/>
+        </class>
+        <class className="GTCCTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GTCCTabBarController.h"/>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="btnCancel" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnLogin" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loginTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MyLiraryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyLiraryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bookTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="borrowDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="borrowDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="infoView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="noBookLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="planReturnDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="planReturnDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="smileImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ScanViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addBookToServer"/>
+                <relationship kind="outlet" name="bookAuthor" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookDesc" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="bookImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bookPage" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookPublishedBy" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookPublishedYear" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="resultImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="resultText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

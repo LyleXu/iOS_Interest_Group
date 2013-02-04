@@ -44,8 +44,6 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"Book Store";
-    
     _listData = [DataLayer GetAllBooks];
     
     self.filteredListData = [NSMutableArray arrayWithCapacity:[self.listData count]];
