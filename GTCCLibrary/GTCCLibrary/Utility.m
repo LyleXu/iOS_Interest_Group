@@ -23,6 +23,11 @@
     return [source stringByReplacingOccurrencesOfString:@"&#39;" withString:@"'"];
 }
 
++(NSString*) replaceStringWithBlank:(NSString*) source
+{
+    return [source stringByReplacingOccurrencesOfString:@"在线阅读本书" withString:@""];
+}
+
 +(UIImage*) getImageFromUrl:(NSString*) imageName
 {
     NSString* imageUrl = [[NSString alloc] initWithFormat:@"%@%@",ServerHost,ServerImagePath];

@@ -172,12 +172,12 @@
     return nil;
 }
 
-+(NSMutableString*)FetchDataFromWeb:(NSString *)url
++(NSMutableString*)FetchDataFromWebByGet:(NSString *)url
 {
     NSError *theError = nil;   
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPMethod:@"POST"];
+    [request setHTTPMethod:@"GET"];
     NSURLResponse *theResponse =[[NSURLResponse alloc]init];
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&theResponse error:&theError];      
     NSMutableString *theString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] copy];

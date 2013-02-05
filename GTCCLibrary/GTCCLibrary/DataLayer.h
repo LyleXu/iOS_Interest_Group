@@ -21,7 +21,7 @@ password:(NSString*)password;
 +(CBorrowHistory*) getBorrowInfo:(NSString*) username;
 +(BOOL) ReturnBook:(NSString*) username
        bookBianhao:(NSString*) bookBianhao;
-+(NSMutableString *)FetchDataFromWeb:(NSString* )url;
++(NSMutableString *)FetchDataFromWebByGet:(NSString* )url;
 +(NSInteger) addBookToLibrary:(CBook*) bookInfo;
 
 typedef enum

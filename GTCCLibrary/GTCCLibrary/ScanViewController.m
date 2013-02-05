@@ -13,6 +13,7 @@
 #import "Constraint.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Utility.h"
+#import "SBJson.h"
 @interface ScanViewController ()
 
 @end
@@ -57,40 +58,45 @@ UITextField *bookTagTextfield;
 {
     // Search the barcode on the network
     NSString* url = [[NSString alloc] initWithFormat:@"%@%@/",DouBanAPI,resultText.text];
-    NSMutableString* response = [DataLayer FetchDataFromWeb:url];
+    NSMutableString* response = [DataLayer FetchDataFromWebByGet:url];
     
-    NSString *bookTitleRegexString = @"<span property=\"v:itemreviewed\">(.*)</span>";
-    NSString *authorReg = @"作者</span>: \\s+<a href.+>(.*)</a>";
-    NSString *publishedByReg = @"出版社:</span>\\s+(.*)<br/>";
-    NSString *publishedYearReg = @"出版年:</span>(.*)<br/>";
-    NSString *pageReg = @"页数:</span>(.*)<br/>";
-    NSString *priceReg = @"定价:</span>(.*)<br/>";
-    NSString *bookDescriptionReg = @"<div class=\"intro\">\n(.*)</div>";
-    NSString *bookPicReg = @"img src=\"(.*)\" title=";
+//    NSString *bookTitleRegexString = @"<span property=\"v:itemreviewed\">(.*)</span>";
+//    NSString *authorReg = @"作者</span>: \\s+<a href.+>(.*)</a>";
+//    NSString *publishedByReg = @"出版社:</span>\\s+(.*)<br/>";
+//    NSString *publishedYearReg = @"出版年:</span>(.*)<br/>";
+//    NSString *pageReg = @"页数:</span>(.*)<br/>";
+//    NSString *priceReg = @"定价:</span>(.*)<br/>";
+//    NSString *bookDescriptionReg = @"<div class=\"intro\">\n(.*)</div>";
+//    NSString *bookPicReg = @"img src=\"(.*)\" title=";
     
-    bookTitle.text = [Utility replaceQuote:[response stringByMatching:bookTitleRegexString capture:1L]];
-    bookAuthor.text = [response stringByMatching:authorReg capture:1L];
-    bookPublishedBy.text = [response stringByMatching:publishedByReg capture:1L];
-    bookPublishedYear.text = [response stringByMatching:publishedYearReg capture:1L];
-    bookPage.text = [response stringByMatching:pageReg capture:1L];
-    bookPrice.text = [response stringByMatching:priceReg capture:1L];
+//    bookTitle.text = [Utility replaceQuote:[response stringByMatching:bookTitleRegexString capture:1L]];
+//    bookAuthor.text = [response stringByMatching:authorReg capture:1L];
+//    bookPublishedBy.text = [response stringByMatching:publishedByReg capture:1L];
+//    bookPublishedYear.text = [response stringByMatching:publishedYearReg capture:1L];
+//    bookPage.text = [response stringByMatching:pageReg capture:1L];
+//    bookPrice.text = [response stringByMatching:priceReg capture:1L];
   
+    SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
+    NSError *error = nil;
+    NSDictionary* jsonObject = [jsonParser objectWithString:response error:&error];
+    jsonParser = nil;
+    bookTitle.text = [jsonObject objectForKey:@"title"];
+    NSArray* authors = [jsonObject objectForKey:@"author"];
+    bookAuthor.text = (NSString*)[authors objectAtIndex:0];
+    bookPublishedBy.text = [jsonObject objectForKey:@"publisher"];
+    bookPublishedYear.text = [jsonObject objectForKey:@"pubdate"];
+    bookPage.text = [jsonObject objectForKey:@"pages"];
+    bookPrice.text = [jsonObject objectForKey:@"price"]; 
+    
     // image
-    picUrl = [response stringByMatching:bookPicReg capture:1L];
+    picUrl = [jsonObject objectForKey:@"image"];
     UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:picUrl]]];
     bookImage.image = image;
     
     // description
-    tmpDesc = [[response stringByMatching:bookDescriptionReg capture:1L] copy];
-    tmpDesc = [tmpDesc stringByReplacingOccurrencesOfRegex:@"<p>" withString:@""];
-    tmpDesc = [tmpDesc stringByReplacingOccurrencesOfRegex:@"</p>" withString:@"\n"];
-    NSRange range = [tmpDesc rangeOfString:@"<a href"];
-    if(range.length > 0)
-    {
-        tmpDesc = [tmpDesc substringToIndex:range.location];
-    }
+    tmpDesc = [jsonObject objectForKey:@"summary"];
     
-    tmpDesc = [Utility replaceQuote:tmpDesc];
+    tmpDesc = [Utility replaceStringWithBlank:tmpDesc];
     
     // update the UI on the main thread. but not know why I can update label and image on the thread
     [self performSelectorOnMainThread:@selector(updateDescription) withObject:nil waitUntilDone:false];
@@ -207,10 +213,14 @@ UITextField *bookTagTextfield;
     self.bookDesc.layer.borderColor = [[UIColor grayColor] CGColor];
     self.bookDesc.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     
+    self.bookImage.layer.borderWidth = 2.0f;
+    self.bookImage.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.bookImage.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     
     
     // Test Data
     //resultText.text = @"9781840183788";
+    //resultText.text = @"9780553281095";
     //[self loadBookInfoFromWeb];
     
 //    bookTitle.text = @"Programming WPF";

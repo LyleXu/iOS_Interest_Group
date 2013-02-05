@@ -80,7 +80,10 @@
     self.publishedDate.text = self.bookInfo.publishedDate;
     
     self.theImage.image = [Utility getImageFromUrl:self.bookInfo.ISBN];
-    self.theImage.layer.borderColor = [[UIColor blackColor] CGColor];
+    self.theImage.layer.borderWidth = 2.0f;
+    self.theImage.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.theImage.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    
     self.bookPrice.text = self.bookInfo.price;
     
     [self CheckBorrowButton];

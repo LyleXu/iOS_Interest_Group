@@ -17,4 +17,5 @@
 
 +(NSString*) getGUID;
 +(NSString*) replaceQuote:(NSString*) source;
++(NSString*) replaceStringWithBlank:(NSString*) source;
 @end

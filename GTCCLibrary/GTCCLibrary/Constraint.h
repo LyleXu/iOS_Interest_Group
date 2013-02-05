@@ -16,6 +16,6 @@
 
 #define ServiceAddress @"amfphp/index.php"
 #define ServerImagePath @"Images/"    
-#define DouBanAPI @"http://book.douban.com/isbn/"
+#define DouBanAPI @"https://api.douban.com/v2/book/isbn/"
 
 #endif
