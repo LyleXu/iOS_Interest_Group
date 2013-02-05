@@ -207,7 +207,7 @@
             </objects>
             <point key="canvasLocation" x="2959" y="1029"/>
         </scene>
-        <!--BookstoreTVC - Library-->
+        <!--BookstoreTVC - GTCC Library-->
         <scene sceneID="Sgm-vl-Wrs">
             <objects>
                 <viewController id="NTX-Ic-qfG" customClass="BookstoreTVC" sceneMemberID="viewController">
@@ -244,7 +244,7 @@
                             <outlet property="delegate" destination="NTX-Ic-qfG" id="DgJ-n8-3Bw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Library" id="WfU-lK-jsX"/>
+                    <navigationItem key="navigationItem" title="GTCC Library" id="WfU-lK-jsX"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="dmr-9C-qaP" id="Lfh-HH-rnr"/>
                     </connections>
@@ -516,12 +516,12 @@
             </objects>
             <point key="canvasLocation" x="1929" y="34"/>
         </scene>
-        <!--Navigation Controller - Library-->
+        <!--Navigation Controller - GTCC Library-->
         <scene sceneID="cDR-nP-gzV">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FpZ-Co-Y2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="aCk-wc-W2i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Library" image="store.png" id="Jro-ix-pA4"/>
+                    <tabBarItem key="tabBarItem" title="GTCC Library" image="store.png" id="Jro-ix-pA4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="nif-Sb-wkb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
