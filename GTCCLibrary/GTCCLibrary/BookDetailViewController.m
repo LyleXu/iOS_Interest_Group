@@ -117,7 +117,7 @@
 
 - (void)doBorrow {
     
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure to borrow the book?" delegate:self cancelButtonTitle:@"No, Thanks!" destructiveButtonTitle:@"Yes, I'm sure!" otherButtonTitles: nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure to borrow the book?" delegate:self cancelButtonTitle:@"No, thanks!" destructiveButtonTitle:@"Yes, I'm sure!" otherButtonTitles: nil];
     
     [actionSheet showInView:self.view];
 }
@@ -131,7 +131,7 @@
         if([DataLayer Borrow:username bookBianhao:bookBianhao])
         {
             // alert borrow sucessfully
-            [Utility Alert:@"" message:@"Borrowed Successfully!"];
+            [Utility Alert:@"" message:@"Borrowed successfully!"];
             self.navigationItem.rightBarButtonItem = nil;
         }else
         {

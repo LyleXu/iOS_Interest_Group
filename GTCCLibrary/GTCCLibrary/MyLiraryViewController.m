@@ -107,7 +107,7 @@
 {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure to return the book?"
                                                              delegate:self
-                                                    cancelButtonTitle:@"No, Thanks!" destructiveButtonTitle:@"Yes, I’m Sure!" otherButtonTitles:nil];
+                                                    cancelButtonTitle:@"No, thanks!" destructiveButtonTitle:@"Yes, I’m Sure!" otherButtonTitles:nil];
     [actionSheet showInView:self.view];
 }
 

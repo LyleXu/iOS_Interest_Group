@@ -102,14 +102,14 @@
 		267CA9261609E2E8005C2EA3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		269F7E9F15A488D200D96F94 /* BookstoreTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookstoreTVC.h; sourceTree = "<group>"; };
 		269F7EA015A488D200D96F94 /* BookstoreTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookstoreTVC.m; sourceTree = "<group>"; };
-		26AAAF03159C473E003AEF83 /* GTCCLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GTCCLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26AAAF03159C473E003AEF83 /* GTCC Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GTCC Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AAAF07159C473E003AEF83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		26AAAF09159C473E003AEF83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26AAAF0B159C473E003AEF83 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		26AAAF0F159C473F003AEF83 /* GTCCLibrary-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GTCCLibrary-Info.plist"; sourceTree = "<group>"; };
+		26AAAF0F159C473F003AEF83 /* GTCC Library-Info.plist */ = {isa = PBXFileReference; path = "GTCC Library-Info.plist"; sourceTree = "<group>"; };
 		26AAAF11159C473F003AEF83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26AAAF13159C473F003AEF83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		26AAAF15159C473F003AEF83 /* GTCCLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GTCCLibrary-Prefix.pch"; sourceTree = "<group>"; };
+		26AAAF15159C473F003AEF83 /* GTCC Library-Prefix.pch */ = {isa = PBXFileReference; path = "GTCC Library-Prefix.pch"; sourceTree = "<group>"; };
 		26AAAF16159C473F003AEF83 /* GTCCLibraryAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTCCLibraryAppDelegate.h; sourceTree = "<group>"; };
 		26AAAF17159C473F003AEF83 /* GTCCLibraryAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTCCLibraryAppDelegate.m; sourceTree = "<group>"; };
 		26AAAF1A159C473F003AEF83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 		26AAAF04159C473E003AEF83 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				26AAAF03159C473E003AEF83 /* GTCCLibrary.app */,
+				26AAAF03159C473E003AEF83 /* GTCC Library.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -276,10 +276,10 @@
 		26AAAF0E159C473F003AEF83 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				26AAAF0F159C473F003AEF83 /* GTCCLibrary-Info.plist */,
+				26AAAF0F159C473F003AEF83 /* GTCC Library-Info.plist */,
 				26AAAF10159C473F003AEF83 /* InfoPlist.strings */,
 				26AAAF13159C473F003AEF83 /* main.m */,
-				26AAAF15159C473F003AEF83 /* GTCCLibrary-Prefix.pch */,
+				26AAAF15159C473F003AEF83 /* GTCC Library-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -470,9 +470,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		26AAAF02159C473E003AEF83 /* GTCCLibrary */ = {
+		26AAAF02159C473E003AEF83 /* GTCC Library */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26AAAF24159C473F003AEF83 /* Build configuration list for PBXNativeTarget "GTCCLibrary" */;
+			buildConfigurationList = 26AAAF24159C473F003AEF83 /* Build configuration list for PBXNativeTarget "GTCC Library" */;
 			buildPhases = (
 				26AAAEFF159C473E003AEF83 /* Sources */,
 				26AAAF00159C473E003AEF83 /* Frameworks */,
@@ -483,9 +483,9 @@
 			);
 			dependencies = (
 			);
-			name = GTCCLibrary;
+			name = "GTCC Library";
 			productName = GTCCLibrary;
-			productReference = 26AAAF03159C473E003AEF83 /* GTCCLibrary.app */;
+			productReference = 26AAAF03159C473E003AEF83 /* GTCC Library.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -496,7 +496,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = 26AAAEFD159C473E003AEF83 /* Build configuration list for PBXProject "GTCCLibrary" */;
+			buildConfigurationList = 26AAAEFD159C473E003AEF83 /* Build configuration list for PBXProject "GTCC Library" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -508,7 +508,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				26AAAF02159C473E003AEF83 /* GTCCLibrary */,
+				26AAAF02159C473E003AEF83 /* GTCC Library */,
 			);
 		};
 /* End PBXProject section */
@@ -679,15 +679,15 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GTCCLibrary/GTCCLibrary-Prefix.pch";
-				INFOPLIST_FILE = "GTCCLibrary/GTCCLibrary-Info.plist";
+				GCC_PREFIX_HEADER = "GTCCLibrary/GTCC Library-Prefix.pch";
+				INFOPLIST_FILE = "GTCCLibrary/GTCC Library-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
 				);
 				OTHER_LDFLAGS = "-licucore";
 				"OTHER_LDFLAGS[arch=*]" = "-licucore";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "GTCC Library";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -698,14 +698,14 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GTCCLibrary/GTCCLibrary-Prefix.pch";
-				INFOPLIST_FILE = "GTCCLibrary/GTCCLibrary-Info.plist";
+				GCC_PREFIX_HEADER = "GTCCLibrary/GTCC Library-Prefix.pch";
+				INFOPLIST_FILE = "GTCCLibrary/GTCC Library-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
 				);
 				OTHER_LDFLAGS = "-licucore";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "GTCC Library";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -713,7 +713,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		26AAAEFD159C473E003AEF83 /* Build configuration list for PBXProject "GTCCLibrary" */ = {
+		26AAAEFD159C473E003AEF83 /* Build configuration list for PBXProject "GTCC Library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26AAAF22159C473F003AEF83 /* Debug */,
@@ -722,7 +722,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		26AAAF24159C473F003AEF83 /* Build configuration list for PBXNativeTarget "GTCCLibrary" */ = {
+		26AAAF24159C473F003AEF83 /* Build configuration list for PBXNativeTarget "GTCC Library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				26AAAF25159C473F003AEF83 /* Debug */,
