@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1179"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -47,7 +47,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="loginCell" id="qpw-EQ-uvb">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="loginCell1" id="qpw-EQ-uvb">
                                         <rect key="frame" x="0.0" y="91" width="328" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -265,7 +265,6 @@
         <!--Book Detail View Controller-->
         <scene sceneID="VAp-WA-9g8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5oZ-GS-7Nv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="95H-zh-8dq" customClass="BookDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1oQ-5Q-kWX">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
@@ -405,6 +404,7 @@
                         <outlet property="theImage" destination="cRN-WA-Jry" id="Jhf-Ai-AzC"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oZ-GS-7Nv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3432" y="300"/>
         </scene>
@@ -519,7 +519,6 @@
         <!--Navigation Controller - GTCC Library-->
         <scene sceneID="cDR-nP-gzV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FpZ-Co-Y2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="aCk-wc-W2i" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="GTCC Library" image="store.png" id="Jro-ix-pA4"/>
                     <toolbarItems/>
@@ -532,6 +531,7 @@
                         <segue destination="NTX-Ic-qfG" kind="relationship" relationship="rootViewController" id="qrq-IQ-Gjr"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FpZ-Co-Y2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2517" y="308"/>
         </scene>

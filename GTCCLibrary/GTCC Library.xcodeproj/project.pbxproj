@@ -106,10 +106,10 @@
 		26AAAF07159C473E003AEF83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		26AAAF09159C473E003AEF83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26AAAF0B159C473E003AEF83 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		26AAAF0F159C473F003AEF83 /* GTCC Library-Info.plist */ = {isa = PBXFileReference; path = "GTCC Library-Info.plist"; sourceTree = "<group>"; };
+		26AAAF0F159C473F003AEF83 /* GTCC Library-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GTCC Library-Info.plist"; sourceTree = "<group>"; };
 		26AAAF11159C473F003AEF83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26AAAF13159C473F003AEF83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		26AAAF15159C473F003AEF83 /* GTCC Library-Prefix.pch */ = {isa = PBXFileReference; path = "GTCC Library-Prefix.pch"; sourceTree = "<group>"; };
+		26AAAF15159C473F003AEF83 /* GTCC Library-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GTCC Library-Prefix.pch"; sourceTree = "<group>"; };
 		26AAAF16159C473F003AEF83 /* GTCCLibraryAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTCCLibraryAppDelegate.h; sourceTree = "<group>"; };
 		26AAAF17159C473F003AEF83 /* GTCCLibraryAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTCCLibraryAppDelegate.m; sourceTree = "<group>"; };
 		26AAAF1A159C473F003AEF83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -557,7 +557,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ] || [ \"${PLATFORM_NAME}\" == \"ipados\" ]; then\n/Applications/Xcode.app/Contents/Developer/iphoneentitlements/gen_entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -677,17 +677,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YANGPING WU (4KDDL8B8PK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GTCCLibrary/GTCC Library-Prefix.pch";
 				INFOPLIST_FILE = "GTCCLibrary/GTCC Library-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-licucore";
 				"OTHER_LDFLAGS[arch=*]" = "-licucore";
 				PRODUCT_NAME = "GTCC Library";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B69B1A2A-9361-4C51-8D50-09AB60FF9C62";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -700,10 +703,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GTCCLibrary/GTCC Library-Prefix.pch";
 				INFOPLIST_FILE = "GTCCLibrary/GTCC Library-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "GTCC Library";
 				WRAPPER_EXTENSION = app;
