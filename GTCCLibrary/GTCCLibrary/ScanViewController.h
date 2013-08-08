@@ -22,11 +22,11 @@
 @property (nonatomic, retain) IBOutlet UILabel *resultText;
 
 @property (weak, nonatomic) IBOutlet UILabel *bookTitle;
-@property (weak, nonatomic) IBOutlet UILabel *bookAuthor;
-@property (weak, nonatomic) IBOutlet UILabel *bookPublishedBy;
-@property (weak, nonatomic) IBOutlet UILabel *bookPublishedYear;
-@property (weak, nonatomic) IBOutlet UILabel *bookPage;
-@property (weak, nonatomic) IBOutlet UILabel *bookPrice;
+@property (weak, nonatomic) IBOutlet UITextField *bookAuthor;
+@property (weak, nonatomic) IBOutlet UITextField *bookPublishedBy;
+@property (weak, nonatomic) IBOutlet UITextField *bookPublishedYear;
+@property (weak, nonatomic) IBOutlet UITextField *bookPage;
+@property (weak, nonatomic) IBOutlet UITextField *bookPrice;
 @property (weak, nonatomic) IBOutlet UIImageView *bookImage;
 @property (retain, nonatomic) IBOutlet UITextView *bookDesc;
 
