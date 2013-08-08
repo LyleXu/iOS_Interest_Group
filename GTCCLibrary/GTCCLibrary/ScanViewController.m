@@ -28,7 +28,8 @@
 @synthesize bookPublishedYear;
 @synthesize bookPage;
 @synthesize bookPrice;
-@synthesize resultImage, resultText;
+@synthesize resultImage;
+@synthesize resultISBN;
 @synthesize tmpDesc;
 @synthesize picUrl;
 UITextField *bookTagTextfield;
@@ -57,7 +58,7 @@ UITextField *bookTagTextfield;
 - (void)loadBookInfoFromWeb
 {
     // Search the barcode on the network
-    NSString* url = [[NSString alloc] initWithFormat:@"%@%@/",DouBanAPI,resultText.text];
+    NSString* url = [[NSString alloc] initWithFormat:@"%@%@/",DouBanAPI,resultISBN.text];
     NSMutableString* response = [DataLayer FetchDataFromWebByGet:url];
     
 //    NSString *bookTitleRegexString = @"<span property=\"v:itemreviewed\">(.*)</span>";
@@ -121,7 +122,7 @@ UITextField *bookTagTextfield;
         break;
     
     // EXAMPLE: do something useful with the barcode data
-    resultText.text = symbol.data;
+    resultISBN.text = symbol.data;
     
     // EXAMPLE: do something useful with the barcode image
     //resultImage.image =

@@ -212,8 +212,10 @@
                         <outlet property="bookPage" destination="pSJ-7J-bv7" id="WhX-co-vKd"/>
                         <outlet property="bookPrice" destination="Q73-TI-0rb" id="PoT-lA-VJh"/>
                         <outlet property="bookPublishedBy" destination="gKw-4C-E9n" id="fUs-cH-NVO"/>
-                        <outlet property="bookPublishedYear" destination="Wy0-Sa-Lqt" id="XsH-7x-2df"/>
+                        <outlet property="bookPublishedYear" destination="qUM-wq-YIO" id="qPt-6T-R96"/>
                         <outlet property="bookTitle" destination="dPA-5b-ZFK" id="Kt8-H7-6Dl"/>
+                        <outlet property="resultISBN" destination="be0-k0-Mki" id="Tq3-9Y-v1w"/>
+                        <outlet property="resultText" destination="be0-k0-Mki" id="cuy-3N-mDI"/>
                         <outlet property="scrollView" destination="dDR-Jo-MbF" id="MGP-U2-h6O"/>
                         <outlet property="view" destination="AkO-qt-U39" id="MkH-Rm-C1A"/>
                     </connections>
@@ -604,6 +606,73 @@
         <image name="tab_isbn.png" width="23" height="18"/>
         <image name="unisys_logo.jpg" width="513" height="161"/>
     </resources>
+    <classes>
+        <class className="BookDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BookDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="authorName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookISBN" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookPrice" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookTag" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bookTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="borrowButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="descTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="printLength" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="publishedDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="publisher" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="theImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="BookstoreTVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BookstoreTVC.h"/>
+        </class>
+        <class className="GTCCTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GTCCTabBarController.h"/>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Login:"/>
+                <relationship kind="outlet" name="btnCancel" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnLogin" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="loginTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MyLiraryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyLiraryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bookInfoView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="bookTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="borrowDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="borrowDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="infoView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="noBookLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="planReturnDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="planReturnDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="smileImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ScanViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ScanViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addBookToServer"/>
+                <relationship kind="outlet" name="bookAuthor" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bookDesc" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="bookImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="bookPage" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bookPrice" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bookPublishedBy" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bookPublishedYear" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="bookTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="resultISBN" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="resultImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

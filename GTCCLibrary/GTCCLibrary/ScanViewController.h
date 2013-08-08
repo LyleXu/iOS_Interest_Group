@@ -19,7 +19,8 @@
 }
 @property (nonatomic, retain) IBOutlet UIImageView *resultImage;
 
-@property (nonatomic, retain) IBOutlet UILabel *resultText;
+
+@property (weak, nonatomic) IBOutlet UITextField *resultISBN;
 
 @property (weak, nonatomic) IBOutlet UILabel *bookTitle;
 @property (weak, nonatomic) IBOutlet UITextField *bookAuthor;
