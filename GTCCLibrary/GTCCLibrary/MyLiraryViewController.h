@@ -24,5 +24,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *planReturnDateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *smileImage;
 @property (weak, nonatomic) IBOutlet UILabel *noBookLabel;
+@property (strong, nonatomic) IBOutlet UIView *bookInfoView;
 
 @end

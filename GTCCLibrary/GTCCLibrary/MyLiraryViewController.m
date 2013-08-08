@@ -9,6 +9,7 @@
 #import "MyLiraryViewController.h"
 #import "Utility.h"
 #import "DataLayer.h"
+#import <QuartzCore/QuartzCore.h>
 @interface MyLiraryViewController ()
 
 @end
@@ -25,6 +26,7 @@
 @synthesize planReturnDateLabel;
 @synthesize smileImage;
 @synthesize noBookLabel;
+@synthesize bookInfoView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -63,6 +65,10 @@
         imageView.image = [Utility getImageFromUrl:history.ISBN];
         borrowDate.text = history.borrowDate;
         planReturnDate.text = history.planReturnDate;
+        
+        self.bookInfoView.layer.borderWidth = 5.0f;
+        self.bookInfoView.layer.borderColor = [[UIColor grayColor] CGColor];
+        self.bookInfoView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     }else
     {
         

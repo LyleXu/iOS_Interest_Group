@@ -36,7 +36,7 @@
     NSError *theError = nil;   
    
     NSString* jsonString = [self GetJsonString:serviceName methodName:methodName parameters:parameters];
-    
+    NSLog(@"%@",jsonString);
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     
     NSString* serverURL = [[NSString alloc] initWithFormat:@"%@%@",ServerHost,ServiceAddress];
@@ -51,35 +51,11 @@
     return jsonDictionaryResponse;
 }
 
-
-
-+(id) GetValueByKey:(NSDictionary*) dictionary 
-                keyName:(NSString*) keyName
-{
-    NSArray *keys;
-    int i, count;
-    id key, value;
-    
-    keys = [dictionary allKeys];
-    count = [keys count];
-    for (i = 0; i < count; i++)
-    {
-        key = [keys objectAtIndex: i];
-        if([key isEqual:keyName])
-        {
-            value = [dictionary objectForKey: key];
-            return value;
-        }
-    }
-    return nil;
-
-}
-
 //Array of CBook
 + (NSMutableArray*) GetAllBooks
 {
     NSDictionary* result = [self FetchData:@"BookService" methodName:@"GetAllBooks" parameters:nil];
-    NSDictionary* datas = [self GetValueByKey:result keyName:@"Books"];
+    NSDictionary* datas = [result valueForKey:@"Books"];
     
     NSMutableArray *AllBooks = [NSMutableArray array];
     
@@ -100,11 +76,12 @@
 {
     NSArray* parameters = [NSArray arrayWithObjects: userName, password, nil];
     NSDictionary* result = [self FetchData:@"LoginService" methodName:@"Login" parameters:parameters];
-    NSInteger value = [[self GetValueByKey:result keyName:@"_returnCode"] integerValue];
+    NSInteger value = [[result valueForKey:@"_returnCode"] integerValue];
     if(value == 0)
     {
         return true;
-    }else
+    }
+    else
     {
         return false;
     }
@@ -115,7 +92,7 @@
 {
     NSArray* parameters = [NSArray arrayWithObjects: username, bookBianhao, nil];
     NSDictionary* result = [self FetchData:@"BorrowService" methodName:@"Borrow" parameters:parameters];
-    NSInteger value = [[self GetValueByKey:result keyName:@"_returnCode"] integerValue];
+    NSInteger value = [[result valueForKey:@"_returnCode"] integerValue];
     if(value == 0)
     {
         return true;
@@ -130,7 +107,7 @@
 {
     NSArray* parameters = [NSArray arrayWithObjects: username, bookBianhao, nil];
     NSDictionary* result = [self FetchData:@"BorrowService" methodName:@"ReturnBook" parameters:parameters];
-    NSInteger value = [[self GetValueByKey:result keyName:@"_returnCode"] integerValue];
+    NSInteger value = [[result valueForKey:@"_returnCode"] integerValue];
     if(value == 0)
     {
         return true;
@@ -144,7 +121,7 @@
 {
     NSArray* parameters = [NSArray arrayWithObjects: bookBianhao, nil];
     NSDictionary* result = [self FetchData:@"BorrowService" methodName:@"checkWhetherBookInBorrow" parameters:parameters];
-    NSInteger value = [[self GetValueByKey:result keyName:@"_returnCode"] integerValue];
+    NSInteger value = [[result valueForKey:@"_returnCode"] integerValue];
     if(value == 0)
     {
         return true;
@@ -159,7 +136,7 @@
 {
     NSArray* parameters = [NSArray arrayWithObjects: username, nil];
     NSDictionary* result = [self FetchData:@"BorrowService" methodName:@"getBorrowInfo" parameters:parameters];
-    NSDictionary* datas = [self GetValueByKey:result keyName:@"borrowInfo"];
+    NSDictionary* datas = [result valueForKey:@"borrowInfo"];
     
     if(datas != [NSNull null] )
     {
@@ -191,7 +168,7 @@
                            bookInfo.publisher,bookInfo.publishedDate,@"",bookInfo.printLength,
                            bookInfo.ISBN,bookInfo.price,bookInfo.bookDescription,bookInfo.imageUrl, nil];
     NSDictionary* result = [self FetchData:@"BookService" methodName:@"AddBook" parameters:parameters];
-    NSInteger value = [[self GetValueByKey:result keyName:@"_returnCode"] integerValue];
+    NSInteger value = [[result valueForKey:@"_returnCode"] integerValue];
     return value;
 }
 

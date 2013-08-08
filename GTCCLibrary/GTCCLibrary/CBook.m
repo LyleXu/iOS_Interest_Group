@@ -14,16 +14,16 @@
 
 -(void) Parse:(NSDictionary*) data
 {
-    self.title = [data objectForKey:@"title"];
     self.bianhao = [data objectForKey:@"bianhao"];
-    self.author = [data objectForKey:@"author"];
-    self.publisher = [data objectForKey:@"publisher"];
-    self.publishedDate = [data objectForKey:@"publishedDate"];
-    self.language = [data objectForKey:@"language"];
-    self.printLength = [data objectForKey:@"printLength"];
-    self.ISBN = [data objectForKey:@"ISBN"];
-    self.price = [data objectForKey:@"price"];
-    self.imageUrl = [data objectForKey:@"imageUrl"];
-    self.bookDescription = [data objectForKey:@"bookDescription"];
+    self.title = [data objectForKey:@"title"] != [NSNull null] ? [data objectForKey:@"title"] : nil;
+    self.author = [data objectForKey:@"author"] != [NSNull null] ? [data objectForKey:@"author"] : nil;
+    self.publisher = [data objectForKey:@"publisher"] != [NSNull null] ? [data objectForKey:@"publisher"] : nil;
+    self.publishedDate = [data objectForKey:@"publishedDate"] != [NSNull null] ? [data objectForKey:@"publishedDate"] : nil;
+    self.language = [data objectForKey:@"language"] != [NSNull null] ? [data objectForKey:@"language"] : nil;
+    self.printLength = [data objectForKey:@"printLength"] != [NSNull null] ? [data objectForKey:@"printLength"] : nil;
+    self.ISBN = [data objectForKey:@"ISBN"] != [NSNull null] ? [data objectForKey:@"ISBN"] : nil;
+    self.price = [data objectForKey:@"price"] != [NSNull null] ? [data objectForKey:@"price"] : nil;
+    self.imageUrl = [data objectForKey:@"imageUrl"] != [NSNull null] ? [data objectForKey:@"imageUrl"] : nil;
+    self.bookDescription = [data objectForKey:@"bookDescription"] != [NSNull null] ? [data objectForKey:@"bookDescription"] : nil;
 }
 @end
