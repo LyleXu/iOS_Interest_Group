@@ -21,8 +21,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UITextField *resultISBN;
+@property (weak, nonatomic) IBOutlet UITextField *bookTitle;
 
-@property (weak, nonatomic) IBOutlet UILabel *bookTitle;
 @property (weak, nonatomic) IBOutlet UITextField *bookAuthor;
 @property (weak, nonatomic) IBOutlet UITextField *bookPublishedBy;
 @property (weak, nonatomic) IBOutlet UITextField *bookPublishedYear;
@@ -38,4 +38,5 @@
 - (void) loadBookInfoFromWeb;
 - (void) updateDescription;
 - (IBAction)addBookToServer;
+-(void) handleTouchBookImage: (UIGestureRecognizer*) gesture;
 @end

@@ -14,6 +14,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Utility.h"
 #import "SBJson.h"
+#import "NSData+Base64.h"
 @interface ScanViewController ()
 
 @end
@@ -32,6 +33,9 @@
 @synthesize resultISBN;
 @synthesize tmpDesc;
 @synthesize picUrl;
+
+
+UIImagePickerController *picker;
 UITextField *bookTagTextfield;
 - (IBAction) scanButtonTapped
 {
@@ -57,89 +61,100 @@ UITextField *bookTagTextfield;
 
 - (void)loadBookInfoFromWeb
 {
-    // Search the barcode on the network
-    NSString* url = [[NSString alloc] initWithFormat:@"%@%@/",DouBanAPI,resultISBN.text];
-    NSMutableString* response = [DataLayer FetchDataFromWebByGet:url];
+    @try {
     
-//    NSString *bookTitleRegexString = @"<span property=\"v:itemreviewed\">(.*)</span>";
-//    NSString *authorReg = @"作者</span>: \\s+<a href.+>(.*)</a>";
-//    NSString *publishedByReg = @"出版社:</span>\\s+(.*)<br/>";
-//    NSString *publishedYearReg = @"出版年:</span>(.*)<br/>";
-//    NSString *pageReg = @"页数:</span>(.*)<br/>";
-//    NSString *priceReg = @"定价:</span>(.*)<br/>";
-//    NSString *bookDescriptionReg = @"<div class=\"intro\">\n(.*)</div>";
-//    NSString *bookPicReg = @"img src=\"(.*)\" title=";
+        // Search the barcode on the network
+        NSString* url = [[NSString alloc] initWithFormat:@"%@%@/",DouBanAPI,resultISBN.text];
+        NSMutableString* response = [DataLayer FetchDataFromWebByGet:url];
+      
+        SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
+        NSError *error = nil;
+        NSDictionary* jsonObject = [jsonParser objectWithString:response error:&error];
+        jsonParser = nil;
+        bookTitle.text = [jsonObject objectForKey:@"title"];
+        NSArray* authors = [jsonObject objectForKey:@"author"];
+        bookAuthor.text = (NSString*)[authors objectAtIndex:0];
+        bookPublishedBy.text = [jsonObject objectForKey:@"publisher"];
+        bookPublishedYear.text = [jsonObject objectForKey:@"pubdate"];
+        bookPage.text = [jsonObject objectForKey:@"pages"];
+        bookPrice.text = [jsonObject objectForKey:@"price"]; 
+        
+        // image
+        picUrl = [jsonObject objectForKey:@"image"];
+        UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:picUrl]]];
+        bookImage.image = image;
+        
+        // description
+        tmpDesc = [jsonObject objectForKey:@"summary"];
+        
+        tmpDesc = [Utility replaceStringWithBlank:tmpDesc];
     
-//    bookTitle.text = [Utility replaceQuote:[response stringByMatching:bookTitleRegexString capture:1L]];
-//    bookAuthor.text = [response stringByMatching:authorReg capture:1L];
-//    bookPublishedBy.text = [response stringByMatching:publishedByReg capture:1L];
-//    bookPublishedYear.text = [response stringByMatching:publishedYearReg capture:1L];
-//    bookPage.text = [response stringByMatching:pageReg capture:1L];
-//    bookPrice.text = [response stringByMatching:priceReg capture:1L];
-  
-    SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
-    NSError *error = nil;
-    NSDictionary* jsonObject = [jsonParser objectWithString:response error:&error];
-    jsonParser = nil;
-    bookTitle.text = [jsonObject objectForKey:@"title"];
-    NSArray* authors = [jsonObject objectForKey:@"author"];
-    bookAuthor.text = (NSString*)[authors objectAtIndex:0];
-    bookPublishedBy.text = [jsonObject objectForKey:@"publisher"];
-    bookPublishedYear.text = [jsonObject objectForKey:@"pubdate"];
-    bookPage.text = [jsonObject objectForKey:@"pages"];
-    bookPrice.text = [jsonObject objectForKey:@"price"]; 
-    
-    // image
-    picUrl = [jsonObject objectForKey:@"image"];
-    UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:picUrl]]];
-    bookImage.image = image;
-    
-    // description
-    tmpDesc = [jsonObject objectForKey:@"summary"];
-    
-    tmpDesc = [Utility replaceStringWithBlank:tmpDesc];
-    
+    }
+    @catch (NSException *exception) {
+        [tmpDesc stringByAppendingString:exception.reason];
+    }
+        
     // update the UI on the main thread. but not know why I can update label and image on the thread
     [self performSelectorOnMainThread:@selector(updateDescription) withObject:nil waitUntilDone:false];
+}
+
+-(void) handleTouchBookImage: (UIGestureRecognizer*) gesture
+{
+    if(picker == nil)
+        picker = [[UIImagePickerController alloc] init];
+
+    picker.delegate = self;
+    picker.allowsEditing = NO;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentModalViewController:picker animated:YES];
 }
 
 -(void)updateDescription
 {
     self.bookDesc.text = tmpDesc;
-    
     self.scrollView.hidden = false;
 }
 
-- (void) imagePickerController: (UIImagePickerController*) reader
+- (void)  imagePickerController: (UIImagePickerController*) reader
  didFinishPickingMediaWithInfo: (NSDictionary*) info
 {
-    // ADD: get the decode results
-    id<NSFastEnumeration> results =
-    [info objectForKey: ZBarReaderControllerResults];
-    ZBarSymbol *symbol = nil;
-    for(symbol in results)
-        // EXAMPLE: just grab the first barcode
-        break;
-    
-    // EXAMPLE: do something useful with the barcode data
-    resultISBN.text = symbol.data;
-    
-    // EXAMPLE: do something useful with the barcode image
-    //resultImage.image =
-    //[info objectForKey: UIImagePickerControllerOriginalImage];
-    
-    // ADD: dismiss the controller (NB dismiss from the *reader*!)
-    [reader dismissModalViewControllerAnimated: YES];
-    
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-	[self.navigationController.view addSubview:HUD];
-	
-	HUD.delegate = self;
-	HUD.labelText = @"Loading";
-	HUD.detailsLabelText = @"Getting Book Info";
-	HUD.square = YES;
-	
-	[HUD showWhileExecuting:@selector(loadBookInfoFromWeb) onTarget:self withObject:nil animated:YES];
+    if ([reader isKindOfClass: [UIImagePickerController class]])
+    {
+        [reader dismissModalViewControllerAnimated:YES];
+        self.scrollView.hidden = false;
+        UIImage *image = [info valueForKey:@"UIImagePickerControllerOriginalImage"];
+        self.bookImage.image = image;
+    }
+    else
+    {
+        // ADD: get the decode results
+        id<NSFastEnumeration> results =
+        [info objectForKey: ZBarReaderControllerResults];
+        ZBarSymbol *symbol = nil;
+        for(symbol in results)
+            // EXAMPLE: just grab the first barcode
+            break;
+        
+        // EXAMPLE: do something useful with the barcode data
+        resultISBN.text = symbol.data;
+        
+        // EXAMPLE: do something useful with the barcode image
+        //resultImage.image =
+        //[info objectForKey: UIImagePickerControllerOriginalImage];
+        
+        // ADD: dismiss the controller (NB dismiss from the *reader*!)
+        [reader dismissModalViewControllerAnimated: YES];
+        
+        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:HUD];
+        
+        HUD.delegate = self;
+        HUD.labelText = @"Loading";
+        HUD.detailsLabelText = @"Getting Book Info";
+        HUD.square = YES;
+        
+        [HUD showWhileExecuting:@selector(loadBookInfoFromWeb) onTarget:self withObject:nil animated:YES];
+    }
 }
 
 -(void)addBookToServer
@@ -148,6 +163,17 @@ UITextField *bookTagTextfield;
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
     
+}
+
+- (UIImage*)imageWithImage:(UIImage*)image
+              scaledToSize:(CGSize)newSize;
+{
+    UIGraphicsBeginImageContext( newSize );
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -171,10 +197,12 @@ UITextField *bookTagTextfield;
     bookInfo.publisher = bookPublishedBy.text;
     bookInfo.publishedDate = bookPublishedYear.text;
     bookInfo.printLength = (NSNumber*)bookPage.text;
-    bookInfo.imageUrl = picUrl;
+    //bookInfo.imageUrl = picUrl;
     bookInfo.price = bookPrice.text;
     bookInfo.bookDescription = bookDesc.text;
-    bookInfo.ISBN = resultText.text;
+    bookInfo.ISBN = resultISBN.text;
+    NSData * imageData = UIImageJPEGRepresentation([self imageWithImage:bookImage.image scaledToSize:CGSizeMake(105.0f, 140.0f)],0.6);
+    bookInfo.imageUrl = [imageData base64EncodedString];
     
     NSInteger returnCode = [DataLayer addBookToLibrary:bookInfo];
     if(returnCode == 0)
@@ -217,6 +245,12 @@ UITextField *bookTagTextfield;
     self.bookImage.layer.borderWidth = 2.0f;
     self.bookImage.layer.borderColor = [[UIColor grayColor] CGColor];
     self.bookImage.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    
+    // Add touch event gesture in BookImage
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTouchBookImage:)];
+    tapGesture.numberOfTapsRequired = 1;
+    tapGesture.numberOfTouchesRequired = 1;
+    [self.bookImage addGestureRecognizer:tapGesture];
     
     
     // Test Data
