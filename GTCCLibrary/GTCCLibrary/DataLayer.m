@@ -52,9 +52,11 @@
 }
 
 //Array of CBook
-+ (NSMutableArray*) GetAllBooks
++ (NSMutableArray*) GetAllBooks:(NSString*)offset
+                       count:(NSString*)count
 {
-    NSDictionary* result = [self FetchData:@"BookService" methodName:@"GetAllBooks" parameters:nil];
+    NSArray* parameters = [NSArray arrayWithObjects: offset, count, nil];
+    NSDictionary* result = [self FetchData:@"BookService" methodName:@"GetAllBooks" parameters:parameters];
     NSDictionary* datas = [result valueForKey:@"Books"];
     
     NSMutableArray *AllBooks = [NSMutableArray array];

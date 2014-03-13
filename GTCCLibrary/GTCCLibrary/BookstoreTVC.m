@@ -44,7 +44,11 @@
 {
     [super viewDidLoad];
     
-    _listData = [DataLayer GetAllBooks];
+    NSString* offset = @"0";
+    NSString* count = @"100";
+    _listData = [DataLayer GetAllBooks:offset count:count];
+    
+    //_listData = [DataLayer GetAllBooks];
     
     self.filteredListData = [NSMutableArray arrayWithCapacity:[self.listData count]];
     
@@ -206,7 +210,10 @@ CGCONTEXT_H_
 	//  put here just for demo
 	_reloading = YES;
     
-    _listData = [DataLayer GetAllBooks];
+    NSString* offset = @"0";
+    NSString* count = @"100";
+    _listData = [DataLayer GetAllBooks:offset count:count];
+    //_listData = [DataLayer GetAllBooks];
     
     self.filteredListData = [NSMutableArray arrayWithCapacity:[self.listData count]];
 }

@@ -14,7 +14,8 @@
 +(BOOL) Login:(NSString*)userName
 password:(NSString*)password;
 
-+(NSMutableArray*) GetAllBooks;
++(NSMutableArray*) GetAllBooks:(NSString*)offset
+                         count:(NSString*)count;
 +(BOOL) checkWhetherBookInBorrow:(NSString*) bookBianhao;
 +(BOOL) Borrow:(NSString*) username
    bookBianhao: (NSString*) bookBianhao;
