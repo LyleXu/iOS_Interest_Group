@@ -12,8 +12,8 @@
 #define USERNAME    @"USERNAME"
 //#define ServerHost @"http://192.168.23.1:8080/gtcclibrary/"
 //#define ServerHost @"http://localhost/~lylexu/gtcclibrary/"
-//#define ServerHost @"http://129.223.252.236/gtcclibrary/"
-#define ServerHost @"http://129.223.252.205:8080/gtcclibrary/"
+#define ServerHost @"http://129.223.252.236/gtcclibrary/"
+//#define ServerHost @"http://129.223.252.205:8080/gtcclibrary/"
 
 #define ServiceAddress @"amfphp/index.php"
 #define ServerImagePath @"Images/"    
