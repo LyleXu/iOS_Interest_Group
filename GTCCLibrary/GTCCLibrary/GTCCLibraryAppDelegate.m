@@ -8,26 +8,14 @@
 
 #import "GTCCLibraryAppDelegate.h"
 #import "LoginViewController.h"
-#import "GTCCTabBarController.h"
 
 @implementation GTCCLibraryAppDelegate
 
 @synthesize window = _window;
-@synthesize tabbarController = _tabbarController;
 @synthesize viewController;
-
--(GTCCTabBarController*)tabbarController
-{
-    if(_tabbarController == nil)
-    {
-        _tabbarController = [[GTCCTabBarController alloc] init];
-    }
-    return _tabbarController;
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	[self.window addSubview:self.tabbarController.view];
     [self.window addSubview:self.viewController.view];
     
     // Override point for customization after application launch.

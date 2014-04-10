@@ -52,11 +52,15 @@ UITextField *bookTagTextfield;
                    config: ZBAR_CFG_ENABLE
                        to: 0];
     
-    // present and release the controller
-    [self presentModalViewController: reader
-                            animated: YES];
-
-   
+    
+    @try {
+        // present and release the controller
+        [self presentModalViewController: reader
+                                animated: YES];
+    }
+    @catch (NSException *exception) {
+        [tmpDesc stringByAppendingString:exception.reason];
+    }
 }
 
 - (void)loadBookInfoFromWeb
@@ -227,13 +231,14 @@ UITextField *bookTagTextfield;
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.scrollView.hidden = true;
+    self.scrollView.hidden = true;    
     [self scanButtonTapped];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
     self.scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, 600.0f);
     self.scrollView.scrollEnabled = YES;

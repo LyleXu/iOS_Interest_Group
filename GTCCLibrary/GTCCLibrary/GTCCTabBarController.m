@@ -7,7 +7,8 @@
 //
 
 #import "GTCCTabBarController.h"
-
+#import "Utility.h"
+#import "ScanViewController.h"
 @implementation GTCCTabBarController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,13 +37,26 @@
 }
 */
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Remove the Scan tab if the user is not Admin
+    if(![@"admin" isEqualToString:[Utility getUsername ]])
+    {
+        NSMutableArray *navControllers = [NSMutableArray arrayWithArray: self. viewControllers];
+        for (id controller in navControllers) {
+            NSMutableArray *subcontrollers = [NSMutableArray arrayWithArray: [controller viewControllers]];
+            if([subcontrollers[0] isKindOfClass:[ScanViewController class]]){
+                    [navControllers removeObject:controller];
+                    break;
+            }
+        }
+        
+        [self  setViewControllers: navControllers ];
+    }
 }
-*/
 
 - (void)viewDidUnload
 {

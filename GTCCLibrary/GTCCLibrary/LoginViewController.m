@@ -207,7 +207,7 @@ static NSString *kViewKey = @"viewKey";
         [mydefault setObject:txtUser.text forKey:USERNAME];
         [mydefault synchronize];
         
-    	[self performSegueWithIdentifier:@"DoLogin" sender:self];
+        [self performSegueWithIdentifier:@"DoLogin" sender:self];
     }
     else{
         [Utility Alert:@"Login Failed" message:@"Please input correct username and password"];

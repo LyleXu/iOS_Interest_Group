@@ -9,12 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @class LoginViewController;
-@class GTCCTabBarController;
 
 @interface GTCCLibraryAppDelegate : UIResponder <UIApplicationDelegate>
-
-
 @property (retain, nonatomic) UIWindow *window;
 @property (nonatomic, retain) IBOutlet LoginViewController *viewController;
-@property (nonatomic, retain) IBOutlet 	GTCCTabBarController *tabbarController;
+
 @end

@@ -64,12 +64,33 @@
                     <connections>
                         <outlet property="btnLogin" destination="6ja-NZ-mYP" id="e7a-0f-j14"/>
                         <outlet property="loginTableView" destination="Y7g-lo-2i1" id="BcP-KB-Izi"/>
-                        <segue destination="oPU-pn-kcy" kind="modal" identifier="DoLogin" id="ozB-cp-VB4"/>
+                        <segue destination="oPU-pn-kcy" kind="modal" identifier="DoLoginAdmin" modalTransitionStyle="flipHorizontal" animates="NO" id="jzs-AY-ERc"/>
+                        <segue destination="2VP-3E-9J3" kind="modal" identifier="DoLoginUnAdmin" id="Brm-HT-fkT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1174" y="258"/>
+            <point key="canvasLocation" x="1221" y="1152"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="r0y-1r-dNB">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="2VP-3E-9J3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="q4n-zd-Wcq"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="QMv-q5-hMP">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ZdU-Iz-O4v" kind="relationship" relationship="viewControllers" id="8ac-mH-Wel"/>
+                        <segue destination="2v2-YH-rsf" kind="relationship" relationship="viewControllers" id="4kV-Ob-RPG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kQB-9d-gbt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="2069"/>
         </scene>
         <!--Scan View Controller - Scan-->
         <scene sceneID="JTJ-t8-ALQ">
@@ -200,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ul-s2-e7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2959" y="1029"/>
+            <point key="canvasLocation" x="3007" y="1029"/>
         </scene>
         <!--BookstoreTVC - GTCC Library-->
         <scene sceneID="Sgm-vl-Wrs">
@@ -487,7 +508,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I79-pv-2Ht" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2904" y="-295"/>
+            <point key="canvasLocation" x="3020" y="-295"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sId-Kl-Z3W">
@@ -503,12 +524,12 @@
                     <connections>
                         <segue destination="b8F-vV-DeH" kind="relationship" relationship="viewControllers" id="SaG-lz-ZO9"/>
                         <segue destination="aCk-wc-W2i" kind="relationship" relationship="viewControllers" id="bbo-ss-TNy"/>
-                        <segue destination="nIr-6O-0SZ" kind="relationship" relationship="viewControllers" id="3B5-rW-Qbf"/>
+                        <segue destination="nIr-6O-0SZ" kind="relationship" relationship="viewControllers" id="eYt-iw-TGl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zNB-Qh-PtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1719" y="-124"/>
+            <point key="canvasLocation" x="1765" y="6"/>
         </scene>
         <!--Navigation Controller - GTCC Library-->
         <scene sceneID="cDR-nP-gzV">
@@ -546,7 +567,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gEs-MK-FYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2509" y="-311"/>
+            <point key="canvasLocation" x="2529" y="-295"/>
         </scene>
         <!--Navigation Controller - Scan-->
         <scene sceneID="BkN-QV-NIg">
@@ -554,6 +575,7 @@
                 <navigationController id="nIr-6O-0SZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Scan" image="tab_isbn.png" id="AWd-hj-dpe"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="H7p-8Q-K2F"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="bW2-eh-8jg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -566,6 +588,331 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSW-gY-e3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2493" y="1029"/>
+        </scene>
+        <!--My Lirary View Controller - My Book-->
+        <scene sceneID="Mpb-Yq-jmy">
+            <objects>
+                <viewController id="jKC-LR-M6c" customClass="MyLiraryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JxD-HG-05r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="mGQ-QC-wqP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="377"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="w3s-xZ-oMZ">
+                                        <rect key="frame" x="20" y="97" width="101" height="260"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Borrowed on:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="UVS-FV-u9c">
+                                        <rect key="frame" x="145" y="97" width="121" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BorrowDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="ctj-w0-jus">
+                                        <rect key="frame" x="145" y="137" width="121" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PlanReturnDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="a2G-ea-Tmk">
+                                        <rect key="frame" x="145" y="223" width="121" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please return before:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="eod-Cc-gUS">
+                                        <rect key="frame" x="145" y="178" width="139" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BookTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="j97-PM-hYj">
+                                        <rect key="frame" x="20" y="20" width="280" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="smile.jpeg" id="MFD-AT-MkT">
+                                <rect key="frame" x="40" y="83" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="You haven't borrowed any book." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" id="L1u-L7-qC8">
+                                <rect key="frame" x="20" y="234" width="280" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="My Book" id="5kU-CZ-BxX"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bookTitle" destination="j97-PM-hYj" id="uk8-jC-6Yb"/>
+                        <outlet property="borrowDate" destination="ctj-w0-jus" id="SYS-KN-dCq"/>
+                        <outlet property="borrowDateLabel" destination="UVS-FV-u9c" id="jdz-YD-USN"/>
+                        <outlet property="imageView" destination="w3s-xZ-oMZ" id="Etv-d0-ls9"/>
+                        <outlet property="infoView" destination="mGQ-QC-wqP" id="S7G-V3-a1V"/>
+                        <outlet property="noBookLabel" destination="L1u-L7-qC8" id="aVY-yy-akB"/>
+                        <outlet property="planReturnDate" destination="a2G-ea-Tmk" id="rUE-Ra-geZ"/>
+                        <outlet property="planReturnDateLabel" destination="eod-Cc-gUS" id="v7d-d8-m4R"/>
+                        <outlet property="smileImage" destination="MFD-AT-MkT" id="RCx-Te-1mS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxN-Nw-Dbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3060" y="1701"/>
+        </scene>
+        <!--Navigation Controller - My Book-->
+        <scene sceneID="52P-DW-xUi">
+            <objects>
+                <navigationController id="ZdU-Iz-O4v" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Book" image="mybook.png" id="UnU-gr-xd8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rSV-BD-Awr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jKC-LR-M6c" kind="relationship" relationship="rootViewController" id="nbI-it-1a7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F0v-PK-gjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2517" y="1701"/>
+        </scene>
+        <!--BookstoreTVC - GTCC Library-->
+        <scene sceneID="84l-8z-OTl">
+            <objects>
+                <viewController id="AhD-kr-s9t" customClass="BookstoreTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zYZ-aR-hFC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="80P-Q8-V2n">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="AhD-kr-s9t" id="9y1-dH-QYh"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" id="yMb-Qq-gHW">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yMb-Qq-gHW" id="aZa-zA-0Dj">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="tgJ-RS-JWP" kind="push" identifier="BookDetail" id="1PF-oQ-tj2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="AhD-kr-s9t" id="cqg-bb-EEi"/>
+                            <outlet property="delegate" destination="AhD-kr-s9t" id="Ghy-Yo-W6e"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="GTCC Library" id="AP3-T1-QJ7"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="dmr-9C-qaP" id="1UG-qI-ZL3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q00-8k-SbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="w4c-gQ-bmX">
+                    <connections>
+                        <outlet property="delegate" destination="AhD-kr-s9t" id="pqQ-14-b8e"/>
+                        <outlet property="searchBar" destination="80P-Q8-V2n" id="W60-e0-W4U"/>
+                        <outlet property="searchContentsController" destination="AhD-kr-s9t" id="SNt-fL-rjK"/>
+                        <outlet property="searchResultsDataSource" destination="AhD-kr-s9t" id="5Cp-4m-BRA"/>
+                        <outlet property="searchResultsDelegate" destination="AhD-kr-s9t" id="bqh-jA-JQg"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="3060" y="2372"/>
+        </scene>
+        <!--Book Detail View Controller-->
+        <scene sceneID="3bf-rA-geG">
+            <objects>
+                <viewController id="tgJ-RS-JWP" customClass="BookDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Djg-PO-bRZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="no4-i3-JFc">
+                                <rect key="frame" x="0.0" y="113" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="0Qb-cV-b5R">
+                                        <rect key="frame" x="13" y="8" width="295" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="zRM-wk-sFW">
+                                        <rect key="frame" x="146" y="58" width="154" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Published By" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="ex8-Rf-tiZ">
+                                        <rect key="frame" x="146" y="82" width="154" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Published Year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="f5u-Au-vPy">
+                                        <rect key="frame" x="146" y="111" width="154" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dIT-fg-BiQ">
+                                        <rect key="frame" x="199" y="167" width="92" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="82P-nb-VYa">
+                                        <rect key="frame" x="199" y="196" width="92" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="rUb-vH-vDX">
+                                        <rect key="frame" x="199" y="225" width="109" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ISBN:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="q7r-J6-BFq">
+                                        <rect key="frame" x="146" y="138" width="45" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Page:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cVM-LX-MGT">
+                                        <rect key="frame" x="146" y="167" width="45" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="yKN-Zr-kgd">
+                                        <rect key="frame" x="146" y="196" width="44" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tag:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="JKo-94-AOr">
+                                        <rect key="frame" x="146" y="225" width="39" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="s1f-ze-77O">
+                                        <rect key="frame" x="13" y="58" width="119" height="159"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="DT6-cC-aMx">
+                                        <rect key="frame" x="13" y="244" width="92" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="7zu-S9-7aH">
+                                        <rect key="frame" x="199" y="140" width="109" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="nI3-KN-H88">
+                                        <rect key="frame" x="13" y="275" width="295" height="300"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="b0J-ih-Hux">
+                        <barButtonItem key="rightBarButtonItem" title="Borrow" id="hCB-BC-U46">
+                            <connections>
+                                <action selector="doBorrow:" destination="tgJ-RS-JWP" id="lNC-8l-U2R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="authorName" destination="zRM-wk-sFW" id="2TS-EE-xbn"/>
+                        <outlet property="bookISBN" destination="7zu-S9-7aH" id="d6g-Gf-1p7"/>
+                        <outlet property="bookPrice" destination="82P-nb-VYa" id="Dt8-y5-D7f"/>
+                        <outlet property="bookTag" destination="rUb-vH-vDX" id="9eG-pH-llm"/>
+                        <outlet property="bookTitle" destination="0Qb-cV-b5R" id="446-Rf-E5c"/>
+                        <outlet property="borrowButton" destination="hCB-BC-U46" id="tXH-cx-tWH"/>
+                        <outlet property="descTextView" destination="nI3-KN-H88" id="25E-OS-lhC"/>
+                        <outlet property="printLength" destination="dIT-fg-BiQ" id="f68-a6-5Bk"/>
+                        <outlet property="publishedDate" destination="f5u-Au-vPy" id="WM0-KM-nLQ"/>
+                        <outlet property="publisher" destination="ex8-Rf-tiZ" id="lWQ-CM-zwO"/>
+                        <outlet property="scrollView" destination="no4-i3-JFc" id="1CB-vs-HeT"/>
+                        <outlet property="theImage" destination="s1f-ze-77O" id="qPv-Zf-ARF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YPX-Ne-d3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3560" y="2364"/>
+        </scene>
+        <!--Navigation Controller - GTCC Library-->
+        <scene sceneID="5IZ-E8-3bY">
+            <objects>
+                <navigationController id="2v2-YH-rsf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="GTCC Library" image="store.png" id="Mtw-9L-ASv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="EAQ-yc-igv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AhD-kr-s9t" kind="relationship" relationship="rootViewController" id="Dzg-dg-HaM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NkZ-6b-YRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2517" y="2384"/>
         </scene>
     </scenes>
     <resources>
