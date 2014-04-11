@@ -508,7 +508,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zNB-Qh-PtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1719" y="-124"/>
+            <point key="canvasLocation" x="1703" y="258"/>
         </scene>
         <!--Navigation Controller - GTCC Library-->
         <scene sceneID="cDR-nP-gzV">

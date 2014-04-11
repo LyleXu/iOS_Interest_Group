@@ -45,7 +45,7 @@
     [super viewDidLoad];
     
     NSString* offset = @"0";
-    NSString* count = @"100";
+    NSString* count = @"";
     _listData = [DataLayer GetAllBooks:offset count:count];
     
     //_listData = [DataLayer GetAllBooks];
@@ -211,7 +211,7 @@ CGCONTEXT_H_
 	_reloading = YES;
     
     NSString* offset = @"0";
-    NSString* count = @"100";
+    NSString* count = @"";
     _listData = [DataLayer GetAllBooks:offset count:count];
     //_listData = [DataLayer GetAllBooks];
     
