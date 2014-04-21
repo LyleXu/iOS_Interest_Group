@@ -39,6 +39,8 @@
 		26BAD59715C2DADE00E4AC7F /* unisys_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */; };
 		26DFDC79160A0DAD002283E4 /* GTCCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */; };
 		6D9E3BD017BBD81000033D41 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E3BCF17BBD81000033D41 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6D9EC8811904DBE4004FE1AE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9EC8801904DBE4004FE1AE /* SettingViewController.m */; };
+		6D9EC8871904E28B004FE1AE /* setting.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D9EC8861904E28B004FE1AE /* setting.jpg */; };
 		7F9CDEB016B3F64C008FB818 /* smile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7F9CDEAF16B3F64C008FB818 /* smile.jpeg */; };
 		7F9E297816B4EFD4002FBDCC /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9E296E16B4EFD4002FBDCC /* EGORefreshTableHeaderView.m */; };
 		7F9E297916B4EFD4002FBDCC /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9E297016B4EFD4002FBDCC /* blackArrow.png */; };
@@ -129,6 +131,9 @@
 		26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTCCTabBarController.m; sourceTree = "<group>"; };
 		6D9E3BCE17BBD81000033D41 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		6D9E3BCF17BBD81000033D41 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		6D9EC87F1904DBE4004FE1AE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		6D9EC8801904DBE4004FE1AE /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		6D9EC8861904E28B004FE1AE /* setting.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setting.jpg; sourceTree = "<group>"; };
 		7F9CDEAF16B3F64C008FB818 /* smile.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smile.jpeg; sourceTree = "<group>"; };
 		7F9E296D16B4EFD4002FBDCC /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		7F9E296E16B4EFD4002FBDCC /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
@@ -273,6 +278,8 @@
 				7FF9E30E169DA50300DF4906 /* ScanViewController.h */,
 				7FF9E30F169DA50300DF4906 /* ScanViewController.m */,
 				26AAAF0E159C473F003AEF83 /* Supporting Files */,
+				6D9EC87F1904DBE4004FE1AE /* SettingViewController.h */,
+				6D9EC8801904DBE4004FE1AE /* SettingViewController.m */,
 			);
 			path = GTCCLibrary;
 			sourceTree = "<group>";
@@ -337,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				7FFB25E4169DA0380087F12F /* Icon-iPhone@2x.png */,
+				6D9EC8861904E28B004FE1AE /* setting.jpg */,
 				7F9CDEAF16B3F64C008FB818 /* smile.jpeg */,
 				7FA2291D16B00B3D0089FC75 /* tab_isbn.png */,
 				7FA2292316B034FE0089FC75 /* sync-1.png */,
@@ -531,6 +539,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D9EC8871904E28B004FE1AE /* setting.jpg in Resources */,
 				26AAAF12159C473F003AEF83 /* InfoPlist.strings in Resources */,
 				26AAAF1B159C473F003AEF83 /* MainStoryboard_iPhone.storyboard in Resources */,
 				26AAAF1E159C473F003AEF83 /* MainStoryboard_iPad.storyboard in Resources */,
@@ -586,6 +595,7 @@
 				2638D0C615C06A68000906BC /* NSObject+SBJson.m in Sources */,
 				2638D0C715C06A68000906BC /* SBJsonParser.m in Sources */,
 				2638D0C815C06A68000906BC /* SBJsonStreamParser.m in Sources */,
+				6D9EC8811904DBE4004FE1AE /* SettingViewController.m in Sources */,
 				2638D0C915C06A68000906BC /* SBJsonStreamParserAccumulator.m in Sources */,
 				2638D0CA15C06A68000906BC /* SBJsonStreamParserAdapter.m in Sources */,
 				2638D0CB15C06A68000906BC /* SBJsonStreamParserState.m in Sources */,

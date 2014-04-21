@@ -49,6 +49,13 @@
     return  [mydefault objectForKey:USERNAME];
 }
 
++(void)clearUserInfo
+{
+    NSUserDefaults *mydefault = [NSUserDefaults standardUserDefaults];
+    [mydefault setObject:@"" forKey:USERNAME];
+    [mydefault synchronize];
+}
+
 +(NSString *)getGUID
 {
     CFUUIDRef uuidObj = CFUUIDCreate(nil);

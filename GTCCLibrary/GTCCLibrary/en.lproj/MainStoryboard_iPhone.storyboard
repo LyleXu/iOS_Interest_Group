@@ -504,6 +504,7 @@
                         <segue destination="b8F-vV-DeH" kind="relationship" relationship="viewControllers" id="SaG-lz-ZO9"/>
                         <segue destination="aCk-wc-W2i" kind="relationship" relationship="viewControllers" id="bbo-ss-TNy"/>
                         <segue destination="nIr-6O-0SZ" kind="relationship" relationship="viewControllers" id="3B5-rW-Qbf"/>
+                        <segue destination="dQe-t4-L4y" kind="relationship" relationship="viewControllers" id="KEs-Iu-fdt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zNB-Qh-PtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -565,11 +566,77 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSW-gY-e3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2493" y="1029"/>
+            <point key="canvasLocation" x="2549" y="1037"/>
+        </scene>
+        <!--Navigation Controller - Setting-->
+        <scene sceneID="oSt-Ok-Q7D">
+            <objects>
+                <navigationController id="dQe-t4-L4y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Setting" image="setting.jpg" id="K78-4i-GMt"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Kuo-46-OCC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wJy-fE-HOW" kind="relationship" relationship="rootViewController" id="aMM-4C-hE2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o3Q-Ju-1Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2565" y="1749"/>
+        </scene>
+        <!--Setting View Controller - Setting-->
+        <scene sceneID="OWR-gt-fde">
+            <objects>
+                <viewController id="wJy-fE-HOW" customClass="SettingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ogB-Ge-coI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xgi-HV-dE9">
+                                <rect key="frame" x="139" y="118" width="161" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current User:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mOs-Rd-GQ6">
+                                <rect key="frame" x="20" y="118" width="111" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kPR-8U-h6k">
+                                <rect key="frame" x="134" y="383" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Logout:" destination="wJy-fE-HOW" eventType="touchUpInside" id="Rc6-qF-vJG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Setting" id="dvO-Fq-LwY"/>
+                    <connections>
+                        <outlet property="btnLogout" destination="kPR-8U-h6k" id="zZP-PB-v4s"/>
+                        <outlet property="lbl_UserName" destination="Xgi-HV-dE9" id="kp5-8Y-czm"/>
+                        <segue destination="2" kind="modal" identifier="DoLogout" modalTransitionStyle="coverVertical" id="nUT-ak-Siu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XA7-Tw-nEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3032" y="1769"/>
         </scene>
     </scenes>
     <resources>
         <image name="mybook.png" width="26" height="26"/>
+        <image name="setting.jpg" width="24" height="24"/>
         <image name="smile.jpeg" width="225" height="225"/>
         <image name="store.png" width="24" height="25"/>
         <image name="tab_isbn.png" width="23" height="18"/>
