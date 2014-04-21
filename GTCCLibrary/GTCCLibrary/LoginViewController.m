@@ -214,4 +214,9 @@ static NSString *kViewKey = @"viewKey";
     }
 }
 
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
 @end

@@ -105,10 +105,11 @@
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (BOOL)shouldAutorotate
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return NO;
 }
+
 - (void)doReturnBook
 {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure to return the book?"

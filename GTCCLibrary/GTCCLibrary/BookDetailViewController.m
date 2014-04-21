@@ -110,9 +110,9 @@
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (BOOL)shouldAutorotate
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return NO;
 }
 
 - (void)doBorrow {

@@ -68,7 +68,7 @@ UITextField *bookTagTextfield;
     @try {
     
         // Search the barcode on the network
-        NSString* url = [[NSString alloc] initWithFormat:@"%@%@/",DouBanAPI,resultISBN.text];
+        NSString* url = [[NSString alloc] initWithFormat:@"%@%@",DouBanAPI,resultISBN.text];
         NSMutableString* response = [DataLayer FetchDataFromWebByGet:url];
       
         SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
@@ -77,7 +77,14 @@ UITextField *bookTagTextfield;
         jsonParser = nil;
         bookTitle.text = [jsonObject objectForKey:@"title"];
         NSArray* authors = [jsonObject objectForKey:@"author"];
-        bookAuthor.text = (NSString*)[authors objectAtIndex:0];
+        if (authors.count > 0) {
+            bookAuthor.text = (NSString*)[authors objectAtIndex:0];
+        }
+        else
+        {
+            bookAuthor.text = @"";
+        }
+        
         bookPublishedBy.text = [jsonObject objectForKey:@"publisher"];
         bookPublishedYear.text = [jsonObject objectForKey:@"pubdate"];
         bookPage.text = [jsonObject objectForKey:@"pages"];
@@ -290,9 +297,9 @@ UITextField *bookTagTextfield;
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (BOOL)shouldAutorotate
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return NO;
 }
 
 @end
