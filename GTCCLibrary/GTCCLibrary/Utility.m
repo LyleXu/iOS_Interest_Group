@@ -7,11 +7,13 @@
 //
 
 #import "Utility.h"
+@interface Utility ()
 
+@end
 
 
 @implementation Utility
-
+static NSDictionary* category;
 +(NSString*) replaceWhiteSpace:(NSString*) url
 {
     url = [url stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
@@ -63,6 +65,15 @@
     CFRelease(uuidObj);
     return (__bridge NSString*)newGUID ;
     
+}
+
++(NSDictionary*) getBookCategory
+{
+    if(category == nil)
+    {
+        category = [NSDictionary dictionaryWithObjectsAndKeys:@"Engineering", @"E", @"Foreign Languages", @"F", @"Management", @"M", @"Self-Improvement", @"S", @"Technical", @"T", @"Miscellaneous", @"Z",nil];
+    }
+    return category;
 }
 
 @end

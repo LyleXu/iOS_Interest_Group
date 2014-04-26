@@ -15,7 +15,7 @@
 	//  Putting it here for demo purposes 
 	BOOL _reloading;
 }
-@property (nonatomic,strong) NSArray * listData;
+@property (nonatomic,strong) NSMutableDictionary * listData;
 @property (nonatomic, retain) NSMutableArray *filteredListData;           
 @property (nonatomic, assign) BOOL isSearching;
 - (void)reloadTableViewDataSource;

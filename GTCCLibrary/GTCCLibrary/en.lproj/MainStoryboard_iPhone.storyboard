@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -202,7 +202,7 @@
             </objects>
             <point key="canvasLocation" x="2959" y="1029"/>
         </scene>
-        <!--BookstoreTVC - GTCC Library-->
+        <!--BookstoreTVC - Library-->
         <scene sceneID="Sgm-vl-Wrs">
             <objects>
                 <viewController id="NTX-Ic-qfG" customClass="BookstoreTVC" sceneMemberID="viewController">
@@ -238,7 +238,7 @@
                             <outlet property="delegate" destination="NTX-Ic-qfG" id="DgJ-n8-3Bw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="GTCC Library" id="WfU-lK-jsX"/>
+                    <navigationItem key="navigationItem" title="Library" id="WfU-lK-jsX"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="dmr-9C-qaP" id="Lfh-HH-rnr"/>
                     </connections>
@@ -511,11 +511,12 @@
             </objects>
             <point key="canvasLocation" x="1703" y="258"/>
         </scene>
-        <!--Navigation Controller - GTCC Library-->
+        <!--Navigation Controller - Library-->
         <scene sceneID="cDR-nP-gzV">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FpZ-Co-Y2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="aCk-wc-W2i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="GTCC Library" image="store.png" id="Jro-ix-pA4"/>
+                    <tabBarItem key="tabBarItem" title="Library" image="store.png" id="Jro-ix-pA4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="nif-Sb-wkb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -526,13 +527,13 @@
                         <segue destination="NTX-Ic-qfG" kind="relationship" relationship="rootViewController" id="qrq-IQ-Gjr"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FpZ-Co-Y2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2517" y="308"/>
         </scene>
         <!--Navigation Controller - My Book-->
         <scene sceneID="myk-Go-wnY">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gEs-MK-FYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="b8F-vV-DeH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Book" image="mybook.png" id="D44-Zf-24u"/>
                     <toolbarItems/>
@@ -545,13 +546,13 @@
                         <segue destination="7Jz-pP-U5k" kind="relationship" relationship="rootViewController" id="tKr-9B-bme"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gEs-MK-FYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2509" y="-311"/>
         </scene>
         <!--Navigation Controller - Scan-->
         <scene sceneID="BkN-QV-NIg">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zSW-gY-e3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="nIr-6O-0SZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Scan" image="tab_isbn.png" id="AWd-hj-dpe"/>
                     <toolbarItems/>
@@ -564,13 +565,13 @@
                         <segue destination="Q5Y-Ji-62j" kind="relationship" relationship="rootViewController" id="C6S-dz-KW2"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zSW-gY-e3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2549" y="1037"/>
         </scene>
         <!--Navigation Controller - Setting-->
         <scene sceneID="oSt-Ok-Q7D">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o3Q-Ju-1Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="dQe-t4-L4y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Setting" image="setting.jpg" id="K78-4i-GMt"/>
                     <toolbarItems/>
@@ -584,7 +585,6 @@
                         <segue destination="wJy-fE-HOW" kind="relationship" relationship="rootViewController" id="aMM-4C-hE2"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o3Q-Ju-1Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2565" y="1749"/>
         </scene>

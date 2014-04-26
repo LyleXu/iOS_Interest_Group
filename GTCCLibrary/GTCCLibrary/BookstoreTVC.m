@@ -20,6 +20,43 @@
 @synthesize filteredListData = _filteredListData;
 @synthesize isSearching;
 
+-(NSMutableDictionary*)listData
+{
+    if(_listData == nil)
+    {
+        NSString* offset = @"0";
+        NSString* count = @"";      // empty means that we get all books
+        NSMutableArray* tempAllBooks = [DataLayer GetAllBooks:offset count:count];
+        _listData = [[NSMutableDictionary alloc] init];
+        
+        
+        NSString* sectionKey = nil;
+        // prepare the sections
+        for (CBook* book in tempAllBooks) {
+            // Get the first character from book tag
+            if(book.bianhao != [NSNull null] && [book.bianhao length] > 0)
+            {
+                NSString* firstLetter = [book.bianhao substringWithRange: NSMakeRange(0, 1)];
+                sectionKey = [[Utility getBookCategory] objectForKey:firstLetter];
+                if (sectionKey) {
+                    NSMutableArray* object = [_listData objectForKey:sectionKey];
+                    if(object)
+                    {
+                        [object addObject:book];
+                    }else
+                    {
+                        NSMutableArray* array = [[NSMutableArray alloc] init];
+                        [array addObject:book];
+                        [_listData setObject:array forKey:sectionKey];
+                    }
+                }
+                
+            }
+        }
+    }
+    return _listData;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -44,11 +81,7 @@
 {
     [super viewDidLoad];
     
-    NSString* offset = @"0";
-    NSString* count = @"";
-    _listData = [DataLayer GetAllBooks:offset count:count];
-    
-    //_listData = [DataLayer GetAllBooks];
+    self.edgesForExtendedLayout = UIRectEdgeNone;   // otherise, section header won't float in iOS7
     
     self.filteredListData = [NSMutableArray arrayWithCapacity:[self.listData count]];
     
@@ -86,16 +119,17 @@
     
     if ([segue.identifier isEqualToString:@"BookDetail"]) {
 
-        NSUInteger rowIndex = [[self.tableView indexPathForSelectedRow] row];
-        CBook* book = nil;
-        if(isSearching)
-        {
-            book = [self.filteredListData objectAtIndex:rowIndex];
-        }else {
-            book = [self.listData objectAtIndex:rowIndex];
-        }
-        BookDetailViewController* controller = segue.destinationViewController;
-        controller.bookInfo = book;
+//        NSUInteger rowIndex = [[self.tableView indexPathForSelectedRow] row];
+//        CBook* book = nil;
+//        if(isSearching)
+//        {
+//            book = [self.filteredListData objectAtIndex:rowIndex];
+//        }else {
+//            
+//            book = [self.listData objectAtIndex:rowIndex];
+//        }
+//        BookDetailViewController* controller = segue.destinationViewController;
+//        controller.bookInfo = book;
         
     }
      
@@ -104,17 +138,29 @@
 
 #pragma mark - Table view data source
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return [self.listData count];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
-        return [self.filteredListData count];
-    }
-	else
-	{
-        return [self.listData count];
-    }
+//	if (tableView == self.searchDisplayController.searchResultsTableView)
+//	{
+//        return [self.filteredListData count];
+//    }
+//	else
+//	{
+//        return [self.listData count];
+//    }
+    NSString *aSection = self.listData.allKeys[section];
+    id theData = self.listData[aSection];
+    return [theData count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return self.listData.allKeys[section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -135,7 +181,8 @@
     {
         book =  [self.filteredListData objectAtIndex:row];
     }else {
-        book = [self.listData objectAtIndex:row];
+        NSString *aSection = self.listData.allKeys[indexPath.section];
+        book = self.listData[aSection][indexPath.row];
     }
     
     cell.textLabel.text= book.title;
@@ -145,6 +192,26 @@
     
     return cell;
 }
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 30.0)];
+    /* Create custom view to display section header... */
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 30.0)];
+    [label setFont:[UIFont boldSystemFontOfSize:12]];
+    [label setBackgroundColor:[UIColor colorWithRed:166/255.0 green:177/255.0 blue:186/255.0 alpha:1.0]]; //your background
+    NSString *string =self.listData.allKeys[section];
+    [label setText:string];
+    [view addSubview:label];
+
+    return view;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    
+}
+
 CGCONTEXT_H_
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

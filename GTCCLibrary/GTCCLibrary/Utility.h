@@ -19,4 +19,5 @@
 +(NSString*) replaceQuote:(NSString*) source;
 +(NSString*) replaceStringWithBlank:(NSString*) source;
 +(void) clearUserInfo;
++(NSDictionary*) getBookCategory;
 @end
