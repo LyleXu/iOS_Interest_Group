@@ -13,7 +13,7 @@
 #import "DataLayer.h"
 #import "CBook.h"
 #import "Utility.h"
-
+#import "BookTableViewCell.h"
 @implementation BookstoreTVC
 
 @synthesize sectionNames = _sectionNames;
@@ -136,13 +136,27 @@
 
         NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
         
-        NSArray* model = isSearching ? self.filteredListData : self.sectionData;
+        NSArray* model = (self.tableView == self.searchDisplayController.searchResultsTableView) ? self.filteredListData : self.sectionData;
+        CBook* book = nil;
+        if(indexPath == nil)
+        {
+            for (NSArray* arr in model) {
+                for (CBook* item in arr) {
+                    if([((BookTableViewCell*)sender).lblTag.text isEqualToString: item.bianhao])
+                    {
+                        book = item;
+                        break;
+                    }
+                }
+            }
+        }else
+        {
+            book = model[indexPath.section][indexPath.row];
+        }
         
-        CBook* book = model[indexPath.section][indexPath.row];
-        
-        BookDetailViewController* controller = segue.destinationViewController;
-        controller.bookInfo = book;
-        
+         BookDetailViewController* controller = segue.destinationViewController;
+         controller.bookInfo = book;
+
     }
      
 }
@@ -167,24 +181,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString * tableIdentifier=@"CellIdentifier";
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+    NSString * tableIdentifier=@"BookCell";
+    BookTableViewCell *cell=[self.tableView dequeueReusableCellWithIdentifier:tableIdentifier];
 
     if(cell==nil)
     {
         // first load
-        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
-        
+        cell=[[BookTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     
     NSArray* model = (tableView == self.searchDisplayController.searchResultsTableView) ? self.filteredListData : self.sectionData;
     
     CBook* book = model[indexPath.section][indexPath.row];
     
-    cell.textLabel.text= book.title;
+    cell.lblTitle.text = book.title;
+    cell.lblTag.text = book.bianhao;
     
     UIImage * imageFromURL = [Utility getImageFromUrl:book.ISBN];
-    cell.imageView.image=imageFromURL;
+    cell.imageView.image = imageFromURL;
     
     return cell;
 }
@@ -203,21 +217,8 @@
     return view;
 }
 
-
-CGCONTEXT_H_
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-	/*
-	 If the requesting table view is the search display controller's table view, configure the next view controller using the filtered content, otherwise use the main list.
-	 */
-	if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
-        isSearching = true;
-        [self performSegueWithIdentifier:@"BookDetail" sender:self];
-    }else {
-        isSearching = false;
-    }
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;  // othereise, the search result tableview cell cannot display correctly
 }
 
 #pragma mark - Table view delegate
@@ -255,6 +256,7 @@ CGCONTEXT_H_
     // Return YES to cause the search result table view to be reloaded.
     return YES;
 }
+
 
 #pragma mark -
 #pragma mark Data Source Loading / Reloading Methods

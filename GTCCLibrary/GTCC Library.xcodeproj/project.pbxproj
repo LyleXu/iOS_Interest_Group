@@ -41,6 +41,8 @@
 		6D9E3BD017BBD81000033D41 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E3BCF17BBD81000033D41 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6D9EC8811904DBE4004FE1AE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9EC8801904DBE4004FE1AE /* SettingViewController.m */; };
 		6D9EC8871904E28B004FE1AE /* setting.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D9EC8861904E28B004FE1AE /* setting.jpg */; };
+		7F1B6929190D2AF500530A96 /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1B6928190D2AF500530A96 /* BookTableViewCell.m */; };
+		7F1B692B190D32A500530A96 /* notAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1B692A190D32A500530A96 /* notAvailable.png */; };
 		7F9CDEB016B3F64C008FB818 /* smile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7F9CDEAF16B3F64C008FB818 /* smile.jpeg */; };
 		7F9E297816B4EFD4002FBDCC /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F9E296E16B4EFD4002FBDCC /* EGORefreshTableHeaderView.m */; };
 		7F9E297916B4EFD4002FBDCC /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F9E297016B4EFD4002FBDCC /* blackArrow.png */; };
@@ -134,6 +136,9 @@
 		6D9EC87F1904DBE4004FE1AE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		6D9EC8801904DBE4004FE1AE /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		6D9EC8861904E28B004FE1AE /* setting.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setting.jpg; sourceTree = "<group>"; };
+		7F1B6927190D2AF500530A96 /* BookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookTableViewCell.h; path = ../BookTableViewCell.h; sourceTree = "<group>"; };
+		7F1B6928190D2AF500530A96 /* BookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookTableViewCell.m; path = ../BookTableViewCell.m; sourceTree = "<group>"; };
+		7F1B692A190D32A500530A96 /* notAvailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notAvailable.png; sourceTree = "<group>"; };
 		7F9CDEAF16B3F64C008FB818 /* smile.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = smile.jpeg; sourceTree = "<group>"; };
 		7F9E296D16B4EFD4002FBDCC /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		7F9E296E16B4EFD4002FBDCC /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
@@ -266,6 +271,8 @@
 				26AAAF1C159C473F003AEF83 /* MainStoryboard_iPad.storyboard */,
 				269F7E9F15A488D200D96F94 /* BookstoreTVC.h */,
 				269F7EA015A488D200D96F94 /* BookstoreTVC.m */,
+				7F1B6927190D2AF500530A96 /* BookTableViewCell.h */,
+				7F1B6928190D2AF500530A96 /* BookTableViewCell.m */,
 				26DFDC77160A0DAD002283E4 /* GTCCTabBarController.h */,
 				26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */,
 				26B513AB162EED8600ABB490 /* BookDetailViewController.h */,
@@ -343,6 +350,7 @@
 		26EAA74E15A47866000057C3 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				7F1B692A190D32A500530A96 /* notAvailable.png */,
 				7FFB25E4169DA0380087F12F /* Icon-iPhone@2x.png */,
 				6D9EC8861904E28B004FE1AE /* setting.jpg */,
 				7F9CDEAF16B3F64C008FB818 /* smile.jpeg */,
@@ -544,6 +552,7 @@
 				26AAAF1B159C473F003AEF83 /* MainStoryboard_iPhone.storyboard in Resources */,
 				26AAAF1E159C473F003AEF83 /* MainStoryboard_iPad.storyboard in Resources */,
 				26BAD59715C2DADE00E4AC7F /* unisys_logo.jpg in Resources */,
+				7F1B692B190D32A500530A96 /* notAvailable.png in Resources */,
 				7FFB25E3169D9E340087F12F /* store.png in Resources */,
 				7FFB25E5169DA0380087F12F /* Icon-iPhone@2x.png in Resources */,
 				7FFB2605169DA17E0087F12F /* zbar-back.png in Resources */,
@@ -598,6 +607,7 @@
 				6D9EC8811904DBE4004FE1AE /* SettingViewController.m in Sources */,
 				2638D0C915C06A68000906BC /* SBJsonStreamParserAccumulator.m in Sources */,
 				2638D0CA15C06A68000906BC /* SBJsonStreamParserAdapter.m in Sources */,
+				7F1B6929190D2AF500530A96 /* BookTableViewCell.m in Sources */,
 				2638D0CB15C06A68000906BC /* SBJsonStreamParserState.m in Sources */,
 				2638D0CC15C06A68000906BC /* SBJsonStreamWriter.m in Sources */,
 				2638D0CD15C06A68000906BC /* SBJsonStreamWriterAccumulator.m in Sources */,
