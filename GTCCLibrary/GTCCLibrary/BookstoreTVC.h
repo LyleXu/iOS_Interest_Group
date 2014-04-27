@@ -15,9 +15,11 @@
 	//  Putting it here for demo purposes 
 	BOOL _reloading;
 }
-@property (nonatomic,strong) NSMutableDictionary * listData;
-@property (nonatomic, retain) NSMutableArray *filteredListData;           
+@property (nonatomic,strong) NSMutableArray * sectionData;
+@property (nonatomic, retain) NSMutableArray *filteredListData;
+@property (nonatomic, retain) NSMutableArray *sectionNames;
 @property (nonatomic, assign) BOOL isSearching;
 - (void)reloadTableViewDataSource;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 - (void)doneLoadingTableViewData;
 @end

@@ -16,46 +16,58 @@
 
 @implementation BookstoreTVC
 
-@synthesize listData = _listData;
+@synthesize sectionNames = _sectionNames;
+@synthesize sectionData = _sectionData;
 @synthesize filteredListData = _filteredListData;
 @synthesize isSearching;
 
--(NSMutableDictionary*)listData
+-(NSMutableArray*)sectionData
 {
-    if(_listData == nil)
+    if(_sectionData == nil)
     {
-        NSString* offset = @"0";
-        NSString* count = @"";      // empty means that we get all books
-        NSMutableArray* tempAllBooks = [DataLayer GetAllBooks:offset count:count];
-        _listData = [[NSMutableDictionary alloc] init];
+        _sectionData = [[NSMutableArray alloc] init];
+        _sectionNames = [[NSMutableArray alloc] init];
         
+        NSMutableArray* allBooks = [DataLayer GetAllBooks:@"0" count:@""];
         
-        NSString* sectionKey = nil;
+        NSSortDescriptor *sortDescriptor;
+        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"bianhao"
+                                                     ascending:YES];
+        NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+        NSArray *sortedArray;
+        sortedArray = [allBooks sortedArrayUsingDescriptors:sortDescriptors];
+        
+        NSString* sectionName = nil;
+        NSString* previous = @"";
         // prepare the sections
-        for (CBook* book in tempAllBooks) {
+        for (CBook* book in sortedArray) {
             // Get the first character from book tag
-            if(book.bianhao != [NSNull null] && [book.bianhao length] > 0)
+            if([book.bianhao length] > 0)
             {
-                NSString* firstLetter = [book.bianhao substringWithRange: NSMakeRange(0, 1)];
-                sectionKey = [[Utility getBookCategory] objectForKey:firstLetter];
-                if (sectionKey) {
-                    NSMutableArray* object = [_listData objectForKey:sectionKey];
-                    if(object)
+                NSString* firstLetter = [book.bianhao substringToIndex:1];
+                sectionName = [[Utility getBookCategory] objectForKey:firstLetter];
+                
+                if(sectionName)
+                {
+                    if(![firstLetter isEqualToString: previous])
                     {
-                        [object addObject:book];
-                    }else
-                    {
-                        NSMutableArray* array = [[NSMutableArray alloc] init];
-                        [array addObject:book];
-                        [_listData setObject:array forKey:sectionKey];
+                        previous = firstLetter;
+                        [_sectionNames addObject: sectionName];
+                        // and in that case, also add a new subarray to our array of subarrays
+                        NSMutableArray* oneSection = [NSMutableArray array];
+                        [_sectionData addObject: oneSection];
                     }
+                    
+                    [[_sectionData lastObject] addObject: book];
                 }
                 
             }
+            
         }
     }
-    return _listData;
+    return _sectionData;
 }
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -83,7 +95,9 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;   // otherise, section header won't float in iOS7
     
-    self.filteredListData = [NSMutableArray arrayWithCapacity:[self.listData count]];
+    // Hide the searchbar, the user can pull to display the searchbar
+    self.tableView.tableHeaderView = self.searchBar;
+    self.tableView.contentOffset = CGPointMake(0, CGRectGetHeight(self.searchBar.bounds));
     
     if (_refreshHeaderView == nil) {
 		
@@ -104,8 +118,9 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     
-    self.listData = nil;
+    self.sectionData = nil;
     self.filteredListData = nil;
+    self.sectionNames = nil;
 }
 
 - (BOOL)shouldAutorotate
@@ -119,17 +134,14 @@
     
     if ([segue.identifier isEqualToString:@"BookDetail"]) {
 
-//        NSUInteger rowIndex = [[self.tableView indexPathForSelectedRow] row];
-//        CBook* book = nil;
-//        if(isSearching)
-//        {
-//            book = [self.filteredListData objectAtIndex:rowIndex];
-//        }else {
-//            
-//            book = [self.listData objectAtIndex:rowIndex];
-//        }
-//        BookDetailViewController* controller = segue.destinationViewController;
-//        controller.bookInfo = book;
+        NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
+        
+        NSArray* model = isSearching ? self.filteredListData : self.sectionData;
+        
+        CBook* book = model[indexPath.section][indexPath.row];
+        
+        BookDetailViewController* controller = segue.destinationViewController;
+        controller.bookInfo = book;
         
     }
      
@@ -139,33 +151,22 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    
-    return [self.listData count];
+    return [self.sectionData count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//	if (tableView == self.searchDisplayController.searchResultsTableView)
-//	{
-//        return [self.filteredListData count];
-//    }
-//	else
-//	{
-//        return [self.listData count];
-//    }
-    NSString *aSection = self.listData.allKeys[section];
-    id theData = self.listData[aSection];
-    return [theData count];
+    NSArray* model = (tableView == self.searchDisplayController.searchResultsTableView) ? self.filteredListData : self.sectionData;
+	return [model[section] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return self.listData.allKeys[section];
+    return self.sectionNames[section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSUInteger row=[indexPath row];
     NSString * tableIdentifier=@"CellIdentifier";
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
 
@@ -176,14 +177,9 @@
         
     }
     
-    CBook * book = nil;
-    if(tableView == self.searchDisplayController.searchResultsTableView)
-    {
-        book =  [self.filteredListData objectAtIndex:row];
-    }else {
-        NSString *aSection = self.listData.allKeys[indexPath.section];
-        book = self.listData[aSection][indexPath.row];
-    }
+    NSArray* model = (tableView == self.searchDisplayController.searchResultsTableView) ? self.filteredListData : self.sectionData;
+    
+    CBook* book = model[indexPath.section][indexPath.row];
     
     cell.textLabel.text= book.title;
     
@@ -200,17 +196,13 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 30.0)];
     [label setFont:[UIFont boldSystemFontOfSize:12]];
     [label setBackgroundColor:[UIColor colorWithRed:166/255.0 green:177/255.0 blue:186/255.0 alpha:1.0]]; //your background
-    NSString *string =self.listData.allKeys[section];
+    NSString *string =self.sectionNames[section];
     [label setText:string];
     [view addSubview:label];
 
     return view;
 }
 
--(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
-{
-    
-}
 
 CGCONTEXT_H_
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -235,24 +227,21 @@ CGCONTEXT_H_
 
 - (void)filterContentForSearchText:(NSString*)searchText
 {
-	/*
-	 Update the filtered array based on the search text and scope.
-	 */
-	
-	[self.filteredListData removeAllObjects]; // First clear the filtered array.
-	
-	/*
-	 Search the main list for products whose type matches the scope (if selected) and whose name matches searchText; add items that match to the filtered array.
-	 */
-	for (CBook *book in self.listData)
-	{
-
-        NSComparisonResult result = [book.title compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
-        if (result == NSOrderedSame)
-        {
-            [self.filteredListData addObject:book];
-        }
-	}
+    NSPredicate* p = [NSPredicate predicateWithBlock:
+                      ^BOOL(id obj, NSDictionary *d) {
+                          CBook* s = obj;
+                          NSStringCompareOptions options = NSCaseInsensitiveSearch;
+                          return ([s.title rangeOfString:searchText
+                                           options:options].location != NSNotFound);
+                      }];
+    NSMutableArray* filteredData = [NSMutableArray new];
+    // sectionData is an array of arrays
+    // for every array ...
+    for (NSMutableArray* arr in self.sectionData) {
+        // generate an array of strings passing the search criteria
+        [filteredData addObject: [arr filteredArrayUsingPredicate:p]];
+    }
+    self.filteredListData = filteredData;
 }
 
 
@@ -276,12 +265,8 @@ CGCONTEXT_H_
 	//  put here just for demo
 	_reloading = YES;
     
-    NSString* offset = @"0";
-    NSString* count = @"";
-    _listData = [DataLayer GetAllBooks:offset count:count];
-    //_listData = [DataLayer GetAllBooks];
-    
-    self.filteredListData = [NSMutableArray arrayWithCapacity:[self.listData count]];
+    self.sectionData = nil;
+    self.sectionNames = nil;
 }
 
 - (void)doneLoadingTableViewData{

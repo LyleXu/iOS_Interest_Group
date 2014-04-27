@@ -240,6 +240,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Library" id="WfU-lK-jsX"/>
                     <connections>
+                        <outlet property="searchBar" destination="kA7-ua-bxB" id="SE0-bx-Juc"/>
                         <outlet property="searchDisplayController" destination="dmr-9C-qaP" id="Lfh-HH-rnr"/>
                     </connections>
                 </viewController>
@@ -514,7 +515,6 @@
         <!--Navigation Controller - Library-->
         <scene sceneID="cDR-nP-gzV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FpZ-Co-Y2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="aCk-wc-W2i" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Library" image="store.png" id="Jro-ix-pA4"/>
                     <toolbarItems/>
@@ -527,13 +527,13 @@
                         <segue destination="NTX-Ic-qfG" kind="relationship" relationship="rootViewController" id="qrq-IQ-Gjr"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FpZ-Co-Y2A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2517" y="308"/>
         </scene>
         <!--Navigation Controller - My Book-->
         <scene sceneID="myk-Go-wnY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gEs-MK-FYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="b8F-vV-DeH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Book" image="mybook.png" id="D44-Zf-24u"/>
                     <toolbarItems/>
@@ -546,13 +546,13 @@
                         <segue destination="7Jz-pP-U5k" kind="relationship" relationship="rootViewController" id="tKr-9B-bme"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gEs-MK-FYT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2509" y="-311"/>
         </scene>
         <!--Navigation Controller - Scan-->
         <scene sceneID="BkN-QV-NIg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zSW-gY-e3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="nIr-6O-0SZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Scan" image="tab_isbn.png" id="AWd-hj-dpe"/>
                     <toolbarItems/>
@@ -565,13 +565,13 @@
                         <segue destination="Q5Y-Ji-62j" kind="relationship" relationship="rootViewController" id="C6S-dz-KW2"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zSW-gY-e3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2549" y="1037"/>
         </scene>
         <!--Navigation Controller - Setting-->
         <scene sceneID="oSt-Ok-Q7D">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o3Q-Ju-1Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="dQe-t4-L4y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Setting" image="setting.jpg" id="K78-4i-GMt"/>
                     <toolbarItems/>
@@ -585,6 +585,7 @@
                         <segue destination="wJy-fE-HOW" kind="relationship" relationship="rootViewController" id="aMM-4C-hE2"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o3Q-Ju-1Jd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2565" y="1749"/>
         </scene>
