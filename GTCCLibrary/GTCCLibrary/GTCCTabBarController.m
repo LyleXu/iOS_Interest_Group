@@ -43,7 +43,7 @@
     [super viewDidLoad];
     
     // Remove the Scan tab if the user is not Admin
-    if(![@"admin" isEqualToString:[Utility getUsername ]])
+    if([@"admin" caseInsensitiveCompare:[Utility getUsername]]!= NSOrderedSame)
     {
         NSMutableArray *navControllers = [NSMutableArray arrayWithArray: self. viewControllers];
         for (id controller in navControllers) {
