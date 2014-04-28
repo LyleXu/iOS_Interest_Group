@@ -594,7 +594,7 @@
         <scene sceneID="oSt-Ok-Q7D">
             <objects>
                 <navigationController id="dQe-t4-L4y" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Setting" image="setting.jpg" id="K78-4i-GMt"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="setting.png" id="K78-4i-GMt"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Kuo-46-OCC">
@@ -658,7 +658,7 @@
     </scenes>
     <resources>
         <image name="mybook.png" width="26" height="26"/>
-        <image name="setting.jpg" width="24" height="24"/>
+        <image name="setting.png" width="24" height="24"/>
         <image name="smile.jpeg" width="225" height="225"/>
         <image name="store.png" width="24" height="25"/>
         <image name="tab_isbn.png" width="23" height="18"/>

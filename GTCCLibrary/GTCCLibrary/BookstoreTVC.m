@@ -42,7 +42,7 @@
         // prepare the sections
         for (CBook* book in sortedArray) {
             // Get the first character from book tag
-            if([book.bianhao length] > 0)
+            if(book.bianhao != [NSNull null] && [book.bianhao length] > 0)
             {
                 NSString* firstLetter = [book.bianhao substringToIndex:1];
                 sectionName = [[Utility getBookCategory] objectForKey:firstLetter];

@@ -38,9 +38,9 @@
 		26B513AD162EED8700ABB490 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B513AC162EED8600ABB490 /* BookDetailViewController.m */; };
 		26BAD59715C2DADE00E4AC7F /* unisys_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */; };
 		26DFDC79160A0DAD002283E4 /* GTCCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */; };
+		6D27F6D6190DEFF500BE1CEA /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D27F6D5190DEFF500BE1CEA /* setting.png */; };
 		6D9E3BD017BBD81000033D41 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E3BCF17BBD81000033D41 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6D9EC8811904DBE4004FE1AE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9EC8801904DBE4004FE1AE /* SettingViewController.m */; };
-		6D9EC8871904E28B004FE1AE /* setting.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D9EC8861904E28B004FE1AE /* setting.jpg */; };
 		7F1B6929190D2AF500530A96 /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1B6928190D2AF500530A96 /* BookTableViewCell.m */; };
 		7F1B692B190D32A500530A96 /* notAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1B692A190D32A500530A96 /* notAvailable.png */; };
 		7F9CDEB016B3F64C008FB818 /* smile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7F9CDEAF16B3F64C008FB818 /* smile.jpeg */; };
@@ -131,11 +131,11 @@
 		26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unisys_logo.jpg; sourceTree = "<group>"; };
 		26DFDC77160A0DAD002283E4 /* GTCCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTCCTabBarController.h; sourceTree = "<group>"; };
 		26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTCCTabBarController.m; sourceTree = "<group>"; };
+		6D27F6D5190DEFF500BE1CEA /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		6D9E3BCE17BBD81000033D41 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		6D9E3BCF17BBD81000033D41 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		6D9EC87F1904DBE4004FE1AE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		6D9EC8801904DBE4004FE1AE /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
-		6D9EC8861904E28B004FE1AE /* setting.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = setting.jpg; sourceTree = "<group>"; };
 		7F1B6927190D2AF500530A96 /* BookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookTableViewCell.h; path = ../BookTableViewCell.h; sourceTree = "<group>"; };
 		7F1B6928190D2AF500530A96 /* BookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookTableViewCell.m; path = ../BookTableViewCell.m; sourceTree = "<group>"; };
 		7F1B692A190D32A500530A96 /* notAvailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notAvailable.png; sourceTree = "<group>"; };
@@ -350,9 +350,9 @@
 		26EAA74E15A47866000057C3 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				6D27F6D5190DEFF500BE1CEA /* setting.png */,
 				7F1B692A190D32A500530A96 /* notAvailable.png */,
 				7FFB25E4169DA0380087F12F /* Icon-iPhone@2x.png */,
-				6D9EC8861904E28B004FE1AE /* setting.jpg */,
 				7F9CDEAF16B3F64C008FB818 /* smile.jpeg */,
 				7FA2291D16B00B3D0089FC75 /* tab_isbn.png */,
 				7FA2292316B034FE0089FC75 /* sync-1.png */,
@@ -547,7 +547,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D9EC8871904E28B004FE1AE /* setting.jpg in Resources */,
 				26AAAF12159C473F003AEF83 /* InfoPlist.strings in Resources */,
 				26AAAF1B159C473F003AEF83 /* MainStoryboard_iPhone.storyboard in Resources */,
 				26AAAF1E159C473F003AEF83 /* MainStoryboard_iPad.storyboard in Resources */,
@@ -560,6 +559,7 @@
 				7FFB2607169DA17E0087F12F /* zbar-helpicons.png in Resources */,
 				7FFB2608169DA17E0087F12F /* zbar-samples.png in Resources */,
 				7FA2291E16B00B3D0089FC75 /* tab_isbn.png in Resources */,
+				6D27F6D6190DEFF500BE1CEA /* setting.png in Resources */,
 				7FA2292016B00BDE0089FC75 /* mybook.png in Resources */,
 				7FA2292416B034FE0089FC75 /* sync-1.png in Resources */,
 				7F9CDEB016B3F64C008FB818 /* smile.jpeg in Resources */,
