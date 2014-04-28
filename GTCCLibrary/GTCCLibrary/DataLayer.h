@@ -17,7 +17,7 @@ password:(NSString*)password;
 +(NSMutableArray*) GetAllBooks:(NSString*)offset
                          count:(NSString*)count;
 +(BOOL) checkWhetherBookInBorrow:(NSString*) bookBianhao;
-+(BOOL) Borrow:(NSString*) username
++(NSInteger) Borrow:(NSString*) username
    bookBianhao: (NSString*) bookBianhao;
 +(CBorrowHistory*) getBorrowInfo:(NSString*) username;
 +(BOOL) ReturnBook:(NSString*) username
@@ -27,7 +27,8 @@ password:(NSString*)password;
 
 typedef enum
 {
-  BookTagAlreadyExists = -201  
+  BookTagAlreadyExists = -201,
+  CannnotBorrowExceeding3 = -303,
 }ErrorCode;
 
 @end

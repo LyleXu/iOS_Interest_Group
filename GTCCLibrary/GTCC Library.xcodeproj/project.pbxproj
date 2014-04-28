@@ -724,7 +724,6 @@
 				OTHER_LDFLAGS = "-licucore";
 				"OTHER_LDFLAGS[arch=*]" = "-licucore";
 				PRODUCT_NAME = "GTCC Library";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B69B1A2A-9361-4C51-8D50-09AB60FF9C62";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -745,7 +744,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "GTCC Library";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B69B1A2A-9361-4C51-8D50-09AB60FF9C62";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

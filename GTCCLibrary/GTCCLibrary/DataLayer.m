@@ -89,19 +89,13 @@
     }
 }
 
-+(BOOL) Borrow:(NSString*) username
++(NSInteger) Borrow:(NSString*) username
         bookBianhao: (NSString*) bookBianhao
 {
     NSArray* parameters = [NSArray arrayWithObjects: username, bookBianhao, nil];
     NSDictionary* result = [self FetchData:@"BorrowService" methodName:@"Borrow" parameters:parameters];
     NSInteger value = [[result valueForKey:@"_returnCode"] integerValue];
-    if(value == 0)
-    {
-        return true;
-    }else
-    {
-        return false;
-    }
+    return value;
 }
 
 +(BOOL) ReturnBook:(NSString*) username
@@ -139,15 +133,18 @@
     NSArray* parameters = [NSArray arrayWithObjects: username, nil];
     NSDictionary* result = [self FetchData:@"BorrowService" methodName:@"getBorrowInfo" parameters:parameters];
     NSDictionary* datas = [result valueForKey:@"borrowInfo"];
+    NSMutableArray *AllHistoryBooks = [NSMutableArray array];
     
     if(datas != [NSNull null] )
     {
       for (NSDictionary *data in [datas allValues]) {
 		CBorrowHistory* history = [CBorrowHistory new];
         [history Parse:data];
+        [AllHistoryBooks addObject:history];
         return history;
 	  }
     }
+    
     return nil;
 }
 

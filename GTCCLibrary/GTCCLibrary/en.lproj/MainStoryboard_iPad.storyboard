@@ -235,16 +235,42 @@
                                 <outlet property="delegate" destination="eKJ-Cw-gHe" id="xOp-Q5-KUE"/>
                             </connections>
                         </searchBar>
+                        <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="uyL-gg-KTT">
+                            <rect key="frame" x="0.0" y="1088" width="768" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" id="NWk-Af-BtD">
-                                <rect key="frame" x="0.0" y="130" width="768" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookCell" rowHeight="80" id="NWk-Af-BtD" customClass="BookTableViewCell">
+                                <rect key="frame" x="0.0" y="130" width="768" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NWk-Af-BtD" id="11A-kO-XK6">
-                                    <rect key="frame" x="0.0" y="0.0" width="735" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="735" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="7gG-1S-2A2">
+                                            <rect key="frame" x="20" y="2" width="59" height="75"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NLI-fH-LCa">
+                                            <rect key="frame" x="96" y="10" width="619" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pHC-hV-NJ7">
+                                            <rect key="frame" x="96" y="39" width="619" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="imageView" destination="7gG-1S-2A2" id="Zbh-dB-9g8"/>
+                                    <outlet property="lblTag" destination="pHC-hV-NJ7" id="bxi-aN-NIf"/>
+                                    <outlet property="lblTitle" destination="NLI-fH-LCa" id="S8I-57-Vu7"/>
                                     <segue destination="z1G-8u-loY" kind="push" identifier="BookDetail" id="6yv-jX-NrX"/>
                                 </connections>
                             </tableViewCell>
@@ -258,6 +284,7 @@
                     <navigationItem key="navigationItem" title="GTCC Library" id="iuc-ec-91b"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
+                        <outlet property="searchBar" destination="iiu-eM-OQ8" id="yCn-qL-2w8"/>
                         <outlet property="searchDisplayController" destination="Aiz-03-wvZ" id="Bt2-0o-y15"/>
                     </connections>
                 </viewController>
