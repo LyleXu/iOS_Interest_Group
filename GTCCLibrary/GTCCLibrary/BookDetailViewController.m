@@ -128,11 +128,17 @@
     {
         NSString* username =  [Utility getUsername];
         NSString* bookBianhao = self.bookInfo.bianhao;
-        if([DataLayer Borrow:username bookBianhao:bookBianhao])
+        
+        NSInteger  result = [DataLayer Borrow:username bookBianhao:bookBianhao];
+        
+        if(result == 0)
         {
             // alert borrow sucessfully
             [Utility Alert:@"" message:@"Borrowed successfully!"];
             self.navigationItem.rightBarButtonItem = nil;
+        }else if (result == CannnotBorrowExceeding3)
+        {
+             [Utility Alert:@"" message:@"You can only borrow 3 books in maximum!"];
         }else
         {
             [Utility Alert:@"" message:@"Borrowed Failed! It may be borrowed by others."];

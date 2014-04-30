@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Wqk-q3-Hkn">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -448,95 +448,6 @@
             </objects>
             <point key="canvasLocation" x="5006" y="888"/>
         </scene>
-        <!--My Lirary View Controller - My Book-->
-        <scene sceneID="w6y-Ie-We1">
-            <objects>
-                <viewController id="jVf-M7-v8s" customClass="MyLiraryViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gnx-yw-xTF">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="pCd-UE-9XL">
-                                <rect key="frame" x="159" y="127" width="451" height="454"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="TW6-Ru-LWn">
-                                        <rect key="frame" x="69" y="97" width="135" height="166"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Borrowed on:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="nFI-KP-d9p">
-                                        <rect key="frame" x="243" y="97" width="121" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BorrowDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="WDV-lQ-aNV">
-                                        <rect key="frame" x="243" y="138" width="121" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PlanReturnDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="BM3-6l-mad">
-                                        <rect key="frame" x="243" y="242" width="121" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please return before:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="07P-kQ-f3u">
-                                        <rect key="frame" x="243" y="184" width="139" height="26"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BookTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dUm-Vc-QD0">
-                                        <rect key="frame" x="14" y="14" width="422" height="54"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="smile.jpeg" id="oI4-e1-Bjq">
-                                <rect key="frame" x="264" y="140" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="You haven't borrowed any book." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="19" id="DM2-wr-xz2">
-                                <rect key="frame" x="244" y="303" width="280" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="My Book" id="4G0-Ss-n0v"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="bookInfoView" destination="pCd-UE-9XL" id="H4p-78-GQ3"/>
-                        <outlet property="bookTitle" destination="dUm-Vc-QD0" id="yDc-sj-5L6"/>
-                        <outlet property="borrowDate" destination="WDV-lQ-aNV" id="F8a-Ea-gNX"/>
-                        <outlet property="borrowDateLabel" destination="nFI-KP-d9p" id="xMl-Uj-VLD"/>
-                        <outlet property="imageView" destination="TW6-Ru-LWn" id="bhC-Lu-XBA"/>
-                        <outlet property="infoView" destination="pCd-UE-9XL" id="Efw-kF-lwv"/>
-                        <outlet property="noBookLabel" destination="DM2-wr-xz2" id="ZfF-zL-S4n"/>
-                        <outlet property="planReturnDate" destination="BM3-6l-mad" id="Xgb-CE-4bs"/>
-                        <outlet property="planReturnDateLabel" destination="07P-kQ-f3u" id="XS6-ii-XVr"/>
-                        <outlet property="smileImage" destination="oI4-e1-Bjq" id="Chc-ov-dsk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBi-48-NH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4000" y="-471"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="al7-LZ-AfJ">
             <objects>
@@ -553,6 +464,7 @@
                         <segue destination="0ZS-Uo-7zW" kind="relationship" relationship="viewControllers" id="X3y-GE-hUg"/>
                         <segue destination="p5m-sB-tDp" kind="relationship" relationship="viewControllers" id="2gd-H5-m8v"/>
                         <segue destination="bHv-Zk-jqp" kind="relationship" relationship="viewControllers" id="aLI-Cc-ih0"/>
+                        <segue destination="gRf-W2-tIM" kind="relationship" relationship="viewControllers" id="qz4-FW-L6T"/>
                         <segue destination="3E7-0E-qTs" kind="relationship" relationship="viewControllers" id="EwM-p0-9s3"/>
                     </connections>
                 </tabBarController>
@@ -593,7 +505,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="jVf-M7-v8s" kind="relationship" relationship="rootViewController" id="l4e-t4-9PJ"/>
+                        <segue destination="uMj-AW-2PM" kind="relationship" relationship="rootViewController" id="U26-xj-7Y0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3de-7F-BwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -639,7 +551,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tG-4b-cd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2757" y="3613"/>
+            <point key="canvasLocation" x="2669" y="3597"/>
         </scene>
         <!--Setting View Controller - Setting-->
         <scene sceneID="uwQ-y1-DRa">
@@ -650,20 +562,25 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gzq-sk-gBq">
-                                <rect key="frame" x="139" y="118" width="161" height="21"/>
+                                <rect key="frame" x="253" y="127" width="370" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current User:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="omI-tz-Mxr">
-                                <rect key="frame" x="20" y="118" width="111" height="21"/>
+                                <rect key="frame" x="134" y="127" width="111" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aCL-Df-KNe">
-                                <rect key="frame" x="134" y="383" width="53" height="30"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Setting" id="ve0-Df-1JA">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Nrm-ig-uKv">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aCL-Df-KNe">
+                                <rect key="frame" x="699" y="7" width="53" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log out">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -672,10 +589,8 @@
                                     <action selector="Logout:" destination="BZI-mw-Wd9" eventType="touchUpInside" id="uW0-fS-LfD"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Setting" id="ve0-Df-1JA"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="btnLogout" destination="aCL-Df-KNe" id="It5-ot-TjT"/>
                         <outlet property="lbl_UserName" destination="gzq-sk-gBq" id="qhW-57-i9h"/>
@@ -686,11 +601,288 @@
             </objects>
             <point key="canvasLocation" x="3912" y="3597"/>
         </scene>
+        <!--Navigation Controller - Scan-->
+        <scene sceneID="r4U-vv-9yM">
+            <objects>
+                <navigationController id="gRf-W2-tIM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Scan" image="tab_isbn.png" id="srO-bT-dlk"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="DXV-ck-q7K"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="XTb-7O-qMs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TrX-Gu-47i" kind="relationship" relationship="rootViewController" id="vjp-7U-hpR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RiV-gF-Oee" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2678" y="4829"/>
+        </scene>
+        <!--Navigation Controller - Setting-->
+        <scene sceneID="2w7-lu-5cF">
+            <objects>
+                <navigationController id="Vlq-mW-rzx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Setting" image="setting.png" id="hdC-ia-yA3"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="7LL-9s-1bo"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mH0-Tn-RrN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F8Y-fg-zIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2669" y="3597"/>
+        </scene>
+        <!--My Lirary View Controller - My Book-->
+        <scene sceneID="UI0-ky-l7w">
+            <objects>
+                <viewController id="uMj-AW-2PM" customClass="MyLiraryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a32-XS-es5">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="196" sectionHeaderHeight="22" sectionFooterHeight="22" id="W3d-c8-x4I">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BorrowedBookCell" rowHeight="196" id="mqR-3J-qOU" customClass="BorrowedBookTableViewCell">
+                                        <rect key="frame" x="0.0" y="86" width="768" height="196"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mqR-3J-qOU" id="Oh6-0S-Mra">
+                                            <rect key="frame" x="0.0" y="0.0" width="768" height="195"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="U7K-9c-WRS">
+                                                    <rect key="frame" x="62" y="31" width="105" height="144"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Borrowed Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Ugm-LW-oTt">
+                                                    <rect key="frame" x="223" y="64" width="121" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BorrowDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="o1H-1S-KG6">
+                                                    <rect key="frame" x="223" y="93" width="121" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Due Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Nou-6T-rkC">
+                                                    <rect key="frame" x="223" y="122" width="139" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BookTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Zfb-P0-mnt">
+                                                    <rect key="frame" x="223" y="29" width="178" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PlanReturnDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="AZz-7Z-DLs">
+                                                    <rect key="frame" x="223" y="156" width="121" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="borrowedDate" destination="o1H-1S-KG6" id="JAb-oz-nmu"/>
+                                            <outlet property="dueDate" destination="AZz-7Z-DLs" id="QbR-gM-mKV"/>
+                                            <outlet property="imageView" destination="U7K-9c-WRS" id="rjk-MQ-Ycm"/>
+                                            <outlet property="lblTitle" destination="Zfb-P0-mnt" id="ocD-LI-6sg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="uMj-AW-2PM" id="vBo-eP-yii"/>
+                                    <outlet property="delegate" destination="uMj-AW-2PM" id="5Mo-6H-2fm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="My Book" id="lxy-3b-H5j"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="MyBookTableView" destination="W3d-c8-x4I" id="89R-qG-mDz"/>
+                        <outlet property="myBookTableView" destination="W3d-c8-x4I" id="0NC-xY-GSR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4b4-Ui-WeZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3816" y="-479"/>
+        </scene>
+        <!--Scan To Borrow View Controller-->
+        <scene sceneID="H83-5z-QH2">
+            <objects>
+                <viewController id="TrX-Gu-47i" customClass="ScanToBorrowViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="adQ-TQ-zqx">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ZRS-O5-CtA">
+                                <rect key="frame" x="0.0" y="63" width="768" height="961"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="TKc-Gl-SXS">
+                                        <rect key="frame" x="237" y="20" width="295" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Llh-A9-C6u">
+                                        <rect key="frame" x="370" y="97" width="154" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Published By" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cwu-Rv-vu4">
+                                        <rect key="frame" x="370" y="121" width="154" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Published Year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dBQ-Lr-HN9">
+                                        <rect key="frame" x="370" y="150" width="154" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="iz5-9J-t5v">
+                                        <rect key="frame" x="423" y="206" width="92" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dwN-MG-E83">
+                                        <rect key="frame" x="423" y="235" width="92" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ISBN:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="pNh-fl-CtE">
+                                        <rect key="frame" x="370" y="177" width="45" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Page:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="QfZ-fs-tB7">
+                                        <rect key="frame" x="370" y="206" width="45" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Ucu-5y-byt">
+                                        <rect key="frame" x="370" y="235" width="44" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tag:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="0Zy-Je-Gkw">
+                                        <rect key="frame" x="370" y="65" width="39" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="B5m-J9-IEK">
+                                        <rect key="frame" x="180" y="68" width="119" height="159"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Description:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Qpx-vc-LJg">
+                                        <rect key="frame" x="180" y="269" width="92" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="LV0-rm-U3R">
+                                        <rect key="frame" x="423" y="179" width="109" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="cMp-Yb-3Aa">
+                                        <rect key="frame" x="180" y="300" width="429" height="296"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Jby-68-Feb">
+                                        <rect key="frame" x="417" y="65" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="startSelectTag:" destination="TrX-Gu-47i" eventType="touchUpInside" id="RFN-MP-5Kc"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="dZk-ar-zqA">
+                        <barButtonItem key="rightBarButtonItem" title="Borrow" id="WbO-34-9aF">
+                            <connections>
+                                <action selector="BorrowBook:" destination="TrX-Gu-47i" id="xBt-Eg-gBY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bookAuthor" destination="Llh-A9-C6u" id="510-zJ-Rv7"/>
+                        <outlet property="bookDesc" destination="cMp-Yb-3Aa" id="sKl-0Z-kJP"/>
+                        <outlet property="bookISBN" destination="LV0-rm-U3R" id="qgP-TD-2Ku"/>
+                        <outlet property="bookImage" destination="B5m-J9-IEK" id="gV7-rt-qkG"/>
+                        <outlet property="bookPage" destination="iz5-9J-t5v" id="e2s-tM-v8X"/>
+                        <outlet property="bookPrice" destination="dwN-MG-E83" id="Vx1-eI-xzz"/>
+                        <outlet property="bookPublishedBy" destination="cwu-Rv-vu4" id="gCQ-6k-2Nm"/>
+                        <outlet property="bookPublishedYear" destination="dBQ-Lr-HN9" id="XIu-Rz-wQP"/>
+                        <outlet property="bookTitle" destination="TKc-Gl-SXS" id="tpQ-eb-Pek"/>
+                        <outlet property="borrowButton" destination="WbO-34-9aF" id="PT4-ai-c0K"/>
+                        <outlet property="scrollView" destination="ZRS-O5-CtA" id="hrs-48-iSb"/>
+                        <outlet property="txtTag" destination="Jby-68-Feb" id="ABu-MG-5dH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pMA-5e-TTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3928" y="4836"/>
+        </scene>
     </scenes>
     <resources>
         <image name="mybook.png" width="26" height="26"/>
         <image name="setting.png" width="24" height="24"/>
-        <image name="smile.jpeg" width="225" height="225"/>
         <image name="store.png" width="24" height="25"/>
         <image name="tab_isbn.png" width="23" height="18"/>
         <image name="unisys_logo.jpg" width="513" height="161"/>

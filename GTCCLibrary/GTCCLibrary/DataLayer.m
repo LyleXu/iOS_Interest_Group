@@ -128,12 +128,14 @@
 
 }
 
-+(CBorrowHistory*) getBorrowInfo:(NSString*) username
+//NSMutableArray
+//+(CBorrowHistory*) getBorrowInfo:(NSString*) username
++(NSMutableArray*) getBorrowInfo:(NSString*) username
 {
+    NSMutableArray *AllHistoryBooks = [NSMutableArray array];
     NSArray* parameters = [NSArray arrayWithObjects: username, nil];
     NSDictionary* result = [self FetchData:@"BorrowService" methodName:@"getBorrowInfo" parameters:parameters];
     NSDictionary* datas = [result valueForKey:@"borrowInfo"];
-    NSMutableArray *AllHistoryBooks = [NSMutableArray array];
     
     if(datas != [NSNull null] )
     {
@@ -141,12 +143,14 @@
 		CBorrowHistory* history = [CBorrowHistory new];
         [history Parse:data];
         [AllHistoryBooks addObject:history];
-        return history;
+        //return history;
 	  }
     }
     
-    return nil;
+    return AllHistoryBooks;
 }
+
+
 
 +(NSMutableString*)FetchDataFromWebByGet:(NSString *)url
 {
@@ -169,6 +173,27 @@
     NSDictionary* result = [self FetchData:@"BookService" methodName:@"AddBook" parameters:parameters];
     NSInteger value = [[result valueForKey:@"_returnCode"] integerValue];
     return value;
+}
+
++(NSMutableArray*) getBookListbyISBN:(NSString *)ISBN
+{
+    NSArray* parameters = [NSArray arrayWithObjects:ISBN, nil];
+    NSDictionary* result = [self FetchData:@"BookService" methodName:@"GetBookListByISBN" parameters:parameters];
+    
+    NSDictionary* datas = [result valueForKey:@"BookList"];
+    
+    NSMutableArray *bookList = [NSMutableArray array];
+    
+    if([datas count])
+    {
+        for (NSDictionary *data in [datas allValues]) {
+            CBook* book = [CBook new];
+            [book Parse:data];
+            [bookList addObject:book];
+        }
+    }
+    
+    return [bookList copy];
 }
 
 @end

@@ -9,25 +9,13 @@
 #import "MyLiraryViewController.h"
 #import "Utility.h"
 #import "DataLayer.h"
-#import <QuartzCore/QuartzCore.h>
+#import "BorrowedBookTableViewCell.h"
 @interface MyLiraryViewController ()
 
 @end
 
 @implementation MyLiraryViewController
-@synthesize infoView;
-@synthesize bookTitle;
-@synthesize borrowDate;
-@synthesize planReturnDate;
-@synthesize imageView;
-@synthesize borrowHistory = _borrowHistory;
-//@synthesize returnButton;
-@synthesize borrowDateLabel;
-@synthesize planReturnDateLabel;
-@synthesize smileImage;
-@synthesize noBookLabel;
-@synthesize bookInfoView;
-
+@synthesize borrowedBooks = _borrowedBooks;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -37,70 +25,76 @@
     return self;
 }
 
--(void) hiddenSubViews:(BOOL) visible
+-(NSMutableArray*)borrowedBooks
 {
-    if(visible)
+    if(_borrowedBooks == nil)
     {
-        self.navigationItem.rightBarButtonItem = nil;
-    }else {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Return" style:UIBarButtonItemStyleBordered target:self action:@selector(doReturnBook)];
+        NSString* username = [Utility getUsername];
+        _borrowedBooks = [DataLayer getBorrowInfo:username];
     }
-   
-    infoView.hidden = visible;
     
-    smileImage.hidden = !visible;
-    noBookLabel.hidden = !visible;
+    return _borrowedBooks;
 }
 
--(void) refresh
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSString* username = [Utility getUsername];
-    CBorrowHistory* history = [DataLayer getBorrowInfo:username];
-    if(history)
+    return [self.borrowedBooks count];
+}
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString * tableIdentifier=@"BorrowedBookCell";
+    BorrowedBookTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:tableIdentifier];
+    
+    if(cell==nil)
     {
-        [self hiddenSubViews:false];
+        // first load
+        cell=[[BorrowedBookTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
+    }
+    
+    CBorrowHistory* book = [self.borrowedBooks objectAtIndex:indexPath.row];
+    
+    cell.lblTitle.text = book.bookName;
+    cell.borrowedDate.text = book.borrowDate;
+    cell.dueDate.text = book.planReturnDate;
+    
+    UIImage * imageFromURL = [Utility getImageFromUrl:book.ISBN];
+    cell.imageView.image = imageFromURL;
+    
+    return cell;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self refresh];
+}
+
+-(void)refresh
+{
+    self.borrowedBooks = nil;
+    self.navigationItem.rightBarButtonItem = nil;
+    
+    if ([self.borrowedBooks count]) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Return" style:UIBarButtonItemStyleBordered target:self action:@selector(doReturnBook)];
         
-        self.borrowHistory = history;
-        bookTitle.text = history.bookName;
-        imageView.image = [Utility getImageFromUrl:history.ISBN];
-        borrowDate.text = history.borrowDate;
-        planReturnDate.text = history.planReturnDate;
-        
-        self.bookInfoView.layer.borderWidth = 5.0f;
-        self.bookInfoView.layer.borderColor = [[UIColor grayColor] CGColor];
-        self.bookInfoView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+        self.myBookTableView.hidden = false;
     }else
     {
-        
-        [self hiddenSubViews:true];
+        self.myBookTableView.hidden = true;
     }
-
+    
+    [self.myBookTableView reloadData];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-}
 
--(void) viewWillAppear:(BOOL)animated
-{
-    [self refresh];
 }
 
 - (void)viewDidUnload
 {
-    [self setInfoView:nil];
-    [self setBookTitle:nil];
-    [self setBorrowDate:nil];
-    [self setPlanReturnDate:nil];
-    [self setImageView:nil];
-    [self setBorrowDateLabel:nil];
-    [self setPlanReturnDateLabel:nil];
-    //[self setReturnButton:nil];
-    [self setSmileImage:nil];
-    [self setNoBookLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -123,14 +117,22 @@
     if( buttonIndex != [actionSheet cancelButtonIndex])
     {
         NSString* username = [Utility getUsername];
-        NSString* bookBianhao = [self.borrowHistory bookBianhao];
-        if([DataLayer ReturnBook:username bookBianhao:bookBianhao])
+        
+        NSIndexPath* indexpath = [self.myBookTableView indexPathForSelectedRow];
+        if(indexpath != nil)
         {
-            [Utility Alert:@"" message:@"Returned the book successfully!"];
-            [self refresh];
+            CBorrowHistory* book = [self.borrowedBooks objectAtIndex:indexpath.row];
+            if([DataLayer ReturnBook:username bookBianhao:book.bookBianhao])
+            {
+                [Utility Alert:@"" message:@"Returned successfully!"];
+                [self refresh];
+            }else
+            {
+                [Utility Alert:@"" message:@"Returned failed!"];
+            }
         }else
         {
-            [Utility Alert:@"" message:@"Returned the book failed!"];
+             [Utility Alert:@"" message:@"No book is selected!"];
         }
     }
 }

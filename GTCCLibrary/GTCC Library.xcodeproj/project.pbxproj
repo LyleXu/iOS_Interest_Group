@@ -39,8 +39,10 @@
 		26BAD59715C2DADE00E4AC7F /* unisys_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26BAD59615C2DADE00E4AC7F /* unisys_logo.jpg */; };
 		26DFDC79160A0DAD002283E4 /* GTCCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */; };
 		6D27F6D6190DEFF500BE1CEA /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D27F6D5190DEFF500BE1CEA /* setting.png */; };
+		6D349044191019FC005CACCB /* BorrowedBookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D349043191019FC005CACCB /* BorrowedBookTableViewCell.m */; };
 		6D9E3BD017BBD81000033D41 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E3BCF17BBD81000033D41 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6D9EC8811904DBE4004FE1AE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9EC8801904DBE4004FE1AE /* SettingViewController.m */; };
+		6D9FDDCF190FE9CF00414C32 /* ScanToBorrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9FDDCE190FE9CF00414C32 /* ScanToBorrowViewController.m */; };
 		7F1B6929190D2AF500530A96 /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1B6928190D2AF500530A96 /* BookTableViewCell.m */; };
 		7F1B692B190D32A500530A96 /* notAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1B692A190D32A500530A96 /* notAvailable.png */; };
 		7F9CDEB016B3F64C008FB818 /* smile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7F9CDEAF16B3F64C008FB818 /* smile.jpeg */; };
@@ -132,10 +134,14 @@
 		26DFDC77160A0DAD002283E4 /* GTCCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTCCTabBarController.h; sourceTree = "<group>"; };
 		26DFDC78160A0DAD002283E4 /* GTCCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTCCTabBarController.m; sourceTree = "<group>"; };
 		6D27F6D5190DEFF500BE1CEA /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		6D349042191019FC005CACCB /* BorrowedBookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorrowedBookTableViewCell.h; sourceTree = "<group>"; };
+		6D349043191019FC005CACCB /* BorrowedBookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorrowedBookTableViewCell.m; sourceTree = "<group>"; };
 		6D9E3BCE17BBD81000033D41 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		6D9E3BCF17BBD81000033D41 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		6D9EC87F1904DBE4004FE1AE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		6D9EC8801904DBE4004FE1AE /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		6D9FDDCD190FE9CF00414C32 /* ScanToBorrowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanToBorrowViewController.h; sourceTree = "<group>"; };
+		6D9FDDCE190FE9CF00414C32 /* ScanToBorrowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanToBorrowViewController.m; sourceTree = "<group>"; };
 		7F1B6927190D2AF500530A96 /* BookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookTableViewCell.h; path = ../BookTableViewCell.h; sourceTree = "<group>"; };
 		7F1B6928190D2AF500530A96 /* BookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookTableViewCell.m; path = ../BookTableViewCell.m; sourceTree = "<group>"; };
 		7F1B692A190D32A500530A96 /* notAvailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notAvailable.png; sourceTree = "<group>"; };
@@ -284,9 +290,13 @@
 				26AF2D5A1633BC3200AB5CEF /* MyLiraryViewController.m */,
 				7FF9E30E169DA50300DF4906 /* ScanViewController.h */,
 				7FF9E30F169DA50300DF4906 /* ScanViewController.m */,
+				6D9FDDCD190FE9CF00414C32 /* ScanToBorrowViewController.h */,
+				6D9FDDCE190FE9CF00414C32 /* ScanToBorrowViewController.m */,
 				26AAAF0E159C473F003AEF83 /* Supporting Files */,
 				6D9EC87F1904DBE4004FE1AE /* SettingViewController.h */,
 				6D9EC8801904DBE4004FE1AE /* SettingViewController.m */,
+				6D349042191019FC005CACCB /* BorrowedBookTableViewCell.h */,
+				6D349043191019FC005CACCB /* BorrowedBookTableViewCell.m */,
 			);
 			path = GTCCLibrary;
 			sourceTree = "<group>";
@@ -524,6 +534,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				TargetAttributes = {
+					26AAAF02159C473E003AEF83 = {
+						DevelopmentTeam = 833VCT4CR5;
+					};
+				};
 			};
 			buildConfigurationList = 26AAAEFD159C473E003AEF83 /* Build configuration list for PBXProject "GTCC Library" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -605,6 +620,7 @@
 				2638D0C715C06A68000906BC /* SBJsonParser.m in Sources */,
 				2638D0C815C06A68000906BC /* SBJsonStreamParser.m in Sources */,
 				6D9EC8811904DBE4004FE1AE /* SettingViewController.m in Sources */,
+				6D349044191019FC005CACCB /* BorrowedBookTableViewCell.m in Sources */,
 				2638D0C915C06A68000906BC /* SBJsonStreamParserAccumulator.m in Sources */,
 				2638D0CA15C06A68000906BC /* SBJsonStreamParserAdapter.m in Sources */,
 				7F1B6929190D2AF500530A96 /* BookTableViewCell.m in Sources */,
@@ -627,6 +643,7 @@
 				7F9F117816A6FB370085AE8C /* MBProgressHUD.m in Sources */,
 				7F9E297816B4EFD4002FBDCC /* EGORefreshTableHeaderView.m in Sources */,
 				6D9E3BD017BBD81000033D41 /* NSData+Base64.m in Sources */,
+				6D9FDDCF190FE9CF00414C32 /* ScanToBorrowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,11 +728,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YANGPING WU (4KDDL8B8PK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GTCCLibrary/GTCC Library-Prefix.pch";
 				INFOPLIST_FILE = "GTCCLibrary/GTCC Library-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
@@ -724,6 +742,7 @@
 				OTHER_LDFLAGS = "-licucore";
 				"OTHER_LDFLAGS[arch=*]" = "-licucore";
 				PRODUCT_NAME = "GTCC Library";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -732,11 +751,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YANGPING WU (4KDDL8B8PK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GTCCLibrary/GTCC Library-Prefix.pch";
 				INFOPLIST_FILE = "GTCCLibrary/GTCC Library-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
@@ -744,6 +764,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "GTCC Library";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

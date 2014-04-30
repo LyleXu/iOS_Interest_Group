@@ -93,7 +93,7 @@
 {
     [super viewDidLoad];
     
-    self.edgesForExtendedLayout = UIRectEdgeNone;   // otherise, section header won't float in iOS7
+    //self.edgesForExtendedLayout = UIRectEdgeNone;   // otherise, section header won't float in iOS7
     
     // Hide the searchbar, the user can pull to display the searchbar
     self.tableView.tableHeaderView = self.searchBar;

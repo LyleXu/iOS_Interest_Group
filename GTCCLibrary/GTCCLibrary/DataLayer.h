@@ -19,11 +19,12 @@ password:(NSString*)password;
 +(BOOL) checkWhetherBookInBorrow:(NSString*) bookBianhao;
 +(NSInteger) Borrow:(NSString*) username
    bookBianhao: (NSString*) bookBianhao;
-+(CBorrowHistory*) getBorrowInfo:(NSString*) username;
++(NSMutableArray*) getBorrowInfo:(NSString*) username;
 +(BOOL) ReturnBook:(NSString*) username
        bookBianhao:(NSString*) bookBianhao;
 +(NSMutableString *)FetchDataFromWebByGet:(NSString* )url;
 +(NSInteger) addBookToLibrary:(CBook*) bookInfo;
++(NSMutableArray*) getBookListbyISBN:(NSString*) ISBN;
 
 typedef enum
 {

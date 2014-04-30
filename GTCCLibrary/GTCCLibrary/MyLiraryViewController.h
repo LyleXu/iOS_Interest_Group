@@ -8,22 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CBorrowHistory.h"
-@interface MyLiraryViewController : UIViewController <UIActionSheetDelegate>
+@interface MyLiraryViewController : UIViewController <UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *infoView;
-@property (weak, nonatomic) IBOutlet UILabel *bookTitle;
-@property (weak, nonatomic) IBOutlet UILabel *borrowDate;
-
-@property (weak, nonatomic) IBOutlet UILabel *planReturnDate;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
-@property (retain, nonatomic) CBorrowHistory* borrowHistory;
-//@property (weak, nonatomic) IBOutlet UIBarButtonItem *returnButton;
-
-@property (weak, nonatomic) IBOutlet UILabel *borrowDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *planReturnDateLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *smileImage;
-@property (weak, nonatomic) IBOutlet UILabel *noBookLabel;
-@property (strong, nonatomic) IBOutlet UIView *bookInfoView;
-
+@property (weak, nonatomic) NSMutableArray* borrowedBooks;
+@property (weak, nonatomic) IBOutlet UITableView *myBookTableView;
 @end

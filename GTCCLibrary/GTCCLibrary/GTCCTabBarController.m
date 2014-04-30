@@ -9,6 +9,7 @@
 #import "GTCCTabBarController.h"
 #import "Utility.h"
 #import "ScanViewController.h"
+#import "ScanToBorrowViewController.h"
 @implementation GTCCTabBarController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -43,19 +44,29 @@
     [super viewDidLoad];
     
     // Remove the Scan tab if the user is not Admin
-    if([@"admin" caseInsensitiveCompare:[Utility getUsername]]!= NSOrderedSame)
+    if([@"admin" caseInsensitiveCompare:[Utility getUsername]] != NSOrderedSame)
     {
-        NSMutableArray *navControllers = [NSMutableArray arrayWithArray: self. viewControllers];
-        for (id controller in navControllers) {
-            NSMutableArray *subcontrollers = [NSMutableArray arrayWithArray: [controller viewControllers]];
-            if([subcontrollers[0] isKindOfClass:[ScanViewController class]]){
-                    [navControllers removeObject:controller];
-                    break;
-            }
-        }
-        
-        [self  setViewControllers: navControllers ];
+        [self removeTab:[ScanViewController class]];
+    }else
+    {
+        // if admin, remove the scan to borrow tab
+        [self removeTab: [ScanToBorrowViewController class]];
     }
+}
+
+-(void)removeTab:(Class) MyType
+{
+    NSMutableArray *navControllers = [NSMutableArray arrayWithArray: self. viewControllers];
+    for (id controller in navControllers) {
+        NSMutableArray *subcontrollers = [NSMutableArray arrayWithArray: [controller viewControllers]];
+        if([subcontrollers[0] isKindOfClass:MyType]){
+            [navControllers removeObject:controller];
+            break;
+        }
+    }
+    
+    [self  setViewControllers: navControllers ];
+
 }
 
 - (void)viewDidUnload
