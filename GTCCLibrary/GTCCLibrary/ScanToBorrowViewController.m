@@ -87,6 +87,9 @@ NSMutableArray* tagList;
 
 -(void)loadBookInfo
 {
+    // empty the previous book info
+    [self emptyControlValue];
+
     // get the booklist by ISBN
     NSMutableArray* bookList =[DataLayer getBookListbyISBN:ISBN];
     if([bookList count])
@@ -97,6 +100,13 @@ NSMutableArray* tagList;
         CBook* book = bookList[0];
         [self updateControlValue:book];
     }
+    else
+    {
+         [Utility Alert:@"" message:@"Please add the book to library at first!"];
+    }
+    
+    //To set whether 'Borrow' button is enabled or not
+    self.navigationItem.rightBarButtonItem.enabled = [bookList count];
 }
 
 -(void)initTagList:(NSMutableArray*)bookList
@@ -118,6 +128,22 @@ NSMutableArray* tagList;
     
     self.tagPickerView = pickerView;
     self.txtTag.inputView = self.tagPickerView;
+}
+
+-(void)emptyControlValue
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.bookTitle.text = nil;
+        self.bookAuthor.text = nil;
+        self.bookDesc.text = nil;
+        self.bookPage.text = nil;
+        self.bookPublishedBy.text = nil;
+        self.bookPublishedYear.text = nil;
+        self.bookPrice.text = nil;
+        self.bookISBN.text = nil;
+        self.txtTag.text = nil;
+        self.bookImage.image = nil;
+    });
 }
 
 -(void)updateControlValue:(CBook*)book
@@ -169,6 +195,7 @@ NSMutableArray* tagList;
         {
             // alert borrow sucessfully
             [Utility Alert:@"" message:@"Borrowed successfully!"];
+            self.navigationItem.rightBarButtonItem = nil;
         }else if(result == CannnotBorrowExceeding3)
         {
             [Utility Alert:@"" message:@"You can only borrow 3 books in maximum!"];

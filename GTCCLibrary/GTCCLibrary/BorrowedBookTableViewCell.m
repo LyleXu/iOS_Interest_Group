@@ -9,7 +9,7 @@
 #import "BorrowedBookTableViewCell.h"
 
 @implementation BorrowedBookTableViewCell
-@synthesize lblTitle, dueDate,borrowedDate,imageView;
+@synthesize lblTitle, lblTag, dueDate,borrowedDate,imageView;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

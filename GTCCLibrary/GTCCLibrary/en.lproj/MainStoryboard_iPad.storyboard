@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13B42" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Wqk-q3-Hkn">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
@@ -141,7 +141,6 @@
                                         <rect key="frame" x="171" y="333" width="427" height="360"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -342,49 +341,49 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="U1J-wo-Pjf">
-                                        <rect key="frame" x="342" y="192" width="92" height="21"/>
+                                        <rect key="frame" x="342" y="194" width="92" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="YUo-9M-V1V">
-                                        <rect key="frame" x="342" y="221" width="92" height="21"/>
+                                        <rect key="frame" x="342" y="223" width="92" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="nZE-kl-8XK">
-                                        <rect key="frame" x="342" y="250" width="109" height="21"/>
+                                        <rect key="frame" x="342" y="252" width="109" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ISBN:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="sGL-Ed-nkF">
-                                        <rect key="frame" x="289" y="170" width="45" height="21"/>
+                                        <rect key="frame" x="289" y="167" width="45" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Page:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="1G7-pJ-x2b">
-                                        <rect key="frame" x="289" y="199" width="45" height="21"/>
+                                        <rect key="frame" x="289" y="194" width="45" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="XHh-qb-6Sw">
-                                        <rect key="frame" x="289" y="228" width="44" height="21"/>
+                                        <rect key="frame" x="289" y="223" width="44" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tag:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Fue-XG-65Y">
-                                        <rect key="frame" x="289" y="257" width="39" height="21"/>
+                                        <rect key="frame" x="289" y="252" width="39" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -402,7 +401,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="HNh-ET-H0g">
-                                        <rect key="frame" x="342" y="165" width="109" height="21"/>
+                                        <rect key="frame" x="342" y="167" width="109" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -412,7 +411,6 @@
                                         <rect key="frame" x="75" y="350" width="618" height="338"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -578,21 +576,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Setting" id="ve0-Df-1JA">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Nrm-ig-uKv">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aCL-Df-KNe">
-                                <rect key="frame" x="699" y="7" width="53" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log out">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Logout:" destination="BZI-mw-Wd9" eventType="touchUpInside" id="uW0-fS-LfD"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="Hag-UF-86j">
+                            <connections>
+                                <action selector="Logout:" destination="BZI-mw-Wd9" id="n2W-8f-fVs"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="btnLogout" destination="aCL-Df-KNe" id="It5-ot-TjT"/>
                         <outlet property="lbl_UserName" destination="gzq-sk-gBq" id="qhW-57-i9h"/>
                         <segue destination="Wqk-q3-Hkn" kind="modal" identifier="DoLogout" modalTransitionStyle="coverVertical" id="pqH-ay-a2Z"/>
                     </connections>
@@ -640,7 +630,7 @@
             </objects>
             <point key="canvasLocation" x="2669" y="3597"/>
         </scene>
-        <!--My Lirary View Controller - My Book-->
+        <!--My Lirary View Controller - My Books-->
         <scene sceneID="UI0-ky-l7w">
             <objects>
                 <viewController id="uMj-AW-2PM" customClass="MyLiraryViewController" sceneMemberID="viewController">
@@ -665,21 +655,21 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Borrowed Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Ugm-LW-oTt">
-                                                    <rect key="frame" x="223" y="64" width="121" height="21"/>
+                                                    <rect key="frame" x="223" y="84" width="121" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="BorrowDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="o1H-1S-KG6">
-                                                    <rect key="frame" x="223" y="93" width="121" height="21"/>
+                                                    <rect key="frame" x="223" y="108" width="121" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Due Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Nou-6T-rkC">
-                                                    <rect key="frame" x="223" y="122" width="139" height="26"/>
+                                                    <rect key="frame" x="223" y="130" width="139" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -699,12 +689,20 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tag" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="X3k-cj-IC5">
+                                                    <rect key="frame" x="223" y="55" width="178" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="borrowedDate" destination="o1H-1S-KG6" id="JAb-oz-nmu"/>
                                             <outlet property="dueDate" destination="AZz-7Z-DLs" id="QbR-gM-mKV"/>
                                             <outlet property="imageView" destination="U7K-9c-WRS" id="rjk-MQ-Ycm"/>
+                                            <outlet property="lblTag" destination="X3k-cj-IC5" id="zM7-oY-AdT"/>
                                             <outlet property="lblTitle" destination="Zfb-P0-mnt" id="ocD-LI-6sg"/>
                                         </connections>
                                     </tableViewCell>
@@ -718,7 +716,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="My Book" id="lxy-3b-H5j"/>
+                    <navigationItem key="navigationItem" title="My Books" id="lxy-3b-H5j"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="MyBookTableView" destination="W3d-c8-x4I" id="89R-qG-mDz"/>
@@ -833,7 +831,6 @@
                                         <rect key="frame" x="180" y="300" width="429" height="296"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>

@@ -11,6 +11,7 @@
 @interface BorrowedBookTableViewCell : UITableViewCell
 
 @property (nonatomic,weak) IBOutlet UILabel* lblTitle;
+@property (nonatomic,weak) IBOutlet UILabel* lblTag;
 @property (nonatomic,weak) IBOutlet UIImageView* imageView;
 @property (nonatomic,weak) IBOutlet UILabel* borrowedDate;
 @property (nonatomic,weak) IBOutlet UILabel* dueDate;

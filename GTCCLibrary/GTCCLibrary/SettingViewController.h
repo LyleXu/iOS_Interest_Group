@@ -10,6 +10,6 @@
 
 @interface SettingViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *lbl_UserName;
-@property (weak, nonatomic) IBOutlet UIButton *btnLogout;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnLogout;
 
 @end

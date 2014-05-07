@@ -55,6 +55,7 @@
     CBorrowHistory* book = [self.borrowedBooks objectAtIndex:indexPath.row];
     
     cell.lblTitle.text = book.bookName;
+    cell.lblTag.text = book.bookBianhao;
     cell.borrowedDate.text = book.borrowDate;
     cell.dueDate.text = book.planReturnDate;
     
