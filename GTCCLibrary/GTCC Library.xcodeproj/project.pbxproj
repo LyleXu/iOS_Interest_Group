@@ -43,6 +43,7 @@
 		6D9E3BD017BBD81000033D41 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E3BCF17BBD81000033D41 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6D9EC8811904DBE4004FE1AE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9EC8801904DBE4004FE1AE /* SettingViewController.m */; };
 		6D9FDDCF190FE9CF00414C32 /* ScanToBorrowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9FDDCE190FE9CF00414C32 /* ScanToBorrowViewController.m */; };
+		6DA6EF4E191B15C6004CBBAF /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA6EF4D191B15C6004CBBAF /* pinyin.m */; };
 		7F1B6929190D2AF500530A96 /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F1B6928190D2AF500530A96 /* BookTableViewCell.m */; };
 		7F1B692B190D32A500530A96 /* notAvailable.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F1B692A190D32A500530A96 /* notAvailable.png */; };
 		7F9CDEB016B3F64C008FB818 /* smile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7F9CDEAF16B3F64C008FB818 /* smile.jpeg */; };
@@ -142,6 +143,8 @@
 		6D9EC8801904DBE4004FE1AE /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		6D9FDDCD190FE9CF00414C32 /* ScanToBorrowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanToBorrowViewController.h; sourceTree = "<group>"; };
 		6D9FDDCE190FE9CF00414C32 /* ScanToBorrowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanToBorrowViewController.m; sourceTree = "<group>"; };
+		6DA6EF4C191B15C6004CBBAF /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		6DA6EF4D191B15C6004CBBAF /* pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pinyin.m; sourceTree = "<group>"; };
 		7F1B6927190D2AF500530A96 /* BookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookTableViewCell.h; path = ../BookTableViewCell.h; sourceTree = "<group>"; };
 		7F1B6928190D2AF500530A96 /* BookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookTableViewCell.m; path = ../BookTableViewCell.m; sourceTree = "<group>"; };
 		7F1B692A190D32A500530A96 /* notAvailable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notAvailable.png; sourceTree = "<group>"; };
@@ -297,6 +300,8 @@
 				6D9EC8801904DBE4004FE1AE /* SettingViewController.m */,
 				6D349042191019FC005CACCB /* BorrowedBookTableViewCell.h */,
 				6D349043191019FC005CACCB /* BorrowedBookTableViewCell.m */,
+				6DA6EF4C191B15C6004CBBAF /* pinyin.h */,
+				6DA6EF4D191B15C6004CBBAF /* pinyin.m */,
 			);
 			path = GTCCLibrary;
 			sourceTree = "<group>";
@@ -620,6 +625,7 @@
 				2638D0C715C06A68000906BC /* SBJsonParser.m in Sources */,
 				2638D0C815C06A68000906BC /* SBJsonStreamParser.m in Sources */,
 				6D9EC8811904DBE4004FE1AE /* SettingViewController.m in Sources */,
+				6DA6EF4E191B15C6004CBBAF /* pinyin.m in Sources */,
 				6D349044191019FC005CACCB /* BorrowedBookTableViewCell.m in Sources */,
 				2638D0C915C06A68000906BC /* SBJsonStreamParserAccumulator.m in Sources */,
 				2638D0CA15C06A68000906BC /* SBJsonStreamParserAdapter.m in Sources */,
@@ -697,7 +703,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -716,7 +722,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

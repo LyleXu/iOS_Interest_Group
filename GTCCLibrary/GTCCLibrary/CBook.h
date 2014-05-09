@@ -23,6 +23,7 @@
 @property(nonatomic,retain) NSString *price;
 @property(nonatomic,retain) NSString *imageUrl;
 @property(nonatomic,retain) NSString *bookDescription;
+@property(nonatomic,retain) NSString *firstLetter;
 
 -(void) Parse:(NSDictionary*) data;
 

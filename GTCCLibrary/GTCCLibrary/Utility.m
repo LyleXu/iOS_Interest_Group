@@ -7,10 +7,10 @@
 //
 
 #import "Utility.h"
+#import "pinyin.h"
 @interface Utility ()
 
 @end
-
 
 @implementation Utility
 static NSDictionary* category;
@@ -71,9 +71,26 @@ static NSDictionary* category;
 {
     if(category == nil)
     {
-        category = [NSDictionary dictionaryWithObjectsAndKeys:@"Engineering", @"E", @"Foreign Languages", @"F", @"Management", @"M", @"Self-Improvement", @"S", @"Technical", @"T", @"Miscellaneous", @"Z",nil];
+        //category = [NSDictionary dictionaryWithObjectsAndKeys:@"Engineering", @"E", @"Foreign Languages", @"F", @"Management", @"M", @"Self-Improvement", @"S", @"Technical", @"T", @"Miscellaneous", @"Z",nil];
+        
+        category = [NSDictionary dictionaryWithObjectsAndKeys:@"A",@"A",@"B",@"B",@"C",@"C",@"D",@"D",@"E",@"E",@"F",@"F",@"G",@"G",@"H",@"H",@"I",@"I",@"J",@"J",@"K",@"K",@"L",@"L",@"M",@"M",@"N",@"N",@"O",@"O",@"P",@"P",@"Q",@"Q",@"R",@"R",@"S",@"S",@"T",@"T",@"U",@"U",@"V",@"V",@"W",@"W",@"X",@"X",@"Y",@"Y",@"Z",@"Z",nil];
     }
     return category;
 }
 
++(NSString*) getFirstLetter:(NSString*) firstName
+{
+    NSString* firstLetter;
+    //If the firstname is English already
+    if ([firstName canBeConvertedToEncoding:NSASCIIStringEncoding])
+    {
+        firstLetter = firstName;
+    }
+    else
+    {
+        firstLetter = [NSString stringWithFormat:@"%c", pinyinFirstLetter([firstName characterAtIndex:0])];
+    }
+    
+    return [firstLetter uppercaseString];
+}
 @end

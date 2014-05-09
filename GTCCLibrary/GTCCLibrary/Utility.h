@@ -20,4 +20,5 @@
 +(NSString*) replaceStringWithBlank:(NSString*) source;
 +(void) clearUserInfo;
 +(NSDictionary*) getBookCategory;
++(NSString*) getFirstLetter:(NSString*) firstName;
 @end

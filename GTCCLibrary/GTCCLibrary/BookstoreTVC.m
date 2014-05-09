@@ -14,6 +14,9 @@
 #import "CBook.h"
 #import "Utility.h"
 #import "BookTableViewCell.h"
+
+NSMutableArray* indexArray;
+
 @implementation BookstoreTVC
 
 @synthesize sectionNames = _sectionNames;
@@ -31,7 +34,7 @@
         NSMutableArray* allBooks = [DataLayer GetAllBooks:@"0" count:@""];
         
         NSSortDescriptor *sortDescriptor;
-        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"bianhao"
+        sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstLetter"
                                                      ascending:YES];
         NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
         NSArray *sortedArray;
@@ -42,27 +45,33 @@
         // prepare the sections
         for (CBook* book in sortedArray) {
             // Get the first character from book tag
-            if(book.bianhao != [NSNull null] && [book.bianhao length] > 0)
+            if(book.firstLetter != [NSNull null])
             {
-                NSString* firstLetter = [book.bianhao substringToIndex:1];
-                sectionName = [[Utility getBookCategory] objectForKey:firstLetter];
-                
+                sectionName = [[Utility getBookCategory] objectForKey:book.firstLetter];
                 if(sectionName)
                 {
-                    if(![firstLetter isEqualToString: previous])
+                    if(![book.firstLetter isEqualToString: previous])
                     {
-                        previous = firstLetter;
+                        previous = book.firstLetter;
                         [_sectionNames addObject: sectionName];
                         // and in that case, also add a new subarray to our array of subarrays
                         NSMutableArray* oneSection = [NSMutableArray array];
                         [_sectionData addObject: oneSection];
                     }
-                    
                     [[_sectionData lastObject] addObject: book];
                 }
-                
             }
-            
+        }
+        
+        indexArray = [[NSMutableArray alloc] init];
+        // setup the index array
+        for (NSArray* array in _sectionData) {
+            if([array count] > 0)
+            {
+                CBook* book = array[0];
+                if(![indexArray containsObject:book.firstLetter])
+                    [indexArray addObject: book.firstLetter];
+            }
         }
     }
     return _sectionData;
@@ -181,22 +190,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    CBook* book=nil;
     NSString * tableIdentifier=@"BookCell";
     BookTableViewCell *cell=[self.tableView dequeueReusableCellWithIdentifier:tableIdentifier];
-
+    
     if(cell==nil)
     {
         // first load
         cell=[[BookTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
-    
+        
     NSArray* model = (tableView == self.searchDisplayController.searchResultsTableView) ? self.filteredListData : self.sectionData;
-    
-    CBook* book = model[indexPath.section][indexPath.row];
-    
+    book = model[indexPath.section][indexPath.row];
     cell.lblTitle.text = book.title;
-    cell.lblTag.text = book.bianhao;
-    
+    if(![book.bianhao isEqual: [NSNull null]])
+    {
+        cell.lblTag.text = book.bianhao;
+    }
     UIImage * imageFromURL = [Utility getImageFromUrl:book.ISBN];
     cell.imageView.image = imageFromURL;
     
@@ -219,6 +229,22 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 80;  // othereise, the search result tableview cell cannot display correctly
+}
+
+-(NSArray*)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return indexArray;
+}
+
+-(NSInteger) tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
+{
+    for (NSInteger i=0; i< [indexArray count]; i++) {
+        if([indexArray[i] isEqualToString:title])
+        {
+            return i;
+        }
+    }
+    return 0;
 }
 
 #pragma mark - Table view delegate
