@@ -8,6 +8,7 @@
 
 #import "Utility.h"
 #import "pinyin.h"
+#import "RegexKitLite.h"
 @interface Utility ()
 
 @end
@@ -73,7 +74,7 @@ static NSDictionary* category;
     {
         //category = [NSDictionary dictionaryWithObjectsAndKeys:@"Engineering", @"E", @"Foreign Languages", @"F", @"Management", @"M", @"Self-Improvement", @"S", @"Technical", @"T", @"Miscellaneous", @"Z",nil];
         
-        category = [NSDictionary dictionaryWithObjectsAndKeys:@"A",@"A",@"B",@"B",@"C",@"C",@"D",@"D",@"E",@"E",@"F",@"F",@"G",@"G",@"H",@"H",@"I",@"I",@"J",@"J",@"K",@"K",@"L",@"L",@"M",@"M",@"N",@"N",@"O",@"O",@"P",@"P",@"Q",@"Q",@"R",@"R",@"S",@"S",@"T",@"T",@"U",@"U",@"V",@"V",@"W",@"W",@"X",@"X",@"Y",@"Y",@"Z",@"Z",nil];
+        category = [NSDictionary dictionaryWithObjectsAndKeys:@"#",@"#",@"A",@"A",@"B",@"B",@"C",@"C",@"D",@"D",@"E",@"E",@"F",@"F",@"G",@"G",@"H",@"H",@"I",@"I",@"J",@"J",@"K",@"K",@"L",@"L",@"M",@"M",@"N",@"N",@"O",@"O",@"P",@"P",@"Q",@"Q",@"R",@"R",@"S",@"S",@"T",@"T",@"U",@"U",@"V",@"V",@"W",@"W",@"X",@"X",@"Y",@"Y",@"Z",@"Z",nil];
     }
     return category;
 }
@@ -81,10 +82,17 @@ static NSDictionary* category;
 +(NSString*) getFirstLetter:(NSString*) firstName
 {
     NSString* firstLetter;
-    //If the firstname is English already
+    
+    //If the firstname is English already, return a-z or #
+    //If the firstname is Chinese, return pinyin
     if ([firstName canBeConvertedToEncoding:NSASCIIStringEncoding])
     {
-        firstLetter = firstName;
+        if ([firstName isMatchedByRegex:@"^[A-Za-z]+$"]) {
+             firstLetter = firstName;
+        }
+        else{
+            firstLetter = @"#";
+        }
     }
     else
     {

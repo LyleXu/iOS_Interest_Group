@@ -77,7 +77,6 @@ NSMutableArray* indexArray;
     return _sectionData;
 }
 
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -102,7 +101,7 @@ NSMutableArray* indexArray;
 {
     [super viewDidLoad];
     
-    //self.edgesForExtendedLayout = UIRectEdgeNone;   // otherise, section header won't float in iOS7
+    self.edgesForExtendedLayout = UIRectEdgeNone;   // otherise, section header won't float in iOS7
     
     // Hide the searchbar, the user can pull to display the searchbar
     self.tableView.tableHeaderView = self.searchBar;
@@ -277,6 +276,8 @@ NSMutableArray* indexArray;
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
+    searchString = [searchString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
     [self filterContentForSearchText:searchString];
     
     // Return YES to cause the search result table view to be reloaded.

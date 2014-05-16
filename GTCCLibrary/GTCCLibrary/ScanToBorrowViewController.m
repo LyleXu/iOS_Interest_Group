@@ -106,7 +106,14 @@ NSMutableArray* tagList;
     }
     
     //To set whether 'Borrow' button is enabled or not
-    self.navigationItem.rightBarButtonItem.enabled = [bookList count];
+    if ([bookList count] > 0) {
+        self.navigationItem.rightBarButtonItem.enabled = true;
+    }
+    else{
+        self.navigationItem.rightBarButtonItem.enabled = false;
+    }
+        
+    //self.navigationItem.rightBarButtonItem.enabled = [bookList count];
 }
 
 -(void)initTagList:(NSMutableArray*)bookList
@@ -195,7 +202,6 @@ NSMutableArray* tagList;
         {
             // alert borrow sucessfully
             [Utility Alert:@"" message:@"Borrowed successfully!"];
-            self.navigationItem.rightBarButtonItem = nil;
         }else if(result == CannnotBorrowExceeding3)
         {
             [Utility Alert:@"" message:@"You can only borrow 3 books in maximum!"];

@@ -574,11 +574,11 @@
             </objects>
             <point key="canvasLocation" x="-443" y="-1732"/>
         </scene>
-        <!--Navigation Controller - My Book-->
+        <!--Navigation Controller - My Books-->
         <scene sceneID="myk-Go-wnY">
             <objects>
                 <navigationController id="b8F-vV-DeH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Book" image="mybook.png" id="D44-Zf-24u"/>
+                    <tabBarItem key="tabBarItem" title="My Books" image="mybook.png" id="D44-Zf-24u"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TQP-V3-JdU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
