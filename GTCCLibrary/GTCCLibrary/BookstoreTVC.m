@@ -268,6 +268,8 @@ NSMutableArray* indexArray;
         [filteredData addObject: [arr filteredArrayUsingPredicate:p]];
     }
     self.filteredListData = filteredData;
+    
+    isSearching = YES;
 }
 
 
@@ -282,6 +284,11 @@ NSMutableArray* indexArray;
     
     // Return YES to cause the search result table view to be reloaded.
     return YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    isSearching = NO;
 }
 
 
@@ -329,10 +336,11 @@ NSMutableArray* indexArray;
 #pragma mark EGORefreshTableHeaderDelegate Methods
 
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
-	
-	[self reloadTableViewDataSource];
-	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
-	
+    if(!isSearching)
+    {
+        	[self reloadTableViewDataSource];
+        	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+    }
 }
 
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
