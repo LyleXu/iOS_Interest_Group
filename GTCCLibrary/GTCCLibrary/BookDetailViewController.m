@@ -119,6 +119,7 @@
     
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure to borrow the book?" delegate:self cancelButtonTitle:@"No, thanks!" destructiveButtonTitle:@"Yes, I'm sure!" otherButtonTitles: nil];
     
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
     [actionSheet showInView:self.view];
 }
 
@@ -138,7 +139,7 @@
             self.navigationItem.rightBarButtonItem = nil;
         }else if (result == CannnotBorrowExceeding3)
         {
-             [Utility Alert:@"" message:@"You can only borrow 3 books in maximum!"];
+             [Utility Alert:@"" message:@"You can only borrow 3 books at a time!"];
         }else
         {
             [Utility Alert:@"" message:@"Borrowed Failed! It may be borrowed by others."];

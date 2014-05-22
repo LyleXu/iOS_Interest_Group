@@ -204,7 +204,7 @@ NSMutableArray* tagList;
             [Utility Alert:@"" message:@"Borrowed successfully!"];
         }else if(result == CannnotBorrowExceeding3)
         {
-            [Utility Alert:@"" message:@"You can only borrow 3 books in maximum!"];
+            [Utility Alert:@"" message:@"You can only borrow 3 books at a time!"];
         }
         else
         {
