@@ -27,7 +27,7 @@ static NSString *kViewKey = @"viewKey";
 @synthesize loginTableView, logoImageView;
 @synthesize btnLogin, btnCancel;
 @synthesize txtUser,txtPass;
-@synthesize dataArray;
+@synthesize dataArray; 
 
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -212,11 +212,6 @@ static NSString *kViewKey = @"viewKey";
     else{
         [Utility Alert:@"Login Failed" message:@"Please input correct username and password"];
     }
-}
-
-- (BOOL)shouldAutorotate
-{
-    return NO;
 }
 
 @end

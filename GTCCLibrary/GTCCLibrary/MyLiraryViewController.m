@@ -112,12 +112,12 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
-
+/*
 - (BOOL)shouldAutorotate
 {
     return NO;
 }
-
+*/
 - (void)doReturnBook
 {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure to return the book?"
