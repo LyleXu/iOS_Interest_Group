@@ -59,6 +59,19 @@
     cell.borrowedDate.text = book.borrowDate;
     cell.dueDate.text = book.planReturnDate;
     
+    //Change due date color automatically
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate* currentdate = [dateFormatter dateFromString: [dateFormatter stringFromDate:[NSDate date]]];
+    NSDate* bookDueDate = [dateFormatter dateFromString:book.planReturnDate];
+    NSComparisonResult result = [currentdate compare:bookDueDate];
+    if (result == NSOrderedDescending) {
+        cell.dueDate.textColor = [UIColor redColor];
+    }
+    else{
+        cell.dueDate.textColor = [UIColor blueColor];
+    }
+    
     UIImage * imageFromURL = [Utility getImageFromUrl:book.ISBN];
     cell.imageView.image = imageFromURL;
     
