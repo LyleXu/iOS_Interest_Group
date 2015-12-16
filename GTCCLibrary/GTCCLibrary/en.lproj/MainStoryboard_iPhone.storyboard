@@ -500,7 +500,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BorrowedBookCell" rowHeight="167" id="Khh-zD-0ae" customClass="BorrowedBookTableViewCell">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="167"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="167"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Khh-zD-0ae" id="JbJ-CF-yKr">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="166.5"/>
