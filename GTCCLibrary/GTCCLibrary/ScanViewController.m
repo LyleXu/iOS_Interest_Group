@@ -55,8 +55,7 @@ UITextField *bookTagTextfield;
     
     @try {
         // present and release the controller
-        [self presentModalViewController: reader
-                                animated: YES];
+        [self presentViewController:reader animated:YES completion:nil];
     }
     @catch (NSException *exception) {
         [tmpDesc stringByAppendingString:exception.reason];
@@ -154,7 +153,7 @@ UITextField *bookTagTextfield;
         //[info objectForKey: UIImagePickerControllerOriginalImage];
         
         // ADD: dismiss the controller (NB dismiss from the *reader*!)
-        [reader dismissModalViewControllerAnimated: YES];
+        [reader dismissViewControllerAnimated:YES completion:nil];
         
         HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
         [self.navigationController.view addSubview:HUD];
@@ -238,8 +237,7 @@ UITextField *bookTagTextfield;
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.scrollView.hidden = true;    
-    [self scanButtonTapped];
+    
 }
 
 - (void)viewDidLoad
@@ -280,6 +278,8 @@ UITextField *bookTagTextfield;
 //    picUrl = @"http://img3.douban.com/lpic/s4255234.jpg";
 //    resultText.text = @"9781840183788";
 
+    self.scrollView.hidden = true;
+    [self scanButtonTapped];
 }
 
 - (void)viewDidUnload

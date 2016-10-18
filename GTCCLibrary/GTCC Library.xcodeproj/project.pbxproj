@@ -544,7 +544,7 @@
 				LastUpgradeCheck = 0510;
 				TargetAttributes = {
 					26AAAF02159C473E003AEF83 = {
-						DevelopmentTeam = 833VCT4CR5;
+						DevelopmentTeam = 9D97ZRA5Q9;
 					};
 				};
 			};
@@ -761,6 +761,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GTCCLibrary/GTCC Library-Prefix.pch";
 				INFOPLIST_FILE = "GTCCLibrary/GTCC Library-Info.plist";
@@ -785,6 +786,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GTCCLibrary/GTCC Library-Prefix.pch";
 				INFOPLIST_FILE = "GTCCLibrary/GTCC Library-Info.plist";
