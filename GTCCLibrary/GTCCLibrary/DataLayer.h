@@ -23,6 +23,7 @@ password:(NSString*)password;
 +(BOOL) ReturnBook:(NSString*) username
        bookBianhao:(NSString*) bookBianhao;
 +(NSMutableString *)FetchDataFromWebByGet:(NSString* )url;
++(NSMutableString*)FetchDataFromWebByGetByHtml:(NSString *)url;
 +(NSInteger) addBookToLibrary:(CBook*) bookInfo;
 +(NSMutableArray*) getBookListbyISBN:(NSString*) ISBN;
 

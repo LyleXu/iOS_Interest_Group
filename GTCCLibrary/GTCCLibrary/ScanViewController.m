@@ -68,7 +68,7 @@ UITextField *bookTagTextfield;
     
         // Search the barcode on the network
         NSString* url = [[NSString alloc] initWithFormat:@"%@%@",DouBanAPI,resultISBN.text];
-        NSMutableString* response = [DataLayer FetchDataFromWebByGet:url];
+        NSMutableString* response = [DataLayer FetchDataFromWebByGetByHtml:url];
       
         SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
         NSError *error = nil;

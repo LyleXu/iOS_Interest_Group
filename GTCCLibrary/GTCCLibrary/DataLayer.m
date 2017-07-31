@@ -164,6 +164,18 @@
     return theString;
 }
 
++(NSMutableString*)FetchDataFromWebByGetByHtml:(NSString *)url
+{
+    NSError *theError = nil;
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setValue:@"text/html; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"GET"];
+    NSURLResponse *theResponse =[[NSURLResponse alloc]init];
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&theResponse error:&theError];
+    NSMutableString *theString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] copy];
+    return theString;
+}
+
 +(NSInteger)addBookToLibrary:(CBook *)bookInfo
 {
     // The first parameter should be bianhao, but not sure we will use it
